@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio showcasing projects and technical details.">
+    <title>dplamarca Web Page</title>
+
+    <!-- Link to an external CSS file -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Font and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader for this page -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navbar Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>dplamarca</h1>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                &#9776;  <!-- This is the "hamburger" menu icon -->
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="pages/test.html">Projects</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Explore my projects and get a deeper insight into the technical aspects of my work.</p>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Write a brief introduction about yourself, your skills, and what kind of projects you work on. Highlight your technical expertise and what you’re passionate about.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-list">
+                <!-- Example Project Card -->
+                <div class="project-card">
+                    <h3>Project Title 1</h3>
+                    <p>Short description of the project and the technical details. Add links to GitHub, live demos, or project write-ups.</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project Title 2</h3>
+                    <p>Another project with a brief description, highlighting the technologies used and interesting aspects of the development process.</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos">
+        <div class="container">
+            <h2>Development Videos</h2>
+            <div class="video-list">
+                <!-- Example Video Embed -->
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+                    <p>Brief description of the video content.</p>
+                </div>
+                <!-- Add more videos as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Contact Icons -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <ul class="contact-icons">
+                <li>
+                    <a href="mailto:your.email@example.com" target="_blank">
+                        <i class="fas fa-envelope"></i> <!-- Email Icon -->
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank">
+                        <i class="fab fa-linkedin"></i> <!-- LinkedIn Icon -->
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/your-profile" target="_blank">
+                        <i class="fab fa-github"></i> <!-- GitHub Icon -->
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Import the external JavaScript file at the end of the body -->
+    <script src="scripts/script.js"></script>
+
+</body>
+
+</html>
