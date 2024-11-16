@@ -1,4 +1,9 @@
 
+/* Add Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* General Reset */
 * {
     margin: 0;
@@ -44,6 +49,10 @@ body {
     color: #d3d3d3;
     text-decoration: none;
     transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00adb5; /* Light cyan on hover */
 }
 
 /* Hero Section */

@@ -1,0 +1,17 @@
+{
+  "name": "personal-web",
+  "version": "1.0.0",
+  "description": "Personal web page to describe professional and personal projects, providing an environment to share deeper and detailed explanations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.15"
+  }
+}
