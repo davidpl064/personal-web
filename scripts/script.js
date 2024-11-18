@@ -3,13 +3,13 @@ const themeToggleBtn = document.getElementById('theme-toggle');
 const themeToggleIcon = document.getElementById('theme-toggle-icon');
 
 // Function to set the icon based on current theme
-const setThemeIcon = () => {
-    if (document.documentElement.classList.contains('dark')) {
-        themeToggleIcon.textContent = '🌜'; // Moon icon for dark mode
-    } else {
-        themeToggleIcon.textContent = '🌞'; // Sun icon for light mode
-    }
-};
+// const setThemeIcon = () => {
+//     if (document.documentElement.classList.contains('dark')) {
+//         themeToggleIcon.textContent = '🌜'; // Moon icon for dark mode
+//     } else {
+//         themeToggleIcon.textContent = '🌞'; // Sun icon for light mode
+//     }
+// };
 
 // Function to apply dark mode based on user or OS preference
 const applyDarkMode = () => {
@@ -19,7 +19,6 @@ const applyDarkMode = () => {
     } else {
         document.documentElement.classList.remove('dark');
     }
-    setThemeIcon();
 };
 
 // Toggle theme manually
@@ -30,7 +29,6 @@ const onToggleTheme = () => {
     } else {
         localStorage.setItem('theme', 'light');
     }
-    setThemeIcon();
 };
 
 // Watch for system preference changes and update theme accordingly
