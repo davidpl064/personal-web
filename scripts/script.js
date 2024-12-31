@@ -1,16 +1,3 @@
-// Initialize theme based on preference and manual override
-const themeToggleBtn = document.getElementById('theme-toggle');
-const themeToggleIcon = document.getElementById('theme-toggle-icon');
-
-// Function to set the icon based on current theme
-// const setThemeIcon = () => {
-//     if (document.documentElement.classList.contains('dark')) {
-//         themeToggleIcon.textContent = '🌜'; // Moon icon for dark mode
-//     } else {
-//         themeToggleIcon.textContent = '🌞'; // Sun icon for light mode
-//     }
-// };
-
 // Function to apply dark mode based on user or OS preference
 const applyDarkMode = () => {
     if (localStorage.getItem('theme') === 'dark' ||
@@ -34,19 +21,6 @@ const onToggleTheme = () => {
 // Watch for system preference changes and update theme accordingly
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyDarkMode);
 
-const menuToggle = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-
-menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
-  
-
-// function toggleMenu() {
-//     const navLinks = document.querySelector('.nav-links');
-//     navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-// }
-
 // Hide the preloader when the page is fully loaded
 window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
@@ -65,3 +39,9 @@ document.querySelectorAll('a').forEach(link => {
         document.getElementById('preloader').style.display = 'flex';
     });
 });
+
+// Get the current year
+const currentYear = new Date().getFullYear();
+
+// Insert the year into the footer
+document.getElementById('current-year').textContent = currentYear;
