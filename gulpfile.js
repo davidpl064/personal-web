@@ -1,13 +1,13 @@
 const gulp = require('gulp');
 const webpack = require('webpack-stream');
-const sass = require('gulp-sass')(require('sass'));
+// const sass = require('gulp-sass')(require('sass'));
 const imagemin = require('gulp-imagemin');
 const clean = require('gulp-clean');
 
 // Webpack Configuration
 const webpackConfig = {
   mode: 'production',
-  entry: './src/js/index.js',
+  entry: './scripts/script.js',
   output: {
     filename: 'bundle.js',
   },
@@ -61,7 +61,4 @@ gulp.task('watch', function () {
 });
 
 // Build task: collection of tasks
-gulp.task('build', gulp.series(
-  gulp.parallel('images', 'scripts'),
-  'watch'
-));
+gulp.task('build', gulp.parallel('images', 'scripts'));
