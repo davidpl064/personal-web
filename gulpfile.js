@@ -1,3 +1,5 @@
+const path = require('path');
+
 const gulp = require('gulp');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
@@ -9,6 +11,18 @@ const extReplace = require('gulp-ext-replace');
 const htmlmin = require('gulp-htmlmin');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+// Paths to project files
+const paths = {
+  images: {
+    src: 'assets/**/*.{png,jpg,jpeg,gif,svg,webp}',
+    dest: 'dist/assets'
+  },
+  scripts: {
+    src: 'src/scripts/**/*.js',
+    dest: 'assets/scripts/'
+  }
+};
 
 // Webpack Configuration
 const webpackConfig = {
@@ -60,12 +74,12 @@ gulp.task('html', function() {
     .pipe(gulp.dest('dist')); // Output folder
 });
 
-// Optimize Images
+// Optimize images
 gulp.task('images', function () {
-  return gulp.src('assets/**/*')
-    .pipe(imagemin())
+  return gulp.src(paths.images.src, {encoding: false})
+    //.pipe(imagemin())
     //.pipe(extReplace('.webp'))
-    .pipe(gulp.dest('dist/assets'));
+    .pipe(gulp.dest(paths.images.dest));
 });
 
 // Use Webpack for JavaScript Bundling
