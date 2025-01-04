@@ -39,6 +39,7 @@
     "@babel/preset-env": "^7.26.0",
     "@babel/register": "^7.25.9",
     "babel-loader": "^9.2.1",
+    "copy-webpack-plugin": "^12.0.2",
     "flowbite": "^2.5.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",

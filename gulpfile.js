@@ -8,6 +8,8 @@ const clean = require('gulp-clean');
 const extReplace = require('gulp-ext-replace');
 const htmlmin = require('gulp-htmlmin');
 
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 // Webpack Configuration
 const webpackConfig = {
   mode: 'production',
@@ -29,6 +31,14 @@ const webpackConfig = {
       },
     ],
   },
+  plugins: [
+    // Copy CSS files from src/styles to dist/styles
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'styles/**/*.css', to: '../styles/[name][ext]' },  // Match all .css files in styles folder
+      ],
+    }),
+  ],
 };
 
 // Clean Dist Folder
