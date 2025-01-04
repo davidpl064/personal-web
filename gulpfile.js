@@ -1,15 +1,19 @@
 const gulp = require('gulp');
-const webpack = require('webpack-stream');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
 // const sass = require('gulp-sass')(require('sass'));
 const imagemin = require('gulp-imagemin');
+const webp = require('imagemin-webp');
 const clean = require('gulp-clean');
+const extReplace = require('gulp-ext-replace');
+const htmlmin = require('gulp-htmlmin');
 
 // Webpack Configuration
 const webpackConfig = {
   mode: 'production',
   entry: './scripts/script.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'script.js',
   },
   module: {
     rules: [
@@ -39,26 +43,37 @@ gulp.task('clean', function () {
 //    .pipe(gulp.dest('dist/styles'));
 //});
 
+// Task to move HTML files
+gulp.task('html', function() {
+  return gulp.src(['./index.html', './projects.html']) // Source HTML files
+    .pipe(htmlmin({ collapseWhitespace: true })) // Optional: Minify HTML
+    .pipe(gulp.dest('dist')); // Output folder
+});
+
 // Optimize Images
 gulp.task('images', function () {
   return gulp.src('assets/**/*')
     .pipe(imagemin())
+    //.pipe(extReplace('.webp'))
     .pipe(gulp.dest('dist/assets'));
 });
 
 // Use Webpack for JavaScript Bundling
-gulp.task('scripts', function () {
+gulp.task('bundle', function () {
   return gulp.src('scripts/script.js')
-    .pipe(webpack(webpackConfig))
+    .pipe(webpackStream(webpackConfig, webpack))
     .pipe(gulp.dest('dist/scripts'));
 });
 
 // Watch Files for Changes
 gulp.task('watch', function () {
   // gulp.watch('src/scss/**/*.scss', gulp.series('styles'));
-  gulp.watch('scripts/**/*.js', gulp.series('scripts'));
+  gulp.watch('scripts/**/*.js', gulp.series('bundle'));
   gulp.watch('assets/**/*', gulp.series('images'));
 });
 
 // Build task: collection of tasks
-gulp.task('build', gulp.parallel('images', 'scripts'));
+gulp.task('build', gulp.series(
+  'html',
+  gulp.parallel('images', 'bundle')
+));
