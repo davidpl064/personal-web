@@ -1,5 +1,3 @@
-const path = require('path');
-
 const gulp = require('gulp');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');

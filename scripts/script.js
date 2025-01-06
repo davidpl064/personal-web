@@ -1,4 +1,4 @@
-import 'flowbite';
+// import 'flowbite';
 
 // Function to apply dark mode based on user or OS preference
 const applyDarkMode = () => {
