@@ -1,4 +1,3 @@
-
 /* Add Tailwind directives */
 @tailwind base;
 @tailwind components;
@@ -32,7 +31,7 @@ body {
 .menu-icon {
     font-size: 2rem;
     color: #d3d3d3;
-    display: none;  /* Hidden by default */
+    display: none; /* Hidden by default */
     cursor: pointer;
 }
 
@@ -114,7 +113,9 @@ body {
 .contact-icons li a {
     color: #00adb5;
     font-size: 2rem;
-    transition: color 0.3s, transform 0.3s;
+    transition:
+        color 0.3s,
+        transform 0.3s;
 }
 
 .contact-icons li a:hover {
@@ -139,7 +140,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 2rem; /* Space between icons and text */
-    flex-wrap: nowrap;  /* Prevent the footer items from stacking */
+    flex-wrap: nowrap; /* Prevent the footer items from stacking */
 }
 
 /* Contact Icons List */
@@ -159,7 +160,9 @@ footer {
 .contact-icons li a {
     color: #00adb5; /* Light cyan color for icons */
     font-size: 1.5rem; /* Adjust the size of the icons */
-    transition: color 0.3s, transform 0.3s; /* Smooth transition for color and scale */
+    transition:
+        color 0.3s,
+        transform 0.3s; /* Smooth transition for color and scale */
 }
 
 .contact-icons li a:hover {
@@ -181,17 +184,17 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #1e1e1e;  /* Background color of the preloader */
+    background-color: #1e1e1e; /* Background color of the preloader */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;               /* Make sure it stays on top */
+    z-index: 9999; /* Make sure it stays on top */
 }
 
 /* Loader Animation */
 .loader {
-    border: 10px solid #f3f3f3;  /* Light grey */
-    border-top: 10px solid #3498db;  /* Blue */
+    border: 10px solid #f3f3f3; /* Light grey */
+    border-top: 10px solid #3498db; /* Blue */
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -200,8 +203,12 @@ footer {
 
 /* Spin Animation */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Media Queries for smaller screens */
@@ -212,13 +219,13 @@ footer {
     }
 
     .nav-links {
-        display: none;          /* Hide navigation links */
+        display: none; /* Hide navigation links */
         flex-direction: column; /* Stack vertically when shown */
         align-items: flex-start;
         margin-top: 1rem;
-        gap: 0;                 /* Remove gap between items */
+        gap: 0; /* Remove gap between items */
         position: absolute;
-        top: 60px;              /* Position the dropdown below the header */
+        top: 60px; /* Position the dropdown below the header */
         right: 0;
         background-color: #333;
         width: 200px;
@@ -227,7 +234,7 @@ footer {
     }
 
     .menu-icon {
-        display: block;         /* Show the menu icon on small screens */
+        display: block; /* Show the menu icon on small screens */
     }
 
     .hero h2 {

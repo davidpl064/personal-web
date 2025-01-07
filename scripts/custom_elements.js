@@ -1,5 +1,5 @@
 class HeaderNavBar extends HTMLElement {
-    constructor () {
+    constructor() {
         super()
     }
 
@@ -64,7 +64,7 @@ class HeaderNavBar extends HTMLElement {
                             <li><a href="contact.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Contact</a></li>
 
                             <!-- Theme Mode Selector -->
-                            <button id="theme-toggle" onclick="onToggleTheme()" class="text-gray-800 dark:text-white p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-all duration-300 hover:bg-gray-300 dark:hover:bg-gray-600 transform hover:scale-110">
+                            <button id="theme-toggle" class="text-gray-800 dark:text-white p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-all duration-300 hover:bg-gray-300 dark:hover:bg-gray-600 transform hover:scale-110">
                                 <!-- Sun Icon for Light Mode -->
                                 <svg data-toggle-icon="sun" class="hidden w-3.5 h-3.5 dark:block text-yellow-500 transition-all duration-300 hover:text-yellow-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M10 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0-11a1 1 0 0 0 1-1V1a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1Zm0 12a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0v-2a1 1 0 0 0-1-1ZM4.343 5.757a1 1 0 0 0 1.414-1.414L4.343 2.929a1 1 0 0 0-1.414 1.414l1.414 1.414Zm11.314 8.486a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM4 10a1 1 0 0 0-1-1H1a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1Zm15-1h-2a1 1 0 1 0 0 2h2a1 1 0 0 0 0-2ZM4.343 14.243l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414a1 1 0 0 0-1.414-1.414ZM14.95 6.05a1 1 0 0 0 .707-.293l1.414-1.414a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 .707 1.707Z"/>
@@ -78,13 +78,13 @@ class HeaderNavBar extends HTMLElement {
                     </div>
                 </nav>
             </header>
-        `;
+        `
     }
 }
-customElements.define('header-navbar', HeaderNavBar);
+customElements.define('header-navbar', HeaderNavBar)
 
 class CustomFooter extends HTMLElement {
-    constructor () {
+    constructor() {
         super()
     }
 
@@ -123,7 +123,7 @@ class CustomFooter extends HTMLElement {
                     <!-- <p class="text-center text-gray-300 dark:text-gray-400">&copy; 2024 dplamarca. All rights reserved.</p> -->
                 </div>
             </footer>
-        `;
+        `
     }
 }
-customElements.define('custom-footer', CustomFooter);
+customElements.define('custom-footer', CustomFooter)

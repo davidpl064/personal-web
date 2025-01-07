@@ -1,22 +1,22 @@
-name: personal_web_env  # Environment name.
+name: personal_web_env # Environment name.
 channels:
-  - conda-forge
-  - defaults
-dependencies:  # Everything under this, installed by conda.
-- build
-- fire
-- loguru
-- fire
-- matplotlib
-- numpy
-- pip
-- pre-commit
-- pydantic
-- pydantic-settings
-- pytest
-- pytest-cov
-- pytest-loguru
-- python
-- setuptools
-- pip:  # Everything under this, installed by pip.
-  - wheel
+    - conda-forge
+    - defaults
+dependencies: # Everything under this, installed by conda.
+    - build
+    - fire
+    - loguru
+    - fire
+    - matplotlib
+    - numpy
+    - pip
+    - pre-commit
+    - pydantic
+    - pydantic-settings
+    - pytest
+    - pytest-cov
+    - pytest-loguru
+    - python
+    - setuptools
+    - pip: # Everything under this, installed by pip.
+          - wheel
