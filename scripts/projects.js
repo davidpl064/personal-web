@@ -24,8 +24,77 @@ function handleCheckboxChange(event) {
         removeFilterTag(tag)
     }
 
-    // Filter cards with updated filters
+    // Update active badges
+    filterActiveBadges()
+
+    // Filter cards with updated tags
     filterProjectCards()
+}
+
+document.querySelectorAll('#active-bagdes [data-hide-target]').forEach((button) => {
+    button.addEventListener('click', onActiveBadgesDismiss);
+});
+
+
+// Functionality to update filter checkboxes on changes in active badges
+function onActiveBadgesDismiss(event) {
+    const button = event.currentTarget
+    const targetSelector = button.getAttribute('data-hide-target');
+    const checkboxTargetSelector = button.getAttribute('data-checkbox-target');
+
+    const badgeToHide = document.querySelector(targetSelector);
+    const checkbox = document.querySelector(checkboxTargetSelector);
+
+    // Hide badge
+    if (badgeToHide) {
+        badgeToHide.classList.add('hidden');
+    }
+
+    // Uncheck the associated checkbox
+    if (checkbox) {
+        checkbox.checked = false;
+        tag = checkbox.dataset.tags
+        removeFilterTag(tag)
+    }
+
+    // Filter cards with updated tags
+    filterProjectCards();
+}
+// const activeTagsContainer = document.getElementById('active-bagdes');
+// activeTagsContainer.addEventListener('click', (event) => {
+//     const button = event.target.closest('[data-dismiss-target]');
+//     if (button) {
+//         const dismissTargetSelector = button.getAttribute('data-dismiss-target');
+//         const checkboxTargetSelector = button.getAttribute('data-checkbox-target');
+
+//         // Dismiss the target badge
+//         const dismissTarget = document.querySelector(dismissTargetSelector);
+//         if (dismissTarget) {
+//         dismissTarget.remove();
+//         }
+
+//         // Uncheck the associated checkbox
+//         if (checkboxTargetSelector) {
+//         const checkbox = document.querySelector(checkboxTargetSelector);
+//         if (checkbox) {
+//             checkbox.checked = false;
+//         }
+//         }
+
+//     // Filter cards with updated tags
+//     filterProjectCards()
+//     }
+// });
+
+function filterActiveBadges() {
+    document.querySelectorAll('#active-bagdes [data-tags]').forEach((badge) => {
+        const badgeTag = badge.dataset.tags
+        if (activeTagFilters.includes(badgeTag)) {
+            badge.classList.remove('hidden');
+        } else {
+            badge.classList.add('hidden');
+        }
+    })
 }
 
 function filterProjectCards() {
