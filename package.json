@@ -4,18 +4,20 @@
     "description": "Personal web page to describe professional and personal projects, providing an environment to share deeper and detailed explanations.",
     "main": "index.js",
     "lint-staged": {
-        "*.js": [
+        "scripts/**/*.js": [
             "eslint --fix",
             "prettier --write"
         ],
-        "*.css": "prettier --write",
-        "*.html": "prettier --write"
+        "*.{css,md,html,json}": "prettier --cache --write",
+        "pages/*.html": "prettier --cache --write",
+        "styles/*.css": "prettier --cache --write"
     },
     "scripts": {
-        "linting": "husky install",
+        "linting": "npx husky init",
         "build_css": "npx tailwindcss -i ./styles/styles_new.css -o ./styles/styles_new_tailwind.css",
         "build": "gulp build",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "husky"
     },
     "keywords": [],
     "author": "",
@@ -25,6 +27,8 @@
         "@babel/core": "^7.26.0",
         "@babel/preset-env": "^7.26.0",
         "@babel/register": "^7.25.9",
+        "@commitlint/cli": "^19.6.1",
+        "@commitlint/config-conventional": "^19.6.0",
         "@eslint/js": "^9.17.0",
         "babel-loader": "^9.2.1",
         "browser-sync": "^3.0.3",
