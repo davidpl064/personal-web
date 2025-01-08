@@ -10,6 +10,18 @@
 
         <link href="styles/styles_new_tailwind.css" rel="stylesheet" />
 
+        <!-- Font Awesome for Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+
+        <!-- Font and Icons -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+
         <!-- Check dark mode -->
         <script>
             document.documentElement.classList.toggle(
@@ -114,8 +126,11 @@
                         </li>
                     </ul>
                 </div>
-                
-                <div id="active-bagdes" class="flex flex-wrap items-center justify-center py-4 md:py-8">
+
+                <div
+                    id="active-bagdes"
+                    class="flex flex-wrap items-center justify-center py-4 md:py-8"
+                >
                     <span
                         id="badge-statistics"
                         class="me-2 hidden items-center rounded bg-blue-100 px-2 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300"
@@ -182,7 +197,7 @@
                         id="badge-embedded-systems"
                         class="me-2 hidden items-center rounded bg-red-100 px-2 py-1 text-sm font-medium text-red-800 dark:bg-red-900 dark:text-red-300"
                         data-tags="#embedded_systems"
-                    >   
+                    >
                         #embedded_systems
                         <button
                             type="button"
@@ -356,9 +371,12 @@
                     </span>
                 </div>
             </div>
-            <div id="container-cards" class="grid grid-cols-2 gap-4 md:grid-cols-3">
+            <div
+                id="container-cards"
+                class="grid grid-cols-2 justify-items-center gap-4 py-8 md:grid-cols-3 lg:px-8 lg:py-16"
+            >
                 <div
-                    class="card max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
+                    class="card max-w-sm justify-center rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
                     data-tags="#statistics"
                 >
                     <figure class="relative max-w-sm">
@@ -662,12 +680,6 @@
 
         <!-- Footer with Contact Icons -->
         <custom-footer></custom-footer>
-
-        <!-- Import the external JavaScript file at the end of the body -->
-        <!-- <script src="scripts/custom_elements.js"></script>
-        <script src="scripts/projects.js"></script>
-
-        <script src="node_modules/flowbite/dist/flowbite.min.js"></script> -->
 
         <!-- Webpack will inject scripts here -->
     </body>

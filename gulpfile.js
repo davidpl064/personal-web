@@ -82,6 +82,13 @@ const webpackConfig = {
             inject: 'body', // Inject scripts into the <body> tag
             minify: !isProduction, // Minify for production
         }),
+        new HtmlWebpackPlugin({
+            template: './pages/hobbies/3dprinting.html', // Source HTML file
+            filename: '../hobbies/3dprinting.html', // Output HTML file
+            // chunks: ['main'], specify javascript files to be injected
+            inject: 'body', // Inject scripts into the <body> tag
+            minify: !isProduction, // Minify for production
+        }),
         // Copy CSS files from src/styles to dist/styles
         new CopyWebpackPlugin({
             patterns: [
@@ -170,10 +177,11 @@ gulp.task('webpack-server', (done) => {
 
 // Watch Files for Changes
 gulp.task('watch', function () {
-    gulp.watch(path.styles.src, gulp.series('styles'))
+    //gulp.watch(paths.styles.src, gulp.series('styles'))
     gulp.watch(paths.scripts.src, gulp.series('webpack-build'))
     gulp.watch(paths.images.src, gulp.series('images'))
 })
 
-// Build task: collection of tasks
+// Main build tasks
+gulp.task('build-env', gulp.series(gulp.parallel('images', 'webpack-build'), 'webpack-server'))
 gulp.task('build', gulp.series(gulp.parallel('images', 'webpack-build'), 'webpack-server'))

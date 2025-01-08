@@ -9,15 +9,15 @@
             "prettier --write"
         ],
         "*.{css,md,html,json}": "prettier --cache --write",
-        "pages/*.html": "prettier --cache --write",
+        "pages/**/*.html": "prettier --cache --write",
         "styles/*.css": "prettier --cache --write"
     },
     "scripts": {
         "linting": "npx husky init",
-        "build_css": "npx tailwindcss -i ./styles/styles_new.css -o ./styles/styles_new_tailwind.css",
+        "build-css": "npx tailwindcss -i ./styles/styles_new.css -o ./styles/styles_new_tailwind.css",
         "build": "gulp build",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "prepare": "husky"
+        "build-env": "gulp build-env",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "",
