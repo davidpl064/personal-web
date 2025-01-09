@@ -32,7 +32,7 @@ const paths = {
     },
     scripts: {
         src: 'scripts/**/*.js',
-        dest: 'dist/scripts',
+        dest: 'dist',
     },
     styles: {
         src: 'styles/styles.css',

@@ -8,11 +8,13 @@ module.exports = (env) => {
 
     return {
         mode: isProduction ? 'production' : 'development',
-        watch: true,
-        watchOptions: {
-            poll: true,
-            ignored: /node_modules/
-        },
+        ...(isProduction ? {} : {
+            watch: true,
+            watchOptions: {
+                poll: true,
+                ignored: /node_modules/,
+            },
+        }),
         // cache: {
         //     type: 'filesystem',
         //     buildDependencies: {
