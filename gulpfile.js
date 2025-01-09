@@ -1,19 +1,20 @@
-const path = require('path')
-
 const gulp = require('gulp')
 // const sass = require('gulp-sass')(require('sass'));
 const imagemin = require('gulp-imagemin')
 // const webp = require('imagemin-webp');
+const postcss = require('gulp-postcss')
 const clean = require('gulp-clean')
 const extReplace = require('gulp-ext-replace')
 const htmlmin = require('gulp-htmlmin')
+const rename = require('gulp-rename');
 const browserSync = require('browser-sync').create() // Optionally use BrowserSync for better browser sync
+
+const tailwindcss = require('tailwindcss')
+const autoprefixer = require('autoprefixer')
 
 const webpack = require('webpack')
 const webpackStream = require('webpack-stream')
 const webpackDevServer = require('webpack-dev-server')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // Paths to project files
 const paths = {
@@ -34,7 +35,7 @@ const paths = {
         dest: 'dist/scripts',
     },
     styles: {
-        src: 'styles/**/*.css',
+        src: 'styles/styles.css',
         dest: 'dist/styles',
     },
 }
@@ -43,87 +44,12 @@ const paths = {
 const isProduction = process.env.NODE_ENV === 'production'
 
 // Webpack Configuration
-const webpackConfig = {
-    mode: isProduction ? 'production' : 'development',
-    entry: {
-        bundle_main: ['./scripts/custom_elements.js', './scripts/projects.js', './scripts/main.js'],
-        bundle_dependencies: './scripts/external.js',
-    },
-    output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'dist/scripts'),
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env'],
-                    },
-                },
-            },
-        ],
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './pages/index.html', // Source HTML file
-            filename: '../index.html', // Output HTML file
-            // chunks: ['main'], specify javascript files to be injected
-            inject: 'body', // Inject scripts into the <body> tag
-            minify: !isProduction, // Minify for production
-        }),
-        new HtmlWebpackPlugin({
-            template: './pages/projects.html', // Source HTML file
-            filename: '../projects.html', // Output HTML file
-            // chunks: ['main'], specify javascript files to be injected
-            inject: 'body', // Inject scripts into the <body> tag
-            minify: !isProduction, // Minify for production
-        }),
-        new HtmlWebpackPlugin({
-            template: './pages/hobbies/3dprinting.html', // Source HTML file
-            filename: '../hobbies/3dprinting.html', // Output HTML file
-            // chunks: ['main'], specify javascript files to be injected
-            inject: 'body', // Inject scripts into the <body> tag
-            minify: !isProduction, // Minify for production
-        }),
-        // Copy CSS files from src/styles to dist/styles
-        new CopyWebpackPlugin({
-            patterns: [
-                { from: 'styles/**/*.css', to: '../styles/[name][ext]' }, // Match all .css files in styles folder
-            ],
-        }),
-        // Copy CSS files from src/styles to dist/styles
-        // new CopyWebpackPlugin({
-        //     patterns: [
-        //         { from: 'scripts/custom_elements.js', to: '../scripts/[name][ext]' }, // Match all .css files in styles folder
-        //     ],
-        // }),
-    ],
-    devtool: isProduction ? false : 'source-map',
-    devServer: {
-        static: {
-            directory: path.resolve(__dirname, 'dist'),
-        },
-        compress: true,
-        port: 9000,
-        open: true, // Open the browser automatically
-    },
-}
+const webpackConfig = require('./webpack.config.js')({ production: isProduction });
 
-// Clean Dist Folder
+// Clean dist folder
 gulp.task('clean', function () {
     return gulp.src('dist', { allowEmpty: true, read: false }).pipe(clean())
 })
-
-// Process SCSS
-// gulp.task('styles', function () {
-//  return gulp.src('styles/**/*.scss')
-//    .pipe(sass({ outputStyle: 'compressed' }))
-//    .pipe(gulp.dest('dist/styles'));
-//});
 
 // Task to move HTML files
 // gulp.task('html', function () {
@@ -132,6 +58,15 @@ gulp.task('clean', function () {
 //         .pipe(htmlmin({ collapseWhitespace: true })) // Optional: Minify HTML
 //         .pipe(gulp.dest('dist')) // Output folder
 // })
+
+// Post-CSS process, compile with TailwindCSS
+gulp.task('styles-compile', function () {
+    return gulp
+        .src(paths.styles.src)
+        .pipe(postcss([tailwindcss, autoprefixer]))
+        .pipe(rename({ basename: 'styles_tailwind' }))
+        .pipe(gulp.dest(paths.styles.dest));
+})
 
 // Optimize images
 gulp.task('images', function () {
@@ -183,5 +118,5 @@ gulp.task('watch', function () {
 })
 
 // Main build tasks
-gulp.task('build-env', gulp.series(gulp.parallel('images', 'webpack-build'), 'webpack-server'))
-gulp.task('build', gulp.series(gulp.parallel('images', 'webpack-build'), 'webpack-server'))
+gulp.task('build-dev', gulp.series(gulp.parallel('images', 'styles-compile'), 'webpack-server'))
+gulp.task('build', gulp.series(gulp.parallel('images', 'styles-compile'), 'webpack-build'))

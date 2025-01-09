@@ -1,2 +1,2 @@
-import 'flowbite'
-//import 'flowbite/dist/flowbite.min.js';
+// import 'flowbite'
+import 'flowbite/dist/flowbite.min.js'

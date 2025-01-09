@@ -51,3 +51,5 @@ const currentYear = new Date().getFullYear()
 
 // Insert the year into the footer
 document.getElementById('current-year').textContent = currentYear
+
+console.log('Puede que solo el javascript')

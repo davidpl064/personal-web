@@ -4,6 +4,7 @@ class HeaderNavBar extends HTMLElement {
     }
 
     connectedCallback() {
+        const relPath = this.getAttribute('rel-path') || ''
         this.innerHTML = `
             <header class="bg-gray-100 dark:bg-gray-800 shadow-md">
                 <!-- <nav class="items-center space-x-6 md:flex"></nav> -->
@@ -24,9 +25,9 @@ class HeaderNavBar extends HTMLElement {
                     <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
                         <ul class="flex flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:items-center md:mt-0 md:text-sm  md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 md:space-x-8 md:rtl:space-x-reverse">
                             <li>
-                                <a href="index.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Home</a></li>
+                                <a href="${relPath}index.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Home</a></li>
                             </li>
-                            <li><a href="projects.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Projects</a></li>
+                            <li><a href="${relPath}projects.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Projects</a></li>
                             <li>
                                 <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full text-gray-700 rounded hover:bg-gray-100 focus:text-blue-500 hover:text-blue-500 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto dark:text-gray-300 dark:hover:text-blue-500 dark:focus:text-blue-500 dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Hobbies
                                     <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -37,10 +38,10 @@ class HeaderNavBar extends HTMLElement {
                                 <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                     <li>
-                                        <a href="hobbies/3dprinting.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">3D Printing</a>
+                                        <a href="${relPath}hobbies/3dprinting.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">3D Printing</a>
                                     </li>
                                     <li>
-                                        <a href="hobbies/sports.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">Sports</a>
+                                        <a href="${relPath}hobbies/sports.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">Sports</a>
                                     </li>
                                     </ul>
                                     <div class="py-1">
