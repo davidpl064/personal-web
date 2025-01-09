@@ -1,4 +1,5 @@
-# Ignore artifacts:
+# Ignore artifacts
 build
 coverage
-*.html
+dist
+# *.html
