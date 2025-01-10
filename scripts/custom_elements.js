@@ -6,7 +6,7 @@ class HeaderNavBar extends HTMLElement {
     connectedCallback() {
         const relPath = this.getAttribute('rel-path') || ''
         this.innerHTML = `
-            <header class="bg-gray-100 dark:bg-gray-800 shadow-md">
+            <header class="sticky top-0 z-10 bg-gray-100 dark:bg-gray-800 shadow-md">
                 <!-- <nav class="items-center space-x-6 md:flex"></nav> -->
                 <nav class="flex flex-wrap items-center justify-between mx-auto px-4 py-2.5">
                 <!-- <div class="flex flex-wrap container justify-between items-center mx-auto p-4"> -->
@@ -91,7 +91,7 @@ class CustomFooter extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-            <footer class="py-8 bg-gray-100 dark:bg-gray-800">
+            <footer class="bottom-0 py-8 bg-gray-100 dark:bg-gray-800">
                 <div class="w-full mx-auto flex flex-col items-center justify-center text-white space-y-4">
                     <!-- Contact Icons -->
                     <ul class="flex space-x-6">

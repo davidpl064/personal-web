@@ -118,5 +118,6 @@ gulp.task('watch', function () {
 })
 
 // Main build tasks
-gulp.task('build-dev', gulp.series(gulp.parallel('images', 'styles-compile'), 'webpack-server'))
+gulp.task('build-dev', gulp.series('images', 'webpack-server'))
+// gulp.task('build-dev', gulp.series(gulp.parallel('images', 'styles-compile'), 'webpack-build'))
 gulp.task('build', gulp.series(gulp.parallel('images', 'styles-compile'), 'webpack-build'))

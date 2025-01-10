@@ -2,6 +2,7 @@ const path = require('path')
 
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = (env) => {
     const isProduction = env.production || false;
@@ -24,6 +25,7 @@ module.exports = (env) => {
         entry: {
             bundle_main: ['./scripts/custom_elements.js', './scripts/projects.js', './scripts/main.js'],
             bundle_dependencies: './scripts/external.js',
+            styles: './styles/styles.css', // Entry point for Tailwind CSS
         },
         output: {
             filename: '[name].js',
@@ -39,6 +41,30 @@ module.exports = (env) => {
                             loader: 'babel-loader',
                             options: {
                                 presets: ['@babel/preset-env'],
+                            },
+                        },
+                    ],
+                },
+                {
+                    test: /\.css$/,
+                    use: [
+                        MiniCssExtractPlugin.loader, // Extract CSS into separate files
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                url: true, // Resolves URL imports
+                                importLoaders: 1,
+                            },
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                postcssOptions: {
+                                    plugins: [
+                                        require('tailwindcss'),
+                                        require('autoprefixer'),
+                                    ],
+                                },
                             },
                         },
                     ],
@@ -67,6 +93,9 @@ module.exports = (env) => {
                 inject: 'body', // Inject scripts into the <body> tag
                 minify: !isProduction, // Minify for production
             }),
+            new MiniCssExtractPlugin({
+                filename: 'styles/[name]_tailwind.css', // Output CSS file
+            }),
             // // Copy CSS files from src/styles to dist/styles
             // new CopyWebpackPlugin({
             //     patterns: [
@@ -85,7 +114,7 @@ module.exports = (env) => {
             hot: false,
             liveReload: true,
             watchFiles: {
-                paths: ['pages/**/*.html', 'scripts/**/*.js'],
+                paths: ['pages/**/*.html', 'scripts/**/*.js', 'styles/**/*.css'],
                 options: {
                     usePolling: true,
                 },
