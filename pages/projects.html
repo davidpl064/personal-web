@@ -75,56 +75,113 @@
                 >
                     <ul
                         id="checkbox-list"
-                        class="space-y-3 p-3 text-sm text-gray-700 dark:text-gray-200"
+                        class="h-48 space-y-3 overflow-y-auto p-3 text-sm text-gray-700 dark:text-gray-200"
                         aria-labelledby="dropdownCheckboxButton"
                     >
                         <li>
-                            <div class="flex items-center">
-                                <input
-                                    id="checkbox-statistics"
-                                    type="checkbox"
-                                    data-tags="#statistics"
-                                    value=""
-                                    class="checkbox-item h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-700"
-                                />
-                                <label
-                                    for="checkbox-statistics"
-                                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                    >#statistics</label
-                                >
-                            </div>
+                            <checkbox-badge
+                                color-scheme="programming-languages"
+                                ,
+                                data-tag="Qt"
+                            ></checkbox-badge>
                         </li>
                         <li>
-                            <div class="flex items-center">
-                                <input
-                                    id="checkbox-physics"
-                                    type="checkbox"
-                                    data-tags="#physics"
-                                    value=""
-                                    class="checkbox-item h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-700"
-                                />
-                                <label
-                                    for="checkbox-physics"
-                                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                    >#physics</label
-                                >
-                            </div>
+                            <checkbox-badge
+                                color-scheme="programming-languages"
+                                ,
+                                data-tag="MATLAB"
+                            ></checkbox-badge>
                         </li>
                         <li>
-                            <div class="flex items-center">
-                                <input
-                                    id="checkbox-embedded-systems"
-                                    type="checkbox"
-                                    data-tags="#embedded-systems"
-                                    value=""
-                                    class="checkbox-item h-4 w-4 rounded border-red-400 bg-red-100 text-red-800 focus:ring-2 focus:ring-red-400 dark:border-gray-500 dark:bg-gray-700 dark:text-red-400 dark:ring-offset-gray-700 dark:focus:ring-red-500 dark:focus:ring-offset-gray-700"
-                                />
-                                <label
-                                    for="checkbox-embedded-systems"
-                                    class="ms-2 text-sm font-medium text-red-800 dark:text-red-400"
-                                    >#embedded-systems</label
-                                >
-                            </div>
+                            <checkbox-badge
+                                color-scheme="programming-languages"
+                                ,
+                                data-tag="C++"
+                            ></checkbox-badge>
+                        </li>
+                        <li>
+                            <checkbox-badge
+                                color-scheme="programming-languages"
+                                ,
+                                data-tag="Arduino"
+                            ></checkbox-badge>
+                        </li>
+                        <li>
+                            <checkbox-badge
+                                color-scheme="tech-areas"
+                                ,
+                                data-tag="statistics"
+                            ></checkbox-badge>
+                        </li>
+                        <li>
+                            <checkbox-badge
+                                color-scheme="tech-areas"
+                                ,
+                                data-tag="aircraft-design"
+                            ></checkbox-badge>
+                        </li>
+                        <li>
+                            <checkbox-badge
+                                color-scheme="tech-areas"
+                                ,
+                                data-tag="simulation"
+                            ></checkbox-badge>
+                        </li>
+                        <li>
+                            <checkbox-badge
+                                color-scheme="tech-areas"
+                                ,
+                                data-tag="optimization"
+                            ></checkbox-badge>
+                        </li>
+                        <li>
+                            <checkbox-badge
+                                color-scheme="tech-areas"
+                                ,
+                                data-tag="3D-printing"
+                            ></checkbox-badge>
+                        </li>
+                        <li>
+                            <checkbox-badge
+                                color-scheme="tech-areas"
+                                ,
+                                data-tag="orbital-mechanics"
+                            ></checkbox-badge>
+                        </li>
+                        <li>
+                            <checkbox-badge
+                                color-scheme="domain-industry"
+                                ,
+                                data-tag="agriculture"
+                            ></checkbox-badge>
+                        </li>
+                        <li>
+                            <checkbox-badge
+                                color-scheme="domain-industry"
+                                ,
+                                data-tag="aerospace"
+                            ></checkbox-badge>
+                        </li>
+                        <li>
+                            <checkbox-badge
+                                color-scheme="scale-collaboration-type"
+                                ,
+                                data-tag="personal"
+                            ></checkbox-badge>
+                        </li>
+                        <li>
+                            <checkbox-badge
+                                color-scheme="scale-collaboration-type"
+                                ,
+                                data-tag="professional"
+                            ></checkbox-badge>
+                        </li>
+                        <li>
+                            <checkbox-badge
+                                color-scheme="skills"
+                                ,
+                                data-tag="test"
+                            ></checkbox-badge>
                         </li>
                     </ul>
                 </div>
@@ -133,550 +190,176 @@
                     id="active-bagdes"
                     class="flex flex-wrap items-center justify-center py-4 md:py-8"
                 >
-                    <span
-                        id="badge-statistics"
-                        class="me-2 hidden items-center rounded bg-blue-100 px-2 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300"
-                        data-tags="#statistics"
-                    >
-                        #statistics
-                        <button
-                            type="button"
-                            class="ms-2 inline-flex items-center rounded-sm bg-transparent p-1 text-sm text-blue-400 hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
-                            data-hide-target="#badge-statistics"
-                            data-checkbox-target="#checkbox-statistics"
-                            aria-label="Remove"
-                        >
-                            <svg
-                                class="h-2 w-2"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 14"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                                />
-                            </svg>
-                            <span class="sr-only">Remove badge</span>
-                        </button>
-                    </span>
-                    <span
-                        id="badge-physics"
-                        class="me-2 hidden items-center rounded bg-gray-100 px-2 py-1 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"
-                        data-tags="#physics"
-                    >
-                        #physics
-                        <button
-                            type="button"
-                            class="ms-2 inline-flex items-center rounded-sm bg-transparent p-1 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-300"
-                            data-hide-target="#badge-physics"
-                            data-checkbox-target="#checkbox-physics"
-                            aria-label="Remove"
-                        >
-                            <svg
-                                class="h-2 w-2"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 14"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                                />
-                            </svg>
-                            <span class="sr-only">Remove badge</span>
-                        </button>
-                    </span>
-                    <span
-                        id="badge-embedded-systems"
-                        class="me-2 hidden items-center rounded bg-red-100 px-2 py-1 text-sm font-medium text-red-800 dark:bg-red-900 dark:text-red-300"
-                        data-tags="#embedded-systems"
-                    >
-                        #embedded-systems
-                        <button
-                            type="button"
-                            class="ms-2 inline-flex items-center rounded-sm bg-transparent p-1 text-sm text-red-400 hover:bg-red-200 hover:text-red-900 dark:hover:bg-red-800 dark:hover:text-red-300"
-                            data-hide-target="#badge-embedded-systems"
-                            data-checkbox-target="#checkbox-embedded-systems"
-                            aria-label="Remove"
-                        >
-                            <svg
-                                class="h-2 w-2"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 14"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                                />
-                            </svg>
-                            <span class="sr-only">Remove badge</span>
-                        </button>
-                    </span>
-                    <span
-                        id="badge-dismiss-green"
-                        class="me-2 inline-flex items-center rounded bg-green-100 px-2 py-1 text-sm font-medium text-green-800 dark:bg-green-900 dark:text-green-300"
-                    >
-                        Green
-                        <button
-                            type="button"
-                            class="ms-2 inline-flex items-center rounded-sm bg-transparent p-1 text-sm text-green-400 hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300"
-                            data-dismiss-target="#badge-dismiss-green"
-                            aria-label="Remove"
-                        >
-                            <svg
-                                class="h-2 w-2"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 14"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                                />
-                            </svg>
-                            <span class="sr-only">Remove badge</span>
-                        </button>
-                    </span>
-                    <span
-                        id="badge-dismiss-yellow"
-                        class="me-2 inline-flex items-center rounded bg-yellow-100 px-2 py-1 text-sm font-medium text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300"
-                    >
-                        Yellow
-                        <button
-                            type="button"
-                            class="ms-2 inline-flex items-center rounded-sm bg-transparent p-1 text-sm text-yellow-400 hover:bg-yellow-200 hover:text-yellow-900 dark:hover:bg-yellow-800 dark:hover:text-yellow-300"
-                            data-dismiss-target="#badge-dismiss-yellow"
-                            aria-label="Remove"
-                        >
-                            <svg
-                                class="h-2 w-2"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 14"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                                />
-                            </svg>
-                            <span class="sr-only">Remove badge</span>
-                        </button>
-                    </span>
-                    <span
-                        id="badge-dismiss-indigo"
-                        class="me-2 inline-flex items-center rounded bg-indigo-100 px-2 py-1 text-sm font-medium text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300"
-                    >
-                        Indigo
-                        <button
-                            type="button"
-                            class="ms-2 inline-flex items-center rounded-sm bg-transparent p-1 text-sm text-indigo-400 hover:bg-indigo-200 hover:text-indigo-900 dark:hover:bg-indigo-800 dark:hover:text-indigo-300"
-                            data-dismiss-target="#badge-dismiss-indigo"
-                            aria-label="Remove"
-                        >
-                            <svg
-                                class="h-2 w-2"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 14"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                                />
-                            </svg>
-                            <span class="sr-only">Remove badge</span>
-                        </button>
-                    </span>
-                    <span
-                        id="badge-dismiss-purple"
-                        class="me-2 inline-flex items-center rounded bg-purple-100 px-2 py-1 text-sm font-medium text-purple-800 dark:bg-purple-900 dark:text-purple-300"
-                    >
-                        Purple
-                        <button
-                            type="button"
-                            class="ms-2 inline-flex items-center rounded-sm bg-transparent p-1 text-sm text-purple-400 hover:bg-purple-200 hover:text-purple-900 dark:hover:bg-purple-800 dark:hover:text-purple-300"
-                            data-dismiss-target="#badge-dismiss-purple"
-                            aria-label="Remove"
-                        >
-                            <svg
-                                class="h-2 w-2"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 14"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                                />
-                            </svg>
-                            <span class="sr-only">Remove badge</span>
-                        </button>
-                    </span>
-                    <span
-                        id="badge-dismiss-pink"
-                        class="me-2 inline-flex items-center rounded bg-pink-100 px-2 py-1 text-sm font-medium text-pink-800 dark:bg-pink-900 dark:text-pink-300"
-                    >
-                        Pink
-                        <button
-                            type="button"
-                            class="ms-2 inline-flex items-center rounded-sm bg-transparent p-1 text-sm text-pink-400 hover:bg-pink-200 hover:text-pink-900 dark:hover:bg-pink-800 dark:hover:text-pink-300"
-                            data-dismiss-target="#badge-dismiss-pink"
-                            aria-label="Remove"
-                        >
-                            <svg
-                                class="h-2 w-2"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 14"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                                />
-                            </svg>
-                            <span class="sr-only">Remove badge</span>
-                        </button>
-                    </span>
+                    <badge-filter
+                        color-scheme="programming-languages"
+                        ,
+                        data-tag="Qt"
+                    ></badge-filter>
+                    <badge-filter
+                        color-scheme="programming-languages"
+                        ,
+                        data-tag="MATLAB"
+                    ></badge-filter>
+                    <badge-filter
+                        color-scheme="programming-languages"
+                        ,
+                        data-tag="C++"
+                    ></badge-filter>
+                    <badge-filter
+                        color-scheme="programming-languages"
+                        ,
+                        data-tag="Arduino"
+                    ></badge-filter>
+                    <badge-filter color-scheme="tech-areas" , data-tag="statistics"></badge-filter>
+                    <badge-filter
+                        color-scheme="tech-areas"
+                        ,
+                        data-tag="aircraft-design"
+                    ></badge-filter>
+                    <badge-filter color-scheme="tech-areas" , data-tag="simulation"></badge-filter>
+                    <badge-filter
+                        color-scheme="tech-areas"
+                        ,
+                        data-tag="optimization"
+                    ></badge-filter>
+                    <badge-filter color-scheme="tech-areas" , data-tag="3D-printing"></badge-filter>
+                    <badge-filter
+                        color-scheme="tech-areas"
+                        ,
+                        data-tag="orbital-mechanics"
+                    ></badge-filter>
+                    <badge-filter
+                        color-scheme="domain-industry"
+                        ,
+                        data-tag="agriculture"
+                    ></badge-filter>
+                    <badge-filter
+                        color-scheme="domain-industry"
+                        ,
+                        data-tag="aerospace"
+                    ></badge-filter>
+                    <badge-filter
+                        color-scheme="scale-collaboration-type"
+                        ,
+                        data-tag="personal"
+                    ></badge-filter>
+                    <badge-filter
+                        color-scheme="scale-collaboration-type"
+                        ,
+                        data-tag="professional"
+                    ></badge-filter>
+                    <badge-filter color-scheme="skills" , data-tag="test"></badge-filter>
                 </div>
             </div>
             <div
                 id="container-cards"
                 class="grid grid-cols-2 justify-items-center gap-4 py-8 md:grid-cols-3 lg:px-8 lg:py-16"
             >
-                <div
-                    class="card max-w-md justify-center rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
-                    data-tags="#statistics"
-                >
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="rounded-t-lg" src="assets/place_holder.webp" alt="" />
-                        </a>
-                        <figcaption class="absolute bottom-4 px-4 text-lg text-white">
-                            <span
-                                class="me-2 rounded border border-blue-400 bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-gray-700 dark:text-blue-400"
-                                >#statistics</span
-                            >
-                        </figcaption>
-                    </figure>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5
-                                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                            >
-                                Infotaxis
-                            </h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                            Here are the biggest enterprise technology acquisitions of 2021 so far,
-                            in reverse chronological order.
-                        </p>
-                        <a
-                            href="#"
-                            class="inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        >
-                            Read more
-                            <svg
-                                class="ms-2 h-3.5 w-3.5 rtl:rotate-180"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 10"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                                />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="card max-w-md rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
-                    data-tags="#physics"
-                >
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="rounded-t-lg" src="assets/place_holder.webp" alt="" />
-                        </a>
-                        <figcaption class="absolute bottom-4 px-4 text-lg text-white">
-                            <span
-                                class="me-2 rounded border border-gray-500 bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-400"
-                                >#physics</span
-                            >
-                        </figcaption>
-                    </figure>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5
-                                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                            >
-                                Infotaxis
-                            </h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                            Here are the biggest enterprise technology acquisitions of 2021 so far,
-                            in reverse chronological order.
-                        </p>
-                        <a
-                            href="#"
-                            class="inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        >
-                            Read more
-                            <svg
-                                class="ms-2 h-3.5 w-3.5 rtl:rotate-180"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 10"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                                />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="card max-w-md rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
-                    data-tags="#embedded-systems"
-                >
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="rounded-t-lg" src="assets/place_holder.webp" alt="" />
-                        </a>
-                        <figcaption class="absolute bottom-4 px-4 text-lg text-white">
-                            <span
-                                class="me-2 rounded border border-red-400 bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-gray-700 dark:text-red-400"
-                                >#embedded-systems</span
-                            >
-                        </figcaption>
-                    </figure>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5
-                                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                            >
-                                Infotaxis
-                            </h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                            Here are the biggest enterprise technology acquisitions of 2021 so far,
-                            in reverse chronological order.
-                        </p>
-                        <a
-                            href="#"
-                            class="inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        >
-                            Read more
-                            <svg
-                                class="ms-2 h-3.5 w-3.5 rtl:rotate-180"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 10"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                                />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="card max-w-md rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
-                    data-tags="#test"
-                >
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="rounded-t-lg" src="assets/place_holder.webp" alt="" />
-                        </a>
-                        <figcaption class="absolute bottom-4 px-4 text-lg text-white">
-                            <span
-                                class="me-2 rounded border border-blue-400 bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-gray-700 dark:text-blue-400"
-                                >#test</span
-                            >
-                        </figcaption>
-                    </figure>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5
-                                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                            >
-                                Infotaxis
-                            </h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                            Here are the biggest enterprise technology acquisitions of 2021 so far,
-                            in reverse chronological order.
-                        </p>
-                        <a
-                            href="#"
-                            class="inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        >
-                            Read more
-                            <svg
-                                class="ms-2 h-3.5 w-3.5 rtl:rotate-180"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 10"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                                />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="card max-w-md rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
-                    data-tags="#test"
-                >
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="rounded-t-lg" src="assets/place_holder.webp" alt="" />
-                        </a>
-                        <figcaption class="absolute bottom-4 px-4 text-lg text-white">
-                            <span
-                                class="me-2 rounded border border-blue-400 bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-gray-700 dark:text-blue-400"
-                                >#test</span
-                            >
-                        </figcaption>
-                    </figure>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5
-                                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                            >
-                                Infotaxis
-                            </h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                            Here are the biggest enterprise technology acquisitions of 2021 so far,
-                            in reverse chronological order.
-                        </p>
-                        <a
-                            href="#"
-                            class="inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        >
-                            Read more
-                            <svg
-                                class="ms-2 h-3.5 w-3.5 rtl:rotate-180"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 10"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                                />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="card max-w-md rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
-                    data-tags="#test"
-                >
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="rounded-t-lg" src="assets/place_holder.webp" alt="" />
-                        </a>
-                        <figcaption class="absolute bottom-4 px-4 text-lg text-white">
-                            <span
-                                class="me-2 rounded border border-blue-400 bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-gray-700 dark:text-blue-400"
-                                >#test</span
-                            >
-                        </figcaption>
-                    </figure>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5
-                                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                            >
-                                Infotaxis
-                            </h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                            Here are the biggest enterprise technology acquisitions of 2021 so far,
-                            in reverse chronological order.
-                        </p>
-                        <a
-                            href="#"
-                            class="inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        >
-                            Read more
-                            <svg
-                                class="ms-2 h-3.5 w-3.5 rtl:rotate-180"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 14 10"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                                />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+                <project-card
+                    title="Infotaxis"
+                    ,
+                    initial-date="11/2015"
+                    ,
+                    end-date="08/2016"
+                    ,
+                    description="TDB"
+                    ,
+                    rel-path-image="assets/place_holder.webp"
+                    ,
+                    color-scheme='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
+                    ,
+                    data-tags='["MATLAB", "statistics", "simulation", "agriculture"]'
+                ></project-card>
+                <project-card
+                    title="Quadcopter DIY"
+                    ,
+                    initial-date="06/2015"
+                    ,
+                    end-date="03/2016"
+                    ,
+                    description="TDB"
+                    ,
+                    rel-path-image="assets/place_holder.webp"
+                    ,
+                    color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
+                    ,
+                    data-tags='["MATLAB", "Arduino", "embedded-systems", "control", "aerospace"]'
+                ></project-card>
+                <project-card
+                    title="Autonomous Airship"
+                    ,
+                    initial-date="02/2016"
+                    ,
+                    end-date="10/2016"
+                    ,
+                    description="TDB"
+                    ,
+                    rel-path-image="assets/place_holder.webp"
+                    ,
+                    color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "tech-areas", "domain-industry"]'
+                    ,
+                    data-tags='["MATLAB", "Arduino", "aircraft-design", "embedded-systems", "simulation", "aerospace"]'
+                ></project-card>
+                <project-card
+                    title="Ground Station"
+                    ,
+                    initial-date="11/2016"
+                    ,
+                    end-date="08/2017"
+                    ,
+                    description="TDB"
+                    ,
+                    rel-path-image="assets/place_holder.webp"
+                    ,
+                    color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
+                    ,
+                    data-tags='["Qt", "C++", "front-end", "MAVLink", "comms"]'
+                ></project-card>
+                <project-card
+                    title="Genetic Algorithms"
+                    ,
+                    initial-date="09/2016"
+                    ,
+                    end-date="12/2016"
+                    ,
+                    description="TDB"
+                    ,
+                    rel-path-image="assets/place_holder.webp"
+                    ,
+                    color-scheme='["programming-languages", "tech-areas"]'
+                    ,
+                    data-tags='["MATLAB", "optimization"]'
+                ></project-card>
+                <project-card
+                    title="CHEOPS"
+                    ,
+                    initial-date="03/2018"
+                    ,
+                    end-date="03/2019"
+                    ,
+                    description="TDB"
+                    ,
+                    rel-path-image="assets/place_holder.webp"
+                    ,
+                    color-scheme='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
+                    ,
+                    data-tags='["MATLAB", "numerical-calculus", "orbital-mechanics", "aerospace"]'
+                ></project-card>
+                <project-card
+                    title="Rover"
+                    ,
+                    initial-date="TBD"
+                    ,
+                    end-date="TBD"
+                    ,
+                    description="TDB"
+                    ,
+                    rel-path-image="assets/place_holder.webp"
+                    ,
+                    color-scheme='["programming-languages", "tech-areas", "tech-areas"]'
+                    ,
+                    data-tags='["Arduino", "3D-printing", "electronics"]'
+                ></project-card>
             </div>
         </main>
 
