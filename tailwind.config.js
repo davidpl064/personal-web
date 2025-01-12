@@ -4,6 +4,14 @@ module.exports = {
     darkMode: 'selector',
     theme: {
         extend: {},
+        listStyleType: {
+            none: 'none',
+            disc: 'disc',
+            decimal: 'decimal',
+            square: 'square',
+            roman: 'upper-roman',
+            lower: 'lower-alpha',
+        }
     },
     plugins: [require('flowbite/plugin')],
 }

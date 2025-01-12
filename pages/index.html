@@ -55,9 +55,8 @@
                 <!-- Wrapper first column -->
                 <div class="h-screen content-center">
                     <!-- Outer wrapper for flexbox -->
-                    <div
-                        class="content-center justify-center bg-gray-700 bg-[url('../assets/place_holder.webp')] bg-center bg-no-repeat bg-blend-multiply"
-                    >
+                    <!-- class="content-center justify-center bg-gray-700 bg-[url('../assets/place_holder.webp')] bg-center bg-no-repeat bg-blend-multiply" -->
+                    <div class="content-center justify-center">
                         <!-- Inner flexbox wrapper for Hero section -->
                         <!-- <div class="h-full flex items-center">
 
@@ -70,12 +69,12 @@
 
                         <div class="mx-auto items-center px-4 py-24 text-center lg:py-56">
                             <h1
-                                class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl"
+                                class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-800 md:text-5xl lg:text-6xl dark:text-gray-100"
                             >
                                 Welcome to DPL
                             </h1>
                             <p
-                                class="mb-8 text-lg font-normal text-gray-300 sm:px-16 lg:px-48 lg:text-xl"
+                                class="mb-8 text-lg font-normal text-gray-500 sm:px-16 lg:px-48 lg:text-xl dark:text-gray-300"
                             >
                                 A glimpse into my work, projects, and passions. Discover what drives
                                 me!
@@ -89,11 +88,16 @@
                 <!-- Second column -->
                 <div class="">
                     <!-- Carousel -->
-                    <div id="default-carousel" class="relative h-screen" data-carousel="slide">
+                    <div
+                        id="default-carousel"
+                        class="relative h-screen"
+                        data-carousel="slide"
+                        data-carousel-interval="5000"
+                    >
                         <!-- Carousel wrapper -->
                         <div class="relative h-screen overflow-hidden rounded-bl-[4rem] shadow-2xl">
                             <!-- Item 1 -->
-                            <div class="duration-2000 hidden ease-in-out" data-carousel-item>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img
                                     src="https://mdbootstrap.com/img/new/textures/full/243.jpg"
                                     class="absolute left-1/2 top-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2"
@@ -112,7 +116,7 @@
                                 </div>
                             </div>
                             <!-- Item 2 -->
-                            <div class="duration-2000 hidden ease-in-out" data-carousel-item>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img
                                     src="https://mdbootstrap.com/img/new/textures/full/102.jpg"
                                     class="absolute left-1/2 top-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2"
@@ -120,7 +124,7 @@
                                 />
                             </div>
                             <!-- Item 3 -->
-                            <div class="duration-2000 hidden ease-in-out" data-carousel-item>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img
                                     src="https://mdbootstrap.com/img/new/textures/full/107.jpg"
                                     class="absolute left-1/2 top-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2"
@@ -128,7 +132,7 @@
                                 />
                             </div>
                             <!-- Item 4 -->
-                            <div class="duration-2000 hidden ease-in-out" data-carousel-item>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img
                                     src="assets/place_holder.webp"
                                     class="absolute left-1/2 top-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2"
@@ -136,7 +140,7 @@
                                 />
                             </div>
                             <!-- Item 5 -->
-                            <div class="duration-2000 hidden ease-in-out" data-carousel-item>
+                            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                                 <img
                                     src="assets/place_holder.webp"
                                     class="absolute left-1/2 top-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2"
@@ -275,7 +279,9 @@
                     >
                         About Me
                     </h2>
-                    <p class="text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300">
+                    <p
+                        class="text-justify text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300"
+                    >
                         I'm a person who loves science and mostly to materialize all its potential
                         in new ways of helping people. I've been pursuing this objective since I was
                         a child, but it was not until finishing my bachelor's degree I started to
@@ -299,22 +305,161 @@
             </div>
         </section>
 
-        <!--     <div class="py-8 px-8 max-w-sm mx-auto space-y-2 bg-white rounded-xl shadow-lg sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:gap-x-6">
-            <img class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0" src="assets/erin-lindford.jpg" alt="Woman's Face" />
-            <div class="text-center space-y-2 sm:text-left">
-            <div class="space-y-0.5">
-                <p class="text-lg text-black font-semibold">
-                Erin Lindford
-                </p>
-                <p class="text-slate-500 font-medium">
-                Product Engineer
-                </p>
+        <!-- Goal Section -->
+        <section class="bg-white dark:bg-gray-900">
+            <div
+                class="mx-auto grid max-w-screen-2xl gap-8 px-4 py-8 lg:grid-cols-2 lg:gap-16 lg:py-16"
+            >
+                <div class="flex flex-col justify-center">
+                    <h2
+                        class="mb-6 text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100"
+                    >
+                        Navigate the Journey
+                    </h2>
+                    <p
+                        class="mb-3 text-justify text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300"
+                    >
+                        This web was conceived with a dual objective in mind: on one hand, it was
+                        meant to be a place where I can share my passions, both personal and
+                        professional ones, with the level of detail and complexity I consider
+                        appropiate. Moreover, I wanted that place to feel like my own, so developing
+                        my own website sounded like the perfect match. On the other hand, this web
+                        is meant to act like a beacon for those who also share my interests, and to
+                        tend a bridge towards collaboration, whereas that is having a debate,
+                        sharing information or even starting together an exciting project. I
+                        encourage every reader to feel free on getting in contact with me.
+                    </p>
+                    <p
+                        class="mb-3 text-justify text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300"
+                    >
+                        Throghout this site, you can share my journey through life, as it won't be a
+                        static object. The idea is to expand and evolve its content, and I'll try my
+                        best to keep it alive and updated. Getting into matter, initially there are
+                        three main sections:
+                    </p>
+                    <ol
+                        class="list-inside list-decimal space-y-4 text-gray-700 md:text-xl dark:text-gray-300"
+                    >
+                        <li
+                            class="text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300"
+                        >
+                            <span class="font-semibold text-gray-900 dark:text-white"
+                                >Projects:</span
+                            >
+                            ended and in-progress projects, categorized based on tags corresponding
+                            to the subjects they're based on.
+                        </li>
+                        <li
+                            class="text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300"
+                        >
+                            <span class="font-semibold text-gray-900 dark:text-white"
+                                >Hobbies:</span
+                            >
+                            describes activities I really enjoy and were I spent most part of my
+                            free-time.
+                            <ul
+                                class="mt-2 list-inside list-roman space-y-1 ps-5 text-gray-700 md:text-xl dark:text-gray-300"
+                            >
+                                <li>3D Printing</li>
+                                <li>Sports</li>
+                            </ul>
+                        </li>
+                        <li
+                            class="text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300"
+                        >
+                            <span class="font-semibold text-gray-900 dark:text-white"
+                                >Insights:</span
+                            >
+                            blog-like space to discuss/share topics I found interesting or related
+                            to projects I'm working on.
+                        </li>
+                    </ol>
+                </div>
+                <div class="content-center">
+                    <ol class="relative border-s border-gray-200 dark:border-gray-700">
+                        <li class="mb-10 ms-6">
+                            <span
+                                class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900"
+                            >
+                                <svg
+                                    class="h-2.5 w-2.5 text-blue-800 dark:text-blue-300"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+                                    />
+                                </svg>
+                            </span>
+                            <h3
+                                class="mb-1 flex items-center text-lg font-semibold text-gray-900 dark:text-white"
+                            >
+                                PersonalWeb v1.0
+                                <span
+                                    class="me-2 ms-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300"
+                                    >Latest</span
+                                >
+                            </h3>
+                            <time
+                                class="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                                >Released on January, 2025</time
+                            >
+                            <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                                TBD.
+                            </p>
+                            <a
+                                href="#"
+                                class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+                                ><svg
+                                    class="me-2.5 h-3.5 w-3.5"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z"
+                                    />
+                                    <path
+                                        d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+                                    />
+                                </svg>
+                                Download ZIP</a
+                            >
+                        </li>
+                        <li class="mb-10 ms-6">
+                            <span
+                                class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900"
+                            >
+                                <svg
+                                    class="h-2.5 w-2.5 text-blue-800 dark:text-blue-300"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+                                    />
+                                </svg>
+                            </span>
+                            <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                                TBD
+                            </h3>
+                            <time
+                                class="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                                >TBD</time
+                            >
+                            <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+                                TBD
+                            </p>
+                        </li>
+                    </ol>
+                </div>
             </div>
-            <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border
-                border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Message
-            </button>
-            </div>
-        </div> -->
+        </section>
 
         <!-- Footer with Contact Icons -->
         <custom-footer></custom-footer>

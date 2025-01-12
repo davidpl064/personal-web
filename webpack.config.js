@@ -87,8 +87,22 @@ module.exports = (env) => {
                 minify: !isProduction, // Minify for production
             }),
             new HtmlWebpackPlugin({
+                template: './pages/insights.html', // Source HTML file
+                filename: 'insights.html', // Output HTML file
+                // chunks: ['main'], specify javascript files to be injected
+                inject: 'body', // Inject scripts into the <body> tag
+                minify: !isProduction, // Minify for production
+            }),
+            new HtmlWebpackPlugin({
                 template: './pages/hobbies/3dprinting.html', // Source HTML file
                 filename: 'hobbies/3dprinting.html', // Output HTML file
+                // chunks: ['main'], specify javascript files to be injected
+                inject: 'body', // Inject scripts into the <body> tag
+                minify: !isProduction, // Minify for production
+            }),
+            new HtmlWebpackPlugin({
+                template: './pages/hobbies/sports.html', // Source HTML file
+                filename: 'hobbies/sports.html', // Output HTML file
                 // chunks: ['main'], specify javascript files to be injected
                 inject: 'body', // Inject scripts into the <body> tag
                 minify: !isProduction, // Minify for production

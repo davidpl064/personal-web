@@ -6,7 +6,7 @@ class HeaderNavBar extends HTMLElement {
     connectedCallback() {
         const relPath = this.getAttribute('rel-path') || ''
         this.innerHTML = `
-            <header class="sticky top-0 z-10 bg-gray-100 dark:bg-gray-800 shadow-md">
+            <header class="sticky top-0 z-50 bg-gray-100 dark:bg-gray-800 shadow-md">
                 <!-- <nav class="items-center space-x-6 md:flex"></nav> -->
                 <nav class="flex flex-wrap items-center justify-between mx-auto px-4 py-2.5">
                 <!-- <div class="flex flex-wrap container justify-between items-center mx-auto p-4"> -->
@@ -29,7 +29,9 @@ class HeaderNavBar extends HTMLElement {
                             </li>
                             <li><a href="${relPath}projects.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Projects</a></li>
                             <li>
-                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full text-gray-700 rounded hover:bg-gray-100 focus:text-blue-500 hover:text-blue-500 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto dark:text-gray-300 dark:hover:text-blue-500 dark:focus:text-blue-500 dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Hobbies
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full text-gray-700 rounded hover:bg-gray-100 focus:text-blue-500
+                                    hover:text-blue-500 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto dark:text-gray-300 dark:hover:text-blue-500 dark:focus:text-blue-500 dark:border-gray-700
+                                    dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Hobbies
                                     <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                                     </svg>
@@ -49,6 +51,7 @@ class HeaderNavBar extends HTMLElement {
                                     </div>
                                 </div>
                             </li>
+                            <li><a href="${relPath}insights.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Insights</a></li>
 
                             <!-- <li class="relative group">
                                 <button class="hover:text-gray-400 focus:outline-none">
