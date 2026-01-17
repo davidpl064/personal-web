@@ -2,7 +2,6 @@
 // Array to store active filters
 let activeTagFilters = []
 const checkboxes = document.querySelectorAll('#checkbox-list .checkbox-item')
-const projectCards = document.querySelectorAll('#container-cards .card')
 
 // Add an event listener to each checkbox
 checkboxes.forEach((checkbox) => {
@@ -72,6 +71,8 @@ function filterActiveBadges() {
 }
 
 function filterProjectCards() {
+    const projectCards = document.querySelectorAll('#container-cards .card')
+
     projectCards.forEach((card) => {
         const cardTags = card.dataset.tags.split(' ')
         const isVisible = activeTagFilters.every((filter) => cardTags.includes(filter))
@@ -89,15 +90,4 @@ function addFilterTag(tag) {
 // Remove a filter tag
 function removeFilterTag(tag) {
     activeTagFilters = activeTagFilters.filter((activeTag) => activeTag !== tag)
-}
-
-// Filter cards based on active filters
-function filterCards() {
-    const cards = document.querySelectorAll('.card')
-
-    cards.forEach((card) => {
-        const cardTags = card.dataset.tags.split(' ')
-        const isVisible = activeTagFilters.every((filter) => cardTags.includes(filter))
-        card.style.display = isVisible ? 'block' : 'none'
-    })
 }

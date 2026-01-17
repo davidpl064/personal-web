@@ -6,7 +6,7 @@ class HeaderNavBar extends HTMLElement {
     connectedCallback() {
         const relPath = this.getAttribute('rel-path') || ''
         this.innerHTML = `
-            <header class="sticky top-0 z-50 bg-gray-100 dark:bg-gray-800 shadow-md">
+            <header class="fixed top-0 z-10 flex-no-wrap flex w-full items-center justify-between bg-gray-100 dark:bg-gray-800 shadow-md">
                 <!-- <nav class="items-center space-x-6 md:flex"></nav> -->
                 <nav class="flex flex-wrap items-center justify-between mx-auto px-4 py-2.5">
                 <!-- <div class="flex flex-wrap container justify-between items-center mx-auto p-4"> -->
