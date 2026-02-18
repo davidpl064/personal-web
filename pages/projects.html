@@ -32,9 +32,8 @@
             )
         </script>
     </head>
-    <body
-        class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
-    >
+
+    <body class="flex h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
         <!-- Preloader for this page -->
         <div id="preloader">
             <div class="loader"></div>
@@ -43,8 +42,8 @@
         <!-- Navbar Section -->
         <header-navbar></header-navbar>
 
-        <main class="flex-grow p-4">
-            <div class="flex flex-wrap items-center justify-center gap-8 py-4 md:py-8 lg:gap-16">
+        <main id="projects_main_container" class="flex-grow px-4">
+            <div class="flex items-center justify-center gap-8 py-4 md:py-8 lg:gap-16">
                 <!-- Filter dropdown -->
                 <button
                     id="button-filter-tags"
@@ -263,7 +262,7 @@
                     initial-date="11/2015"
                     end-date="08/2016"
                     description="TDB"
-                    rel-path-image="assets/place_holder.webp"
+                    rel-path-image="assets/projects/thumbnails/infotaxis.png"
                     color-scheme='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
                     data-tags='["MATLAB", "statistics", "simulation", "agriculture"]'
                 ></project-card>
@@ -272,7 +271,7 @@
                     initial-date="06/2015"
                     end-date="03/2016"
                     description="TDB"
-                    rel-path-image="assets/place_holder.webp"
+                    rel-path-image="assets/projects/thumbnails/quadcopter_01.png"
                     color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
                     data-tags='["MATLAB", "Arduino", "embedded-systems", "control", "aerospace"]'
                 ></project-card>

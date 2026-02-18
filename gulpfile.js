@@ -23,8 +23,8 @@ const paths = {
         dest: 'dist',
     },
     html: {
-        src: 'pages/index.html',
-        dest: 'dist/assets',
+        src: 'pages/*.html',
+        dest: 'dist',
     },
     images: {
         src: 'assets/**/*.{png,jpg,jpeg,gif,svg,webp}',

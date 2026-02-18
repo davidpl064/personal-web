@@ -6,23 +6,22 @@ class HeaderNavBar extends HTMLElement {
     connectedCallback() {
         const relPath = this.getAttribute('rel-path') || ''
         this.innerHTML = `
-            <header class="fixed top-0 z-10 flex-no-wrap flex w-full items-center justify-between bg-gray-100 dark:bg-gray-800 shadow-md">
-                <!-- <nav class="items-center space-x-6 md:flex"></nav> -->
-                <nav class="flex flex-wrap items-center justify-between mx-auto px-4 py-2.5">
+            <header class="fixed top-0 z-10 flex-no-wrap flex w-full justify-between bg-gray-100 dark:bg-gray-800 shadow-md">
+                <nav class="flex flex-wrap items-center justify-between w-full px-4 py-2.5">
                 <!-- <div class="flex flex-wrap container justify-between items-center mx-auto p-4"> -->
                     <!-- Logo Section -->
-                    <div class="flex text-2xl font-bold">
+                    <div class="flex ml-4 text-2xl font-bold">
                         <a href="#" class="text-gray-700 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-500">dplamarca</a>
                     </div>
 
-                    <!-- Desktop Navigation -->
+                    <!-- Hamburguer Menu Dropdown mobile format -->
                     <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 ms-3 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
                         </svg>
                     </button>
-                    <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                    <div class="hidden w-full md:block md:w-auto mr-16" id="navbar-dropdown">
                         <ul class="flex flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:items-center md:mt-0 md:text-sm  md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 md:space-x-8 md:rtl:space-x-reverse">
                             <li>
                                 <a href="${relPath}index.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Home</a></li>
@@ -45,10 +44,6 @@ class HeaderNavBar extends HTMLElement {
                                     <li>
                                         <a href="${relPath}hobbies/sports.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">Sports</a>
                                     </li>
-                                    </ul>
-                                    <div class="py-1">
-                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-                                    </div>
                                 </div>
                             </li>
                             <li><a href="${relPath}insights.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Insights</a></li>

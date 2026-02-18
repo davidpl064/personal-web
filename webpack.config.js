@@ -23,7 +23,8 @@ module.exports = (env) => {
         //     },
         // },
         entry: {
-            bundle_main: ['./scripts/custom_elements.js', './scripts/projects.js', './scripts/main.js'],
+            projects: './scripts/projects.js',
+            bundle_shared: ['./scripts/custom_elements.js', './scripts/main.js'],
             bundle_dependencies: './scripts/external.js',
             styles: './styles/styles.css', // Entry point for Tailwind CSS
         },
@@ -75,35 +76,35 @@ module.exports = (env) => {
             new HtmlWebpackPlugin({
                 template: './pages/index.html', // Source HTML file
                 filename: 'index.html', // Output HTML file
-                // chunks: ['main'], specify javascript files to be injected
+                chunks: ['bundle_shared', 'bundle_dependencies'], // specify javascript files to be injected
                 inject: 'body', // Inject scripts into the <body> tag
                 minify: !isProduction, // Minify for production
             }),
             new HtmlWebpackPlugin({
                 template: './pages/projects.html', // Source HTML file
                 filename: 'projects.html', // Output HTML file
-                // chunks: ['main'], specify javascript files to be injected
+                chunks: ['bundle_shared', 'bundle_dependencies', 'projects'], // specify javascript files to be injected
                 inject: 'body', // Inject scripts into the <body> tag
                 minify: !isProduction, // Minify for production
             }),
             new HtmlWebpackPlugin({
                 template: './pages/insights.html', // Source HTML file
                 filename: 'insights.html', // Output HTML file
-                // chunks: ['main'], specify javascript files to be injected
+                chunks: ['bundle_shared', 'bundle_dependencies'], // specify javascript files to be injected
                 inject: 'body', // Inject scripts into the <body> tag
                 minify: !isProduction, // Minify for production
             }),
             new HtmlWebpackPlugin({
                 template: './pages/hobbies/3dprinting.html', // Source HTML file
                 filename: 'hobbies/3dprinting.html', // Output HTML file
-                // chunks: ['main'], specify javascript files to be injected
+                chunks: ['bundle_shared', 'bundle_dependencies'], // specify javascript files to be injected
                 inject: 'body', // Inject scripts into the <body> tag
                 minify: !isProduction, // Minify for production
             }),
             new HtmlWebpackPlugin({
                 template: './pages/hobbies/sports.html', // Source HTML file
                 filename: 'hobbies/sports.html', // Output HTML file
-                // chunks: ['main'], specify javascript files to be injected
+                chunks: ['bundle_shared', 'bundle_dependencies'], // specify javascript files to be injected
                 inject: 'body', // Inject scripts into the <body> tag
                 minify: !isProduction, // Minify for production
             }),
@@ -117,6 +118,11 @@ module.exports = (env) => {
             //     ],
             // }),
         ],
+        // optimization: {
+        //     splitChunks: {
+        //         chunks: 'all', // optional, helps deduplicate shared code
+        //     },
+        // },
         devtool: isProduction ? false : 'source-map',
         devServer: {
             static: {

@@ -1,12 +1,19 @@
-// Select all checkboxes inside the filter dropdown list
 // Array to store active filters
 let activeTagFilters = []
-const checkboxes = document.querySelectorAll('#checkbox-list .checkbox-item')
 
-// Add an event listener to each checkbox
-checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', handleCheckboxChange)
-})
+function initProjectFilters() {
+    // Select all checkboxes inside the filter dropdown list
+    const checkboxes = document.querySelectorAll('#checkbox-list .checkbox-item')
+
+    // Add an event listener to each checkbox
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', handleCheckboxChange)
+    })
+
+    document.querySelectorAll('#active-bagdes [data-hide-target]').forEach((button) => {
+        button.addEventListener('click', onActiveBadgesDismiss)
+    })
+}
 
 // Functionality of tag checkboxes
 function handleCheckboxChange(event) {
@@ -29,10 +36,6 @@ function handleCheckboxChange(event) {
     // Filter cards with updated tags
     filterProjectCards()
 }
-
-document.querySelectorAll('#active-bagdes [data-hide-target]').forEach((button) => {
-    button.addEventListener('click', onActiveBadgesDismiss)
-})
 
 // Functionality to update filter checkboxes on changes in active badges
 function onActiveBadgesDismiss(event) {
@@ -76,7 +79,8 @@ function filterProjectCards() {
     projectCards.forEach((card) => {
         const cardTags = card.dataset.tags.split(' ')
         const isVisible = activeTagFilters.every((filter) => cardTags.includes(filter))
-        card.style.display = isVisible ? 'block' : 'none'
+        // card.style.display = isVisible ? 'block' : 'none'
+        card.parentElement.hidden = !isVisible
     })
 }
 
@@ -91,3 +95,23 @@ function addFilterTag(tag) {
 function removeFilterTag(tag) {
     activeTagFilters = activeTagFilters.filter((activeTag) => activeTag !== tag)
 }
+
+// Adjust margin of filter to not overlap with header-navbar
+function adjustFilterPosition() {
+    const header = document.querySelector('header')
+    const main = document.getElementById('projects_main_container')
+
+    const paddingValue = header.getBoundingClientRect().height
+    main.style.paddingTop = `${paddingValue}px`
+}
+
+// Execute initialization after DOM loaded
+document.addEventListener('DOMContentLoaded', () => {
+    customElements.whenDefined('checkbox-badge').then(() => {
+        initProjectFilters()
+    })
+
+    // Run on page load/resize
+    window.addEventListener('load', adjustFilterPosition)
+    window.addEventListener('resize', adjustFilterPosition)
+})
