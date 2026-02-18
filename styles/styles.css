@@ -1,7 +1,6 @@
 /* Add Tailwind directives */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@config '../tailwind.config.js';
 
 /* General Reset */
 * {

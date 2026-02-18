@@ -1,9 +1,14 @@
 GREEN_COLOR  := \033[0;32m
 RESET_COLOR  := \033[0m
 
-update_node_db:
+update-node-db:
 	npx update-browserslist-db@latest
-compile_style: ## install package in "editable" mode
+update-packages-latest:
+	npm install -g npm-check-updates
+	ncu
+	ncu -u
+	npm install
+compile-style: ## install package in "editable" mode
 	npx tailwindcss -i ./styles/styles.css -o ./dist/styles_tailwind.css
 	@echo "Ouput CSS style files in $(GREEN_COLOR)./dist/styles_tailwind.css$(RESET_COLOR)"
 build-dev:  ## build web in development mode

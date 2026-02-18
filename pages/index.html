@@ -178,7 +178,7 @@
                         </div>
 
                         <!-- Slider indicators -->
-                        <!-- <div class="absolute bottom-5 left-1/2 z-[2] flex -translate-x-1/2 space-x-3 rtl:space-x-reverse"></div> -->
+                        <!-- <div class="absolute bottom-5 left-1/2 z-2 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse"></div> -->
                         <div
                             class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse"
                         >
@@ -286,7 +286,7 @@
         <!-- <section
             class="bg-[assets/erin-lindford.jpg] bg-gray-700 bg-center bg-no-repeat bg-blend-multiply"
         >
-            <div class="mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-56">
+            <div class="mx-auto max-w-(--breakpoint-xl) px-4 py-24 text-center lg:py-56">
                 <h1
                     class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl"
                 >
@@ -301,7 +301,7 @@
         <!-- Brief Introduction Section -->
         <section class="bg-white dark:bg-gray-900">
             <div
-                class="mx-auto grid max-w-screen-2xl gap-8 px-4 py-8 lg:grid-cols-2 lg:gap-16 lg:py-16"
+                class="max-w-(--breakpoint-2xl) mx-auto grid gap-8 px-4 py-8 lg:grid-cols-2 lg:gap-16 lg:py-16"
             >
                 <div class="flex flex-col justify-center">
                     <h2
@@ -328,7 +328,14 @@
                         src="https://www.youtube.com/embed/UITt-wrzUzI?si=JoPPVFWBG578Thdy"
                         title="YouTube video player"
                         frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allow="
+                            accelerometer;
+                            autoplay;
+                            clipboard-write;
+                            encrypted-media;
+                            gyroscope;
+                            picture-in-picture;
+                        "
                         allowfullscreen
                     ></iframe>
                 </div>
@@ -338,7 +345,7 @@
         <!-- Goal Section -->
         <section class="bg-white dark:bg-gray-900">
             <div
-                class="mx-auto grid max-w-screen-2xl gap-8 px-4 py-8 lg:grid-cols-2 lg:gap-16 lg:py-16"
+                class="max-w-(--breakpoint-2xl) mx-auto grid gap-8 px-4 py-8 lg:grid-cols-2 lg:gap-16 lg:py-16"
             >
                 <div class="flex flex-col justify-center">
                     <h2
@@ -409,7 +416,7 @@
                     <ol class="relative border-s border-gray-200 dark:border-gray-700">
                         <li class="mb-10 ms-6">
                             <span
-                                class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900"
+                                class="-inset-s-3 absolute flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900"
                             >
                                 <svg
                                     class="h-2.5 w-2.5 text-blue-800 dark:text-blue-300"
@@ -461,7 +468,7 @@
                         </li>
                         <li class="mb-10 ms-6">
                             <span
-                                class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900"
+                                class="-inset-s-3 absolute flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900"
                             >
                                 <svg
                                     class="h-2.5 w-2.5 text-blue-800 dark:text-blue-300"
