@@ -21,6 +21,20 @@ const onToggleTheme = () => {
     }
 }
 
+// // Adjust margin of filter to not overlap with header-navbar
+// function adjustMarginMain() {
+//     const header = document.querySelector('header')
+//     const main = document.querySelector('main')
+
+//     const marginValue = header.getBoundingClientRect().height
+//     main.style.marginTop = `${marginValue}px`
+// }
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     window.addEventListener('load', adjustMarginMain)
+//     window.addEventListener('resize', adjustMarginMain)
+// })
+
 const themeToggle = document.getElementById('theme-toggle')
 themeToggle.addEventListener('click', onToggleTheme)
 

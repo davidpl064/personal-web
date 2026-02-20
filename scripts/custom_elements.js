@@ -6,7 +6,7 @@ class HeaderNavBar extends HTMLElement {
     connectedCallback() {
         const relPath = this.getAttribute('rel-path') || ''
         this.innerHTML = `
-            <header class="fixed top-0 z-10 flex-no-wrap flex w-full justify-between bg-gray-100 dark:bg-gray-800 shadow-md">
+            <header class="sticky top-0 z-20 flex-no-wrap flex w-full justify-between bg-gray-100 dark:bg-gray-800 shadow-md">
                 <nav class="flex flex-wrap items-center justify-between w-full px-4 py-2.5">
                 <!-- <div class="flex flex-wrap container justify-between items-center mx-auto p-4"> -->
                     <!-- Logo Section -->
@@ -60,7 +60,7 @@ class HeaderNavBar extends HTMLElement {
                                 </div>
                             </li> -->
 
-                            <li><a href="contact.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Contact</a></li>
+                            <li><a href="${relPath}contact.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Contact</a></li>
 
                             <!-- Theme Mode Selector -->
                             <button id="theme-toggle" class="text-gray-800 dark:text-white p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-all duration-300 hover:bg-gray-300 dark:hover:bg-gray-600 transform hover:scale-110">

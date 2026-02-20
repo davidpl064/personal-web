@@ -61,10 +61,9 @@ module.exports = (env) => {
                             loader: 'postcss-loader',
                             options: {
                                 postcssOptions: {
-                                    plugins: [
-                                        require('tailwindcss'),
-                                        require('autoprefixer'),
-                                    ],
+                                    plugins: {
+                                        "@tailwindcss/postcss": {}
+                                    },
                                 },
                             },
                         },
@@ -104,6 +103,13 @@ module.exports = (env) => {
             new HtmlWebpackPlugin({
                 template: './pages/hobbies/sports.html', // Source HTML file
                 filename: 'hobbies/sports.html', // Output HTML file
+                chunks: ['bundle_shared', 'bundle_dependencies'], // specify javascript files to be injected
+                inject: 'body', // Inject scripts into the <body> tag
+                minify: !isProduction, // Minify for production
+            }),
+            new HtmlWebpackPlugin({
+                template: './pages/contact.html', // Source HTML file
+                filename: 'contact.html', // Output HTML file
                 chunks: ['bundle_shared', 'bundle_dependencies'], // specify javascript files to be injected
                 inject: 'body', // Inject scripts into the <body> tag
                 minify: !isProduction, // Minify for production

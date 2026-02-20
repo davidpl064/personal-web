@@ -96,22 +96,9 @@ function removeFilterTag(tag) {
     activeTagFilters = activeTagFilters.filter((activeTag) => activeTag !== tag)
 }
 
-// Adjust margin of filter to not overlap with header-navbar
-function adjustFilterPosition() {
-    const header = document.querySelector('header')
-    const main = document.getElementById('projects_main_container')
-
-    const paddingValue = header.getBoundingClientRect().height
-    main.style.paddingTop = `${paddingValue}px`
-}
-
 // Execute initialization after DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
     customElements.whenDefined('checkbox-badge').then(() => {
         initProjectFilters()
     })
-
-    // Run on page load/resize
-    window.addEventListener('load', adjustFilterPosition)
-    window.addEventListener('resize', adjustFilterPosition)
 })

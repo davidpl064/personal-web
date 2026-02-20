@@ -2,11 +2,20 @@
 @import 'tailwindcss';
 @config '../tailwind.config.js';
 
+/* Add Flowbite */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import 'flowbite/src/themes/default';
+
+@plugin 'flowbite/plugin';
+@source '../node_modules/flowbite';
+
 /* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    color: #d3d3d3;
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        color: #d3d3d3;
+    }
 }

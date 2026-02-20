@@ -8,6 +8,7 @@
         <!-- Set the base URL for relative paths -->
         <base href="./" />
 
+        <!-- Compiled Tailwind CSS -->
         <link href="styles/styles_tailwind.css" rel="stylesheet" />
 
         <!-- Font Awesome for Icons -->
@@ -33,7 +34,9 @@
         </script>
     </head>
 
-    <body class="flex h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+    <body
+        class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    >
         <!-- Preloader for this page -->
         <div id="preloader">
             <div class="loader"></div>
@@ -42,13 +45,13 @@
         <!-- Navbar Section -->
         <header-navbar></header-navbar>
 
-        <main id="projects_main_container" class="grow px-4">
+        <main class="mt-24 grow px-4">
             <div class="flex items-center justify-center gap-8 py-4 md:py-8 lg:gap-16">
                 <!-- Filter dropdown -->
                 <button
                     id="button-filter-tags"
                     data-dropdown-toggle="dropdown-filter-tags"
-                    class="inline-flex items-center rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    class="inline-flex items-center rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     type="button"
                 >
                     Filter

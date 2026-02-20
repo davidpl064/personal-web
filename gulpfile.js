@@ -1,15 +1,15 @@
 const gulp = require('gulp')
 // const sass = require('gulp-sass')(require('sass'));
-const imagemin = require('gulp-imagemin')
+// const imagemin = require('gulp-imagemin')
 // const webp = require('imagemin-webp');
 const postcss = require('gulp-postcss')
 const clean = require('gulp-clean')
 const extReplace = require('gulp-ext-replace')
-const htmlmin = require('gulp-htmlmin')
+// const htmlmin = require('gulp-htmlmin')
 const rename = require('gulp-rename');
-const browserSync = require('browser-sync').create() // Optionally use BrowserSync for better browser sync
+// const browserSync = require('browser-sync').create() // Optionally use BrowserSync for better browser sync
 
-const tailwindcss = require('tailwindcss')
+const tailwindcss = require('@tailwindcss/postcss')
 const autoprefixer = require('autoprefixer')
 
 const webpack = require('webpack')
@@ -63,7 +63,7 @@ gulp.task('clean', function () {
 gulp.task('styles-compile', function () {
     return gulp
         .src(paths.styles.src)
-        .pipe(postcss([tailwindcss, autoprefixer]))
+        .pipe(postcss([tailwindcss]))
         .pipe(rename({ basename: 'styles_tailwind' }))
         .pipe(gulp.dest(paths.styles.dest));
 })

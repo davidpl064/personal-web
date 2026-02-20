@@ -38,7 +38,7 @@
         </script>
     </head>
 
-    <body class="flex h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+    <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
         <!-- Preloader for this page -->
         <div id="preloader">
             <div class="loader"></div>
@@ -47,17 +47,19 @@
         <!-- Navbar Section -->
         <header-navbar rel-path="../"></header-navbar>
 
-        <section
-            class="grow content-center bg-gray-700 bg-[url('../assets/work_in_progress_3.jpeg')] bg-center bg-no-repeat bg-blend-multiply"
-        >
-            <div class="max-w-(--breakpoint-xl) mx-auto px-4 py-24 text-center lg:py-56">
-                <h1
-                    class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl"
-                >
-                    Work in progress, it'll be updated as soon as possible.
-                </h1>
-            </div>
-        </section>
+        <main class="mt-24 flex min-h-screen flex-col justify-center">
+            <section
+                class="grow content-center bg-gray-700 bg-[url('../assets/work_in_progress_3.jpeg')] bg-center bg-no-repeat bg-blend-multiply"
+            >
+                <div class="mx-auto max-w-(--breakpoint-xl) px-4 py-24 text-center lg:py-56">
+                    <h1
+                        class="mb-4 text-4xl leading-none font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl"
+                    >
+                        Work in progress, it'll be updated as soon as possible.
+                    </h1>
+                </div>
+            </section>
+        </main>
 
         <!-- Footer with Contact Icons -->
         <custom-footer></custom-footer>

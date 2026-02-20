@@ -10,7 +10,7 @@
         <title>dplamarca</title>
 
         <!-- Compiled Tailwind CSS -->
-        <link href="../styles/styles_tailwind.css" rel="stylesheet" />
+        <link href="styles/styles_tailwind.css" rel="stylesheet" />
 
         <!-- Font Awesome for Icons -->
         <link
@@ -38,7 +38,9 @@
         </script>
     </head>
 
-    <body class="flex h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+    <body
+        class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    >
         <!-- Preloader for this page -->
         <div id="preloader">
             <div class="loader"></div>
@@ -47,17 +49,17 @@
         <!-- Navbar Section -->
         <header-navbar></header-navbar>
 
-        <section
+        <main
             class="grow content-center bg-gray-700 bg-[url('../assets/work_in_progress_3.jpeg')] bg-center bg-no-repeat bg-blend-multiply"
         >
             <div class="mx-auto px-4 py-24 text-center lg:py-56">
                 <h1
-                    class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl"
+                    class="mb-4 text-4xl leading-none font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl"
                 >
                     Work in progress, it'll be updated as soon as possible.
                 </h1>
             </div>
-        </section>
+        </main>
 
         <!-- Footer with Contact Icons -->
         <custom-footer></custom-footer>
