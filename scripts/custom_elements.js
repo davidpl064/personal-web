@@ -6,7 +6,7 @@ class HeaderNavBar extends HTMLElement {
     connectedCallback() {
         const relPath = this.getAttribute('rel-path') || ''
         this.innerHTML = `
-            <header class="sticky top-0 z-20 flex-no-wrap flex w-full justify-between bg-gray-100 dark:bg-gray-800 shadow-md">
+            <header class="mx-auto bg-gray-100 dark:bg-gray-800 shadow-md">
                 <nav class="flex flex-wrap items-center justify-between w-full px-4 py-2.5">
                 <!-- <div class="flex flex-wrap container justify-between items-center mx-auto p-4"> -->
                     <!-- Logo Section -->
@@ -24,9 +24,9 @@ class HeaderNavBar extends HTMLElement {
                     <div class="hidden w-full md:block md:w-auto mr-16" id="navbar-dropdown">
                         <ul class="flex flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:items-center md:mt-0 md:text-sm  md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 md:space-x-8 md:rtl:space-x-reverse">
                             <li>
-                                <a href="${relPath}index.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Home</a></li>
+                                <a href="${relPath}" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Home</a></li>
                             </li>
-                            <li><a href="${relPath}projects.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Projects</a></li>
+                            <li><a href="${relPath}projects" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Projects</a></li>
                             <li>
                                 <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full text-gray-700 rounded hover:bg-gray-100 focus:text-blue-500
                                     hover:text-blue-500 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto dark:text-gray-300 dark:hover:text-blue-500 dark:focus:text-blue-500 dark:border-gray-700
@@ -39,14 +39,14 @@ class HeaderNavBar extends HTMLElement {
                                 <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                     <li>
-                                        <a href="${relPath}hobbies/3dprinting.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">3D Printing</a>
+                                        <a href="${relPath}hobbies/3dprinting" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">3D Printing</a>
                                     </li>
                                     <li>
-                                        <a href="${relPath}hobbies/sports.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">Sports</a>
+                                        <a href="${relPath}hobbies/sports" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">Sports</a>
                                     </li>
                                 </div>
                             </li>
-                            <li><a href="${relPath}insights.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Insights</a></li>
+                            <li><a href="${relPath}insights" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Insights</a></li>
 
                             <!-- <li class="relative group">
                                 <button class="hover:text-gray-400 focus:outline-none">
@@ -60,7 +60,7 @@ class HeaderNavBar extends HTMLElement {
                                 </div>
                             </li> -->
 
-                            <li><a href="${relPath}contact.html" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Contact</a></li>
+                            <li><a href="${relPath}contact" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Contact</a></li>
 
                             <!-- Theme Mode Selector -->
                             <button id="theme-toggle" class="text-gray-800 dark:text-white p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-all duration-300 hover:bg-gray-300 dark:hover:bg-gray-600 transform hover:scale-110">

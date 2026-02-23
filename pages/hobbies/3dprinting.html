@@ -38,20 +38,22 @@
         </script>
     </head>
 
-    <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+    <body
+        class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    >
         <!-- Preloader for this page -->
         <div id="preloader">
             <div class="loader"></div>
         </div>
 
         <!-- Navbar Section -->
-        <header-navbar rel-path="../"></header-navbar>
+        <header-navbar class="sticky top-0 z-20 w-full flex-none" rel-path="../"></header-navbar>
 
-        <main class="mt-24 flex min-h-screen flex-col justify-center">
+        <main class="flex flex-1 justify-center">
             <section
                 class="grow content-center bg-gray-700 bg-[url('../assets/work_in_progress_3.jpeg')] bg-center bg-no-repeat bg-blend-multiply"
             >
-                <div class="mx-auto max-w-(--breakpoint-xl) px-4 py-24 text-center lg:py-56">
+                <div class="mx-auto px-4 py-24 text-center lg:py-56">
                     <h1
                         class="mb-4 text-4xl leading-none font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl"
                     >

@@ -1,11 +1,41 @@
 const path = require('path')
 
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = (env) => {
     const isProduction = env.production || false;
+
+    // Define source html pages
+    const pages = [
+        { name: 'index', path: 'index.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
+        { name: 'projects', path: 'projects.html', chunks: ['bundle_shared', 'bundle_dependencies', 'projects'] },
+        { name: 'insights', path: 'insights.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
+        { name: '3dprinting', path: 'hobbies/3dprinting.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
+        { name: 'sports', path: 'hobbies/sports.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
+        { name: 'contact', path: 'contact.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
+    ];
+
+    const htmlPlugins = pages.map(p => new HtmlWebpackPlugin({
+        template: `./pages/${p.path}`,
+        filename: (() => {
+            // Convert to folder/index.html
+            const parts = p.path.split('/')
+            const file = parts.pop().replace('.html', '')
+            let outputFileName;
+            if (file === 'index' && parts.length === 0) {
+                // Main index.html stays at the root
+                outputFileName = 'index.html'
+            } else {
+                // Nested pages become folder/index.html
+                outputFileName = parts.length ? `${parts.join('/')}/${file}/index.html` : `${file}/index.html`
+            }
+            return outputFileName
+        })(),
+        chunks: p.chunks,
+        inject: 'body',
+        minify: !isProduction,
+    }));
 
     return {
         mode: isProduction ? 'production' : 'development',
@@ -69,60 +99,21 @@ module.exports = (env) => {
                         },
                     ],
                 },
+                {
+                    // Write assets to output dist "assets"
+                    test: /\.(png|jpe?g|gif|svg|webp)$/i,
+                    type: 'asset/resource',
+                    generator: {
+                        filename: 'assets/[hash][ext]',
+                    },
+                },
             ],
         },
         plugins: [
-            new HtmlWebpackPlugin({
-                template: './pages/index.html', // Source HTML file
-                filename: 'index.html', // Output HTML file
-                chunks: ['bundle_shared', 'bundle_dependencies'], // specify javascript files to be injected
-                inject: 'body', // Inject scripts into the <body> tag
-                minify: !isProduction, // Minify for production
-            }),
-            new HtmlWebpackPlugin({
-                template: './pages/projects.html', // Source HTML file
-                filename: 'projects.html', // Output HTML file
-                chunks: ['bundle_shared', 'bundle_dependencies', 'projects'], // specify javascript files to be injected
-                inject: 'body', // Inject scripts into the <body> tag
-                minify: !isProduction, // Minify for production
-            }),
-            new HtmlWebpackPlugin({
-                template: './pages/insights.html', // Source HTML file
-                filename: 'insights.html', // Output HTML file
-                chunks: ['bundle_shared', 'bundle_dependencies'], // specify javascript files to be injected
-                inject: 'body', // Inject scripts into the <body> tag
-                minify: !isProduction, // Minify for production
-            }),
-            new HtmlWebpackPlugin({
-                template: './pages/hobbies/3dprinting.html', // Source HTML file
-                filename: 'hobbies/3dprinting.html', // Output HTML file
-                chunks: ['bundle_shared', 'bundle_dependencies'], // specify javascript files to be injected
-                inject: 'body', // Inject scripts into the <body> tag
-                minify: !isProduction, // Minify for production
-            }),
-            new HtmlWebpackPlugin({
-                template: './pages/hobbies/sports.html', // Source HTML file
-                filename: 'hobbies/sports.html', // Output HTML file
-                chunks: ['bundle_shared', 'bundle_dependencies'], // specify javascript files to be injected
-                inject: 'body', // Inject scripts into the <body> tag
-                minify: !isProduction, // Minify for production
-            }),
-            new HtmlWebpackPlugin({
-                template: './pages/contact.html', // Source HTML file
-                filename: 'contact.html', // Output HTML file
-                chunks: ['bundle_shared', 'bundle_dependencies'], // specify javascript files to be injected
-                inject: 'body', // Inject scripts into the <body> tag
-                minify: !isProduction, // Minify for production
-            }),
+            ...htmlPlugins,
             new MiniCssExtractPlugin({
-                filename: 'styles/[name]_tailwind.css', // Output CSS file
+                filename: 'styles/[name]_tailwind.css',
             }),
-            // // Copy CSS files from src/styles to dist/styles
-            // new CopyWebpackPlugin({
-            //     patterns: [
-            //         { from: 'styles/**/*.css', to: 'styles/[name][ext]' }, // Match all .css files in styles folder
-            //     ],
-            // }),
         ],
         // optimization: {
         //     splitChunks: {

@@ -51,14 +51,6 @@ gulp.task('clean', function () {
     return gulp.src('dist', { allowEmpty: true, read: false }).pipe(clean())
 })
 
-// Task to move HTML files
-// gulp.task('html', function () {
-//     return gulp
-//         .src(['pages/**/*.html']) // Source HTML files
-//         .pipe(htmlmin({ collapseWhitespace: true })) // Optional: Minify HTML
-//         .pipe(gulp.dest('dist')) // Output folder
-// })
-
 // Post-CSS process, compile with TailwindCSS
 gulp.task('styles-compile', function () {
     return gulp
@@ -79,21 +71,10 @@ gulp.task('images', function () {
     )
 })
 
-// Use Webpack for JavaScript bundling and html injection
+// Webpack handles assets, JavaScript, HTML and CSS
 gulp.task('webpack-build', function () {
-    return gulp
-        .src(paths.scripts.src)
-        .pipe(webpackStream(webpackConfig, webpack))
-        .pipe(gulp.dest(paths.scripts.dest))
-    // .on('end', () => {
-    //     browserSync.init({
-    //         server: {
-    //         baseDir: './dist', // Serve files from dist directory
-    //         },
-    //         open: true, // Open the browser automatically
-    //         notify: false, // Disable browser notifications
-    //     });
-    // });
+    return webpackStream(webpackConfig, webpack)
+        .pipe(gulp.dest(webpackConfig.output.path))
 })
 
 // Webpack Development Server Task
@@ -118,6 +99,6 @@ gulp.task('watch', function () {
 })
 
 // Main build tasks
-gulp.task('build-dev', gulp.series('images', 'webpack-server'))
-// gulp.task('build-dev', gulp.series(gulp.parallel('images', 'styles-compile'), 'webpack-build'))
-gulp.task('build', gulp.series(gulp.parallel('images', 'styles-compile'), 'webpack-build'))
+// gulp.task('build-dev', gulp.series('clean', gulp.parallel('images', 'styles-compile'), 'webpack-server'))
+gulp.task('build-dev', gulp.series('clean', 'images', 'webpack-server'))
+gulp.task('build', gulp.series('clean', 'webpack-build'))
