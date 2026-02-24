@@ -9,11 +9,12 @@ module.exports = (env) => {
     // Define source html pages
     const pages = [
         { name: 'index', path: 'index.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
-        { name: 'projects', path: 'projects.html', chunks: ['bundle_shared', 'bundle_dependencies', 'projects'] },
         { name: 'insights', path: 'insights.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
         { name: '3dprinting', path: 'hobbies/3dprinting.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
         { name: 'sports', path: 'hobbies/sports.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
         { name: 'contact', path: 'contact.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
+        { name: 'projects', path: 'projects/index.html', chunks: ['bundle_shared', 'bundle_dependencies', 'projects'] },
+        { name: 'infotaxis', path: 'projects/infotaxis.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
     ];
 
     const htmlPlugins = pages.map(p => new HtmlWebpackPlugin({
@@ -23,9 +24,9 @@ module.exports = (env) => {
             const parts = p.path.split('/')
             const file = parts.pop().replace('.html', '')
             let outputFileName;
-            if (file === 'index' && parts.length === 0) {
-                // Main index.html stays at the root
-                outputFileName = 'index.html'
+            if (file === 'index') {
+                // Already set index files
+                outputFileName = parts.length ? `${parts.join('/')}/${file}.html` : `${file}.html`
             } else {
                 // Nested pages become folder/index.html
                 outputFileName = parts.length ? `${parts.join('/')}/${file}/index.html` : `${file}/index.html`

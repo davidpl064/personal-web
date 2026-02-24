@@ -4,15 +4,15 @@ class HeaderNavBar extends HTMLElement {
     }
 
     connectedCallback() {
-        const relPath = this.getAttribute('rel-path') || ''
         this.innerHTML = `
             <header class="mx-auto bg-gray-100 dark:bg-gray-800 shadow-md">
                 <nav class="flex flex-wrap items-center justify-between w-full px-4 py-2.5">
                 <!-- <div class="flex flex-wrap container justify-between items-center mx-auto p-4"> -->
                     <!-- Logo Section -->
-                    <div class="flex ml-4 text-2xl font-bold">
-                        <a href="#" class="text-gray-700 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-500">dplamarca</a>
-                    </div>
+                    <a href="#" class="flex ml-4 text-2xl items-center space-x-3 text-gray-700 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-500">
+                        <img src="/assets/logo/main_logo.svg" class="h-7" alt="Flowbite Logo" />
+                        <span class="self-center text-xl text-heading font-bold whitespace-nowrap">dplamarca</span>
+                    </a>
 
                     <!-- Hamburguer Menu Dropdown mobile format -->
                     <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 ms-3 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
@@ -24,9 +24,9 @@ class HeaderNavBar extends HTMLElement {
                     <div class="hidden w-full md:block md:w-auto mr-16" id="navbar-dropdown">
                         <ul class="flex flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:items-center md:mt-0 md:text-sm  md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 md:space-x-8 md:rtl:space-x-reverse">
                             <li>
-                                <a href="${relPath}" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Home</a></li>
+                                <a href="/" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Home</a></li>
                             </li>
-                            <li><a href="${relPath}projects" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Projects</a></li>
+                            <li><a href="/projects" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Projects</a></li>
                             <li>
                                 <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full text-gray-700 rounded hover:bg-gray-100 focus:text-blue-500
                                     hover:text-blue-500 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto dark:text-gray-300 dark:hover:text-blue-500 dark:focus:text-blue-500 dark:border-gray-700
@@ -39,14 +39,14 @@ class HeaderNavBar extends HTMLElement {
                                 <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                     <li>
-                                        <a href="${relPath}hobbies/3dprinting" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">3D Printing</a>
+                                        <a href="/hobbies/3dprinting" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">3D Printing</a>
                                     </li>
                                     <li>
-                                        <a href="${relPath}hobbies/sports" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">Sports</a>
+                                        <a href="/hobbies/sports" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">Sports</a>
                                     </li>
                                 </div>
                             </li>
-                            <li><a href="${relPath}insights" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Insights</a></li>
+                            <li><a href="/insights" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Insights</a></li>
 
                             <!-- <li class="relative group">
                                 <button class="hover:text-gray-400 focus:outline-none">
@@ -60,7 +60,7 @@ class HeaderNavBar extends HTMLElement {
                                 </div>
                             </li> -->
 
-                            <li><a href="${relPath}contact" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Contact</a></li>
+                            <li><a href="/contact" class="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-500">Contact</a></li>
 
                             <!-- Theme Mode Selector -->
                             <button id="theme-toggle" class="text-gray-800 dark:text-white p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-all duration-300 hover:bg-gray-300 dark:hover:bg-gray-600 transform hover:scale-110">
@@ -324,6 +324,7 @@ class ProjectCard extends HTMLElement {
 
     connectedCallback() {
         const title = this.getAttribute('title') || ''
+        const relPathProjectPage = this.getAttribute('rel-path-project') || ''
         const relPathImage = this.getAttribute('rel-path-image') || ''
         const description = this.getAttribute('description') || ''
         let colorSchemes = this.getAttribute('color-scheme') || '[]'
@@ -364,7 +365,7 @@ class ProjectCard extends HTMLElement {
                 data-tags="${dataTagsArrayFormatted}"
             >
                 <figure class="relative">
-                    <a href="#">
+                    <a href="${relPathProjectPage}">
                         <img class="rounded-t-lg" src="${relPathImage}" alt="" />
                     </a>
                     <figcaption class="absolute bottom-4 px-4 text-lg text-white">
@@ -372,7 +373,7 @@ class ProjectCard extends HTMLElement {
                     </figcaption>
                 </figure>
                 <div class="p-5">
-                    <a href="#">
+                    <a href="${relPathProjectPage}">
                         <h5
                             class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
                         >
@@ -389,7 +390,7 @@ class ProjectCard extends HTMLElement {
                         ${description}
                     </p>
                     <a
-                        href="#"
+                        href="${relPathProjectPage}"
                         class="inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
                         Read more
@@ -415,3 +416,87 @@ class ProjectCard extends HTMLElement {
     }
 }
 customElements.define('project-card', ProjectCard)
+
+class ProjectHero extends HTMLElement {
+    constructor() {
+        super()
+    }
+
+    connectedCallback() {
+        const title = this.getAttribute('title') || ''
+        const dataTags = this.getAttribute('data-tags') || '[]'
+        let colorSchemes = this.getAttribute('color-scheme') || '[]'
+
+        // Parse JSON strings into an arrays
+        const dataTagsArray = JSON.parse(dataTags)
+
+        colorSchemes = Array.isArray(colorSchemes) ? colorSchemes : [colorSchemes]
+        const colorSchemesArray = JSON.parse(colorSchemes)
+
+        const sanitizedDataTagsArray = sanitizeDataTag(dataTagsArray)
+        // Add the symbol "#" to each tag
+        const dataTagsArrayFormatted = sanitizedDataTagsArray.map((tag) => `#${tag}`).join(' ')
+
+        const colorClassesArray = colorSchemesArray.map((scheme) => {
+            return getColorClasses(scheme)
+        })
+
+        // Generate the badges for each tag dynamically
+        const badges = dataTagsArray
+            .map((tag, index) => {
+                const { badgeColorClass, borderColorClass } = colorClassesArray[index]
+
+                return `
+                <li>
+                    <span class="me-2 rounded border px-2.5 py-0.5 text-xs font-medium ${badgeColorClass} ${borderColorClass}">
+                        #${tag}
+                    </span>
+                </li>
+            `
+            })
+            .join('')
+
+        this.innerHTML = `
+            <figure class="relative grow max-w-(--breakpoint-2xl) mx-auto overflow-hidden">
+                <img class="absolute inset-0 h-full w-full object-cover" src="/assets/projects/thumbnails/infotaxis.png"
+                    alt="${title}" />
+
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-black/50"></div>
+
+                <!-- Centered Title -->
+                <div class="absolute h-full top-1/2 left-1/2 -translate-x-1/2">
+                    <h1 class="text-4xl md:text-6xl font-semibold tracking-wide uppercase text-white text-center">
+                        ${title}
+                    </h1>
+                </div>
+
+                <!-- Bottom-left Tags -->
+                <figcaption class="absolute bottom-6 left-6 text-lg text-white">
+                    <p class="text-base md:text-lg font-medium">
+                        Status:
+                        <span class="inline-flex items-center bg-success-soft border border-success-subtle text-fg-success-strong text-sm font-medium leading-none px-2 py-1 rounded">
+                        <svg class="w-3.5 h-3.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                        </svg>
+                        Completed
+                        </span>
+                    </p>
+                    <p class="text-base md:text-lg font-medium">
+                        Documentation:
+                        <span class="inline-flex items-center bg-warning-soft border border-warning-subtle text-fg-warning text-sm font-medium leading-none px-2 py-1 rounded">
+                        <svg class="w-3.5 h-3.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                        </svg>
+                        In progress
+                        </span>
+                    </p>
+                    <ul class="flex gap-2">
+                        ${badges}
+                    </ul>
+                </figcaption>
+            </figure>
+        `
+    }
+}
+customElements.define('project-hero', ProjectHero)
