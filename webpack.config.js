@@ -7,6 +7,8 @@ module.exports = (env) => {
     const isProduction = env.production || false;
 
     const headContent = fs.readFileSync(path.resolve(__dirname, 'partials/head.html'), 'utf-8')
+    // Absolute path to project root
+    const projectRootPath = path.resolve(__dirname)
 
     // Define which bundles go to which pages
     const pageBundles = {
@@ -15,38 +17,6 @@ module.exports = (env) => {
         '3dprinting': ['bundle_shared', 'bundle_dependencies'],
         sports: ['bundle_shared', 'bundle_dependencies'],
     }
-
-    // // Define source html pages
-    // const pages = [
-    //     { name: 'index', path: 'index.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
-    //     { name: 'insights', path: 'insights.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
-    //     { name: '3dprinting', path: 'hobbies/3dprinting.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
-    //     { name: 'sports', path: 'hobbies/sports.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
-    //     { name: 'contact', path: 'contact.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
-    //     { name: 'projects', path: 'projects/index.html', chunks: ['bundle_shared', 'bundle_dependencies', 'projects'] },
-    //     { name: 'infotaxis', path: 'projects/infotaxis.html', chunks: ['bundle_shared', 'bundle_dependencies'] },
-    // ];
-
-    // const htmlPlugins = pages.map(p => new HtmlWebpackPlugin({
-    //     template: `./pages/${p.path}`,
-    //     filename: (() => {
-    //         // Convert to folder/index.html
-    //         const parts = p.path.split('/')
-    //         const file = parts.pop().replace('.html', '')
-    //         let outputFileName;
-    //         if (file === 'index') {
-    //             // Already set index files
-    //             outputFileName = parts.length ? `${parts.join('/')}/${file}.html` : `${file}.html`
-    //         } else {
-    //             // Nested pages become folder/index.html
-    //             outputFileName = parts.length ? `${parts.join('/')}/${file}/index.html` : `${file}/index.html`
-    //         }
-    //         return outputFileName
-    //     })(),
-    //     chunks: p.chunks,
-    //     inject: 'body',
-    //     minify: !isProduction,
-    // }));
 
     function getPages() {
         const pagesDir = path.resolve(__dirname, 'pages')
@@ -63,13 +33,15 @@ module.exports = (env) => {
                     let outputFilePath
                     if (fileName.includes("index")) {
                         // Already set index files
-                        outputFilePath = parent ? `${parent}/${fileName}.html` : `${fileName}.html`
+                        outputFilePath = parent ? `${parent}/index.html` : `index.html`
                     } else {
                         outputFilePath = parent ? `${parent}/${fileName}/index.html` : `${fileName}/index.html`
                     }
+                    const relativePath = path.relative(projectRootPath, fullPath)
                     pages.push({
                         name: fileName,
                         file: fullPath,
+                        relFilePath: relativePath,
                         outputPath: outputFilePath
                     })
                 }
@@ -85,8 +57,10 @@ module.exports = (env) => {
         template: './layouts/base.html',
         filename: p.outputPath,
         templateParameters: {
-            head: headContent,
-            html: fs.readFileSync(p.file, 'utf-8')  // inject content over base layout
+            // head: headContent,
+            // html: fs.readFileSync(p.file, 'utf-8')  // inject content over base layout
+            head: path.resolve(__dirname, 'partials/head.html'),
+            pageContent: require(p.file),
         },
         chunks: pageBundles[p.name] || ['bundle_shared', 'bundle_dependencies'],
         inject: 'body',  // inject bundles at the end of <body>
@@ -121,6 +95,15 @@ module.exports = (env) => {
         },
         module: {
             rules: [
+                {
+                    test: /\.html$/i,
+                    loader: 'html-loader',
+                    exclude: /base\.html$/,
+                    options: {
+                        esModule: false,
+                        sources: false
+                    }
+                },
                 {
                     test: /\.js$/,
                     exclude: /node_modules/,

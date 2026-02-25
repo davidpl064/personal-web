@@ -74,7 +74,7 @@ function filterActiveBadges() {
 }
 
 function filterProjectCards() {
-    const projectCards = document.querySelectorAll('#container-cards .card')
+    const projectCards = document.querySelectorAll('#container-project-cards .card')
 
     projectCards.forEach((card) => {
         const cardTags = card.dataset.tags.split(' ')

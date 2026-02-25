@@ -21,20 +21,6 @@ const onToggleTheme = () => {
     }
 }
 
-// // Adjust margin of filter to not overlap with header-navbar
-// function adjustMarginMain() {
-//     const header = document.querySelector('header')
-//     const main = document.querySelector('main')
-
-//     const marginValue = header.getBoundingClientRect().height
-//     main.style.marginTop = `${marginValue}px`
-// }
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     window.addEventListener('load', adjustMarginMain)
-//     window.addEventListener('resize', adjustMarginMain)
-// })
-
 const themeToggle = document.getElementById('theme-toggle')
 themeToggle.addEventListener('click', onToggleTheme)
 
@@ -59,6 +45,51 @@ document.querySelectorAll('a').forEach((link) => {
         document.getElementById('preloader').style.display = 'flex'
     })
 })
+
+function initInputSearchs() {
+    const forms = document.querySelectorAll('form')
+
+    forms.forEach((form) => {
+        const input = form.querySelector('input[type="search"]')
+        if (!input) return
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+
+            const query = input.value.toLowerCase()
+            const targetSelector = input.dataset.searchTarget
+            const scopeSelector = input.dataset.searchScope
+
+            const scope = scopeSelector ? document.querySelector(scopeSelector) : document
+
+            const items = scope.querySelectorAll(targetSelector)
+
+            filterSearchItems(query, items)
+        })
+    })
+}
+
+// Functionality search input
+function filterSearchItems(query, items) {
+    if (!query) {
+        items.forEach((item) => (item.parentElement.hidden = false))
+        return
+    }
+
+    items.forEach((item) => {
+        const text = (
+            card.dataset.title +
+            ' ' +
+            card.dataset.tags +
+            ' ' +
+            card.textContent
+        ).toLowerCase()
+        item.parentElement.hidden = text.includes(query) ? false : true
+    })
+}
+
+// Add event listeners for search inputs
+initInputSearchs()
 
 // Get the current year
 const currentYear = new Date().getFullYear()
