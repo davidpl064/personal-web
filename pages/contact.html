@@ -1,215 +1,170 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="description"
-            content="Personal portfolio showcasing projects and technical details."
-        />
-        <title>dplamarca</title>
+<body class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+    <!-- Preloader for this page -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
 
-        <!-- Compiled Tailwind CSS -->
-        <link href="styles/styles_tailwind.css" rel="stylesheet" />
+    <!-- Navbar Section -->
+    <header-navbar class="sticky top-0 z-20 w-full flex-none"></header-navbar>
 
-        <!-- Font Awesome for Icons -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        />
+    <main class="mx-auto mt-8 grow justify-center">
+        <!-- Grid -->
+        <div class="mb-4 grid max-w-(--breakpoint-2xl) grid-cols-1 lg:grid-cols-2">
+            <!-- Wrapper first column -->
+            <div class="mx-auto">
+                <h1
+                    class="mb-8 text-3xl leading-none font-extrabold tracking-tight text-gray-800 md:text-5xl lg:text-4xl dark:text-gray-100"
+                >
+                    Connect with me
+                </h1>
+                <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-300">
+                    In case you're interested in getting in contact with me, there are several ways
+                    you can do it, just choose the one you prefer.
+                </p>
 
-        <!-- Font and Icons -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-            rel="stylesheet"
-        />
+                <h2 class="text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">
+                    Phone number
+                </h2>
+                <p class="mb-3 text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300">
+                    +(34) 665685929
+                </p>
 
-        <!-- TailWind CSS -->
-        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-
-        <!-- Check dark mode -->
-        <script>
-            document.documentElement.classList.toggle(
-                'dark',
-                localStorage.theme === 'dark' ||
-                    (!('theme' in localStorage) &&
-                        window.matchMedia('(prefers-color-scheme: dark)').matches)
-            )
-        </script>
-    </head>
-
-    <body
-        class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
-    >
-        <!-- Preloader for this page -->
-        <div id="preloader">
-            <div class="loader"></div>
-        </div>
-
-        <!-- Navbar Section -->
-        <header-navbar class="sticky top-0 z-20 w-full flex-none"></header-navbar>
-
-        <main class="mx-auto mt-8 grow justify-center">
-            <!-- Grid -->
-            <div class="mb-4 grid max-w-(--breakpoint-2xl) grid-cols-1 lg:grid-cols-2">
-                <!-- Wrapper first column -->
-                <div class="mx-auto">
-                    <h1
-                        class="mb-8 text-3xl leading-none font-extrabold tracking-tight text-gray-800 md:text-5xl lg:text-4xl dark:text-gray-100"
-                    >
-                        Connect with me
-                    </h1>
-                    <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-300">
-                        In case you're interested in getting in contact with me, there are several
-                        ways you can do it, just choose the one you prefer.
-                    </p>
-
-                    <h2 class="text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">
-                        Phone number
-                    </h2>
-                    <p
-                        class="mb-3 text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300"
-                    >
-                        +(34) 665685929
-                    </p>
-
-                    <h2 class="text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">
-                        Social Media
-                    </h2>
-                    <ul class="flex space-x-6 px-4">
-                        <li>
-                            <a
-                                href="mailto:davi.perlam@gmail.com"
-                                target="_blank"
-                                class="text-xl transition-opacity duration-300 hover:opacity-75 md:text-2xl dark:hover:opacity-75"
-                            >
-                                <i class="fas fa-envelope text-gray-500 dark:text-gray-300"></i>
-                                <!-- Email Icon -->
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://linkedin.com/in/david-perez-lamarca-836a60178/?locale=en_US"
-                                target="_blank"
-                                class="text-xl transition-opacity duration-300 hover:opacity-75 md:text-2xl dark:hover:opacity-75"
-                            >
-                                <i class="fab fa-linkedin text-gray-500 dark:text-gray-300"></i>
-                                <!-- LinkedIn Icon -->
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://github.com/davidpl064"
-                                target="_blank"
-                                class="text-xl transition-opacity duration-300 hover:opacity-75 md:text-2xl dark:hover:opacity-75"
-                            >
-                                <i class="fab fa-github text-gray-500 dark:text-gray-300"></i>
-                                <!-- GitHub Icon -->
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Wrapper second column -->
-                <form class="mx-auto max-w-lg space-y-4 py-2 lg:py-4">
-                    <div>
-                        <label for="visitors" class="mb-2.5 block text-sm font-medium text-heading"
-                            >Name</label
+                <h2 class="text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">
+                    Social Media
+                </h2>
+                <ul class="flex space-x-6 px-4">
+                    <li>
+                        <a
+                            href="mailto:davi.perlam@gmail.com"
+                            target="_blank"
+                            class="text-xl transition-opacity duration-300 hover:opacity-75 md:text-2xl dark:hover:opacity-75"
                         >
-                        <input
-                            type="text"
-                            id="visitors"
-                            class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium px-3 py-2.5 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
-                            placeholder=""
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label for="visitors" class="mb-2.5 block text-sm font-medium text-heading"
-                            >Company</label
+                            <i class="fas fa-envelope text-gray-500 dark:text-gray-300"></i>
+                            <!-- Email Icon -->
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://linkedin.com/in/david-perez-lamarca-836a60178/?locale=en_US"
+                            target="_blank"
+                            class="text-xl transition-opacity duration-300 hover:opacity-75 md:text-2xl dark:hover:opacity-75"
                         >
-                        <input
-                            type="text"
-                            id="visitors"
-                            class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium px-3 py-2.5 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
-                            placeholder=""
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label for="email" class="mb-2.5 block text-sm font-medium text-heading"
-                            >Email</label
+                            <i class="fab fa-linkedin text-gray-500 dark:text-gray-300"></i>
+                            <!-- LinkedIn Icon -->
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://github.com/davidpl064"
+                            target="_blank"
+                            class="text-xl transition-opacity duration-300 hover:opacity-75 md:text-2xl dark:hover:opacity-75"
                         >
-                        <div class="relative">
-                            <div
-                                class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3"
-                            >
-                                <svg
-                                    class="h-4 w-4 text-body"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-width="2"
-                                        d="m3.5 5.5 7.893 6.036a1 1 0 0 0 1.214 0L20.5 5.5M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
-                                    />
-                                </svg>
-                            </div>
-                            <input
-                                type="email"
-                                id="email"
-                                class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium py-2.5 ps-9 pe-3 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
-                                placeholder="name@flowbite.com"
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <label for="message" class="mb-2.5 block text-sm font-medium text-heading"
-                            >Message</label
-                        >
-                        <textarea
-                            id="message"
-                            rows="4"
-                            class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium p-3.5 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
-                            placeholder="Write your thoughts here..."
-                        ></textarea>
-                    </div>
-                    <div class="mb-5 flex items-start">
-                        <label for="remember-alternative" class="flex h-5 items-center">
-                            <input
-                                id="remember-alternative"
-                                type="checkbox"
-                                value=""
-                                class="h-4 w-4 rounded-xs border border-default-medium bg-neutral-secondary-medium focus:ring-2 focus:ring-brand-soft"
-                                required
-                            />
-                            <p class="ms-2 text-sm font-medium text-heading select-none">
-                                I agree with the
-                                <a href="#" class="text-fg-brand hover:underline"
-                                    >terms and conditions</a
-                                >.
-                            </p>
-                        </label>
-                    </div>
-                    <button
-                        type="submit"
-                        class="box-border rounded-base border border-transparent bg-brand px-4 py-2.5 text-sm leading-5 font-medium text-white shadow-xs hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium focus:outline-none"
-                    >
-                        Submit
-                    </button>
-                </form>
+                            <i class="fab fa-github text-gray-500 dark:text-gray-300"></i>
+                            <!-- GitHub Icon -->
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </main>
 
-        <!-- Footer with Contact Icons -->
-        <custom-footer></custom-footer>
+            <!-- Wrapper second column -->
+            <form class="mx-auto max-w-lg space-y-4 py-2 lg:py-4">
+                <div>
+                    <label for="visitors" class="mb-2.5 block text-sm font-medium text-heading"
+                        >Name</label
+                    >
+                    <input
+                        type="text"
+                        id="visitors"
+                        class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium px-3 py-2.5 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
+                        placeholder=""
+                        required
+                    />
+                </div>
+                <div>
+                    <label for="visitors" class="mb-2.5 block text-sm font-medium text-heading"
+                        >Company</label
+                    >
+                    <input
+                        type="text"
+                        id="visitors"
+                        class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium px-3 py-2.5 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
+                        placeholder=""
+                        required
+                    />
+                </div>
+                <div>
+                    <label for="email" class="mb-2.5 block text-sm font-medium text-heading"
+                        >Email</label
+                    >
+                    <div class="relative">
+                        <div
+                            class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3"
+                        >
+                            <svg
+                                class="h-4 w-4 text-body"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-width="2"
+                                    d="m3.5 5.5 7.893 6.036a1 1 0 0 0 1.214 0L20.5 5.5M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                                />
+                            </svg>
+                        </div>
+                        <input
+                            type="email"
+                            id="email"
+                            class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium py-2.5 ps-9 pe-3 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
+                            placeholder="name@flowbite.com"
+                        />
+                    </div>
+                </div>
+                <div>
+                    <label for="message" class="mb-2.5 block text-sm font-medium text-heading"
+                        >Message</label
+                    >
+                    <textarea
+                        id="message"
+                        rows="4"
+                        class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium p-3.5 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
+                        placeholder="Write your thoughts here..."
+                    ></textarea>
+                </div>
+                <div class="mb-5 flex items-start">
+                    <label for="remember-alternative" class="flex h-5 items-center">
+                        <input
+                            id="remember-alternative"
+                            type="checkbox"
+                            value=""
+                            class="h-4 w-4 rounded-xs border border-default-medium bg-neutral-secondary-medium focus:ring-2 focus:ring-brand-soft"
+                            required
+                        />
+                        <p class="ms-2 text-sm font-medium text-heading select-none">
+                            I agree with the
+                            <a href="#" class="text-fg-brand hover:underline"
+                                >terms and conditions</a
+                            >.
+                        </p>
+                    </label>
+                </div>
+                <button
+                    type="submit"
+                    class="box-border rounded-base border border-transparent bg-brand px-4 py-2.5 text-sm leading-5 font-medium text-white shadow-xs hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium focus:outline-none"
+                >
+                    Submit
+                </button>
+            </form>
+        </div>
+    </main>
 
-        <!-- Webpack will inject scripts here -->
-    </body>
-</html>
+    <!-- Footer with Contact Icons -->
+    <custom-footer></custom-footer>
+
+    <!-- Webpack will inject scripts here -->
+</body>
