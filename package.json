@@ -1,8 +1,7 @@
 {
     "name": "personal-web",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "Personal web page to describe professional and personal projects, providing an environment to share deeper and detailed explanations.",
-    "main": "index.js",
     "lint-staged": {
         "scripts/**/*.js": [
             "eslint --fix",
@@ -13,12 +12,14 @@
         "styles/*.css": "prettier --cache --write"
     },
     "scripts": {
+        "build-dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro",
         "compile-disk": "npx webpack --performance-hints warning",
         "compile-server": "npx webpack serve --stats-error-details",
         "linting": "npx lint-staged",
         "compile-css": "npx @tailwindcss/cli -i ./styles/styles.css -o ./dist/styles_tailwind.css",
-        "build": "gulp build",
-        "build-dev": "gulp build-dev",
         "test": "echo \"Error: no test specified\" && exit 1",
         "prepare": "husky"
     },
@@ -59,7 +60,7 @@
         "prettier": "^3.8.1",
         "prettier-plugin-tailwindcss": "^0.7.2",
         "svgo": "^4.0.0",
-        "tailwindcss": "^4.2.0",
+        "tailwindcss": "^4.2.1",
         "thread-loader": "^4.0.4",
         "webpack": "^5.105.2",
         "webpack-cli": "^6.0.1",
@@ -73,6 +74,8 @@
         "@babel/register": "^7.28.6",
         "@tailwindcss/cli": "^4.2.0",
         "@tailwindcss/postcss": "^4.2.0",
+        "@tailwindcss/vite": "^4.2.1",
+        "astro": "^5.18.0",
         "babel-loader": "^10.0.0",
         "copy-webpack-plugin": "^13.0.1",
         "flowbite": "^4.0.1",

@@ -1,6 +1,8 @@
 GREEN_COLOR  := \033[0;32m
 RESET_COLOR  := \033[0m
 
+install: ## install dependencies from package.json
+	npm install
 update-node-db:
 	npx update-browserslist-db@latest
 update-packages-latest:

@@ -10,7 +10,7 @@ class HeaderNavBar extends HTMLElement {
                 <!-- <div class="flex flex-wrap container justify-between items-center mx-auto p-4"> -->
                     <!-- Logo Section -->
                     <a href="#" class="flex ml-4 text-2xl items-center space-x-3 text-gray-700 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-500">
-                        <img src="/assets/logo/main_logo.svg" class="h-10" alt="Flowbite Logo" />
+                        <img src="/logo/main_logo.svg" class="h-10" alt="Flowbite Logo" />
                         <span class="self-center text-xl text-heading font-bold whitespace-nowrap">dplamarca</span>
                     </a>
 

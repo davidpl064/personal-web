@@ -21,9 +21,6 @@ const onToggleTheme = () => {
     }
 }
 
-const themeToggle = document.getElementById('theme-toggle')
-themeToggle.addEventListener('click', onToggleTheme)
-
 // Watch for system preference changes and update theme accordingly
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyDarkMode)
 
@@ -88,11 +85,17 @@ function filterSearchItems(query, items) {
     })
 }
 
-// Add event listeners for search inputs
-initInputSearchs()
+// Execute initialization after DOM loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Add event listeners for search inputs
+    const themeToggle = document.getElementById('theme-toggle')
+    themeToggle.addEventListener('click', onToggleTheme)
 
-// Get the current year
-const currentYear = new Date().getFullYear()
+    initInputSearchs()
 
-// Insert the year into the footer
-document.getElementById('current-year').textContent = currentYear
+    // Get the current year
+    const currentYear = new Date().getFullYear()
+
+    // Insert the year into the footer
+    document.getElementById('current-year').textContent = currentYear
+})

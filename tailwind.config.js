@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['pages/**/*.html', 'scripts/**/*.js', './node_modules/flowbite/**/*.js'],
+    content: ['src/pages/**/*.html', 'src/scripts/**/*.js', './node_modules/flowbite/**/*.js'],
     darkMode: 'selector',
     theme: {
         extend: {},
@@ -13,5 +13,4 @@ module.exports = {
             lower: 'lower-alpha',
         }
     },
-    // plugins: [require('flowbite/plugin')],
 }
