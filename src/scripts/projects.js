@@ -22,7 +22,7 @@ function handleCheckboxChange(event) {
     // Get associated label and tags
     /*     let checkboxList = document.getElementById('checkbox-list');
     labelCheckbox = checkboxList.querySelector(`label[for="${checkboxId}"]`); */
-    tag = event.target.dataset.tags
+    let tag = event.target.dataset.tags
 
     if (event.target.checked) {
         addFilterTag(tag)
@@ -54,7 +54,7 @@ function onActiveBadgesDismiss(event) {
     // Uncheck the associated checkbox
     if (checkbox) {
         checkbox.checked = false
-        tag = checkbox.dataset.tags
+        let tag = checkbox.dataset.tags
         removeFilterTag(tag)
     }
 
@@ -80,7 +80,7 @@ function filterProjectCards() {
         const cardTags = card.dataset.tags.split(' ')
         const isVisible = activeTagFilters.every((filter) => cardTags.includes(filter))
         // card.style.display = isVisible ? 'block' : 'none'
-        card.parentElement.hidden = !isVisible
+        card.hidden = !isVisible
     })
 }
 
@@ -98,7 +98,5 @@ function removeFilterTag(tag) {
 
 // Execute initialization after DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
-    customElements.whenDefined('checkbox-badge').then(() => {
-        initProjectFilters()
-    })
+    initProjectFilters()
 })

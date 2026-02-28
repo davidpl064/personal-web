@@ -1,0 +1,116 @@
+---
+import { getColorClasses, sanitizeDataTag } from '../scripts/badgeUtils.js'
+import { projectThumbs } from '../scripts/imageRegistry.js'
+
+const {
+    title = '',
+    'data-tags': dataTags = '[]',
+    'color-schemes': colorSchemes = '[]',
+    'image-key': imageKey = '',
+} = Astro.props
+
+const imageProjectThumb = projectThumbs[imageKey]
+
+// Parse JSON strings into an arrays
+const dataTagsArray = JSON.parse(dataTags)
+
+const colorSchemesRaw = Array.isArray(colorSchemes) ? colorSchemes : [colorSchemes]
+const colorSchemesArray = JSON.parse(colorSchemesRaw)
+
+const sanitizedDataTagsArray = sanitizeDataTag(dataTagsArray)
+
+// Add the symbol "#" to each tag
+const dataTagsArrayFormatted = sanitizedDataTagsArray.map((tag) => `#${tag}`).join(' ')
+
+const colorClassesArray = colorSchemesArray.map((scheme) => {
+    return getColorClasses(scheme)
+})
+---
+
+<figure class="mb-6 w-full flex-1 relative max-w-(--breakpoint-2xl) mx-auto overflow-hidden">
+    <img
+        class="absolute inset-0 h-full w-full object-cover"
+        src={imageProjectThumb.src}
+        alt={title}
+    />
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- Centered Title -->
+    <div class="absolute h-full top-1/2 left-1/2 -translate-x-1/2">
+        <h1
+            class="text-4xl md:text-6xl font-semibold tracking-wide uppercase text-white text-center"
+        >
+            {title}
+        </h1>
+    </div>
+
+    <!-- Bottom-left Tags -->
+    <figcaption class="absolute bottom-4 left-6 text-lg text-white">
+        <p class="text-base md:text-lg font-medium">
+            Status:
+            <span
+                class="inline-flex items-center bg-success-soft border border-success-subtle text-fg-success-strong text-sm font-medium leading-none px-2 py-1 rounded"
+            >
+                <svg
+                    class="w-3.5 h-3.5 me-1.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+                </svg>
+                Completed
+            </span>
+        </p>
+        <p class="text-base md:text-lg font-medium">
+            Documentation:
+            <span
+                class="inline-flex items-center bg-warning-soft border border-warning-subtle text-fg-warning text-sm font-medium leading-none px-2 py-1 rounded"
+            >
+                <svg
+                    class="w-3.5 h-3.5 me-1.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+                </svg>
+                In progress
+            </span>
+        </p>
+        <ul class="flex gap-2 mt-2">
+            <!-- Generate the badges for each tag dynamically -->
+            {
+                dataTagsArray.map((tag, index) => {
+                    const { badgeColorClass, borderColorClass } = colorClassesArray[index]
+
+                    return (
+                        <span
+                            class={`me-2 rounded border px-2.5 py-0.5 text-xs font-medium ${badgeColorClass} ${borderColorClass}`}
+                        >
+                            #{tag}
+                        </span>
+                    )
+                })
+            }
+        </ul>
+    </figcaption>
+</figure>

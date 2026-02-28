@@ -48,10 +48,10 @@ function initInputSearchs() {
 
     forms.forEach((form) => {
         const input = form.querySelector('input[type="search"]')
-        if (!input) return
+        // if (!input) return
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault()
+        form.addEventListener('submit', (event) => {
+            event.preventDefault()
 
             const query = input.value.toLowerCase()
             const targetSelector = input.dataset.searchTarget
@@ -69,19 +69,19 @@ function initInputSearchs() {
 // Functionality search input
 function filterSearchItems(query, items) {
     if (!query) {
-        items.forEach((item) => (item.parentElement.hidden = false))
+        items.forEach((item) => (item.hidden = false))
         return
     }
 
     items.forEach((item) => {
         const text = (
-            card.dataset.title +
+            item.dataset.title +
             ' ' +
-            card.dataset.tags +
+            item.dataset.tags +
             ' ' +
-            card.textContent
+            item.textContent
         ).toLowerCase()
-        item.parentElement.hidden = text.includes(query) ? false : true
+        item.hidden = text.includes(query) ? false : true
     })
 }
 

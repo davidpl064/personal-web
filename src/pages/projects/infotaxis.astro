@@ -1,19 +1,27 @@
-<body class="flex min-h-screen flex-col bg-white text-gray-700 dark:bg-gray-900 dark:text-gray-300">
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+import HeaderNavBar from '../../components/HeaderNavBar.astro'
+import ProjectHero from '../../components/ProjectHero.astro'
+---
+
+<BaseLayout
+    bodyClass="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+>
     <!-- Preloader for this page -->
     <div id="preloader">
         <div class="loader"></div>
     </div>
 
     <!-- Navbar Section -->
-    <header-navbar class="sticky top-0 z-20 w-full flex-none"></header-navbar>
+    <HeaderNavBar classesCustom="sticky top-0 z-20 w-full flex-none" />
 
-    <project-hero
-        class="mb-6 flex w-full flex-1"
+    <ProjectHero
         title="Infotaxis"
         data-tags='["MATLAB", "statistics", "simulation", "agriculture"]'
-        color-scheme='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
-    >
-    </project-hero>
+        color-schemes='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
+        image-key="infotaxis"
+    />
 
     <main class="mx-auto max-w-(--breakpoint-2xl)">
         <section class="mb-6 bg-white dark:bg-gray-900">
@@ -55,9 +63,4 @@
             </ul>
         </section>
     </main>
-
-    <!-- Footer with Contact Icons -->
-    <custom-footer></custom-footer>
-
-    <!-- Webpack will inject scripts here -->
-</body>
+</BaseLayout>

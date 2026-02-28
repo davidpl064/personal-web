@@ -16,8 +16,6 @@
         "build": "astro build",
         "preview": "astro preview",
         "astro": "astro",
-        "compile-disk": "npx webpack --performance-hints warning",
-        "compile-server": "npx webpack serve --stats-error-details",
         "linting": "npx lint-staged",
         "compile-css": "npx @tailwindcss/cli -i ./styles/styles.css -o ./dist/styles_tailwind.css",
         "test": "echo \"Error: no test specified\" && exit 1",

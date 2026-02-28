@@ -1,7 +1,9 @@
 ---
-import "../styles/global.css"
+import '../styles/global.css'
 
-const { title, bodyClass = "" } = Astro.props
+import Footer from '../components/Footer.astro'
+
+const { title, bodyClass = '' } = Astro.props
 ---
 
 <!doctype html>
@@ -9,7 +11,10 @@ const { title, bodyClass = "" } = Astro.props
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Personal portfolio showcasing projects and technical details." />
+		<meta
+			name="description"
+			content="Personal portfolio showcasing projects and technical details."
+		/>
 
 		<!-- Web Favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="/logo/favicon/apple-touch-icon.png" />
@@ -18,7 +23,7 @@ const { title, bodyClass = "" } = Astro.props
 		<link rel="manifest" href="/logo/favicon/site.webmanifest" />
 		<link rel="icon" type="image/svg+xml" href="/logo/favicon/favicon.svg" />
 		<link rel="icon" href="/logo/favicon/favicon.ico" />
-		
+
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 
@@ -47,12 +52,15 @@ const { title, bodyClass = "" } = Astro.props
 			)
 		</script>
 	</head>
-	<body>
+	<body class={bodyClass}>
 		<slot />
 
+		<!-- Footer with Contact Icons -->
+		<Footer />
+
 		<script type="module" src="/src/scripts/main.js"></script>
-		<script type="module" src="/src/scripts/custom_elements.js"></script>
-    	<script type="module" src="/src/scripts/external.js"></script>
+		<script type="module" src="/src/scripts/projects.js"></script>
+		<script type="module" src="/src/scripts/external.js"></script>
 	</body>
 </html>
 

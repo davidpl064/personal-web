@@ -1,11 +1,19 @@
-<body class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+import HeaderNavBar from '../../components/HeaderNavBar.astro'
+---
+
+<BaseLayout
+    bodyClass="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+>
     <!-- Preloader for this page -->
     <div id="preloader">
         <div class="loader"></div>
     </div>
 
     <!-- Navbar Section -->
-    <header-navbar class="sticky top-0 z-20 w-full flex-none"></header-navbar>
+    <HeaderNavBar classesCustom="sticky top-0 z-20 w-full flex-none" />
 
     <main class="flex flex-1 justify-center">
         <section
@@ -20,9 +28,4 @@
             </div>
         </section>
     </main>
-
-    <!-- Footer with Contact Icons -->
-    <custom-footer></custom-footer>
-
-    <!-- Webpack will inject scripts here -->
-</body>
+</BaseLayout>

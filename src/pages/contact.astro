@@ -1,11 +1,19 @@
-<body class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+import HeaderNavBar from '../components/HeaderNavBar.astro'
+---
+
+<BaseLayout
+    bodyClass="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+>
     <!-- Preloader for this page -->
     <div id="preloader">
         <div class="loader"></div>
     </div>
 
     <!-- Navbar Section -->
-    <header-navbar class="sticky top-0 z-20 w-full flex-none"></header-navbar>
+    <HeaderNavBar classesCustom="sticky top-0 z-20 w-full flex-none" />
 
     <main class="mx-auto mt-8 grow justify-center">
         <!-- Grid -->
@@ -114,7 +122,7 @@
                                     stroke-linecap="round"
                                     stroke-width="2"
                                     d="m3.5 5.5 7.893 6.036a1 1 0 0 0 1.214 0L20.5 5.5M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
-                                />
+                                ></path>
                             </svg>
                         </div>
                         <input
@@ -133,8 +141,7 @@
                         id="message"
                         rows="4"
                         class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium p-3.5 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
-                        placeholder="Write your thoughts here..."
-                    ></textarea>
+                        placeholder="Write your thoughts here..."></textarea>
                 </div>
                 <div class="mb-5 flex items-start">
                     <label for="remember-alternative" class="flex h-5 items-center">
@@ -162,9 +169,4 @@
             </form>
         </div>
     </main>
-
-    <!-- Footer with Contact Icons -->
-    <custom-footer></custom-footer>
-
-    <!-- Webpack will inject scripts here -->
-</body>
+</BaseLayout>

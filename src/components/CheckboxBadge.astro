@@ -1,0 +1,22 @@
+---
+import { getColorClasses, sanitizeDataTag } from '../scripts/badgeUtils.js'
+
+const { 'data-tag': dataTag = '', 'color-scheme': colorScheme = '' } = Astro.props
+
+const sanitizedDataTag = sanitizeDataTag(dataTag)
+const { textColorClass, borderColorClass, badgeColorClass, buttonColorClass, checkboxColorClass } =
+    getColorClasses(colorScheme)
+---
+
+<div class="flex items-center">
+    <input
+        id={`checkbox-${sanitizedDataTag}`}
+        type="checkbox"
+        data-tags={`#${sanitizedDataTag}`}
+        value=""
+        class={`checkbox-item h-4 w-4 rounded focus:ring-2 ${checkboxColorClass}`}
+    />
+    <label for={`checkbox-${sanitizedDataTag}`} class={`ms-2 text-sm font-medium ${textColorClass}`}
+        >#{dataTag}</label
+    >
+</div>

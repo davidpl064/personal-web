@@ -18,4 +18,8 @@
         font-family: 'Roboto', sans-serif;
         color: #d3d3d3;
     }
+
+    path {
+        color: inherit;
+    }
 }

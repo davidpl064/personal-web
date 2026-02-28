@@ -2,6 +2,8 @@
 import Welcome from '../components/Welcome.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
 
+import HeaderNavBar from '../components/HeaderNavBar.astro'
+
 import placeHolder from '../assets/place_holder.webp'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -16,7 +18,7 @@ import placeHolder from '../assets/place_holder.webp'
     </div>
 
     <!-- Navbar Section -->
-    <header-navbar class="fixed top-0 z-20 w-full flex-none"></header-navbar>
+    <HeaderNavBar classesCustom="fixed top-0 z-20 w-full flex-none" />
 
     <!-- Grid -->
     <div class="mb-4 grid h-screen grid-cols-1 lg:grid-cols-2">
@@ -428,7 +430,4 @@ import placeHolder from '../assets/place_holder.webp'
             </div>
         </section>
     </main>
-
-    <!-- Footer with Contact Icons -->
-    <custom-footer></custom-footer>
 </BaseLayout>

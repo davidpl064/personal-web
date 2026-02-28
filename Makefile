@@ -17,10 +17,12 @@ compile-style: ## install package in "editable" mode
 lint:  ## lint code
 	npm run linting
 	
-run-dev:  ## build web in development mode
-	NODE_ENV="development" npm run build-dev
-run:  ## build web in development mode
-	NODE_ENV="production" npm run build
+build-dev:  ## build web in development mode
+	npm run build-dev
+build:  ## build web in development mode
+	npm run build
+preview:  ## preview built web
+	npm run preview
 
 help:  ## this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
