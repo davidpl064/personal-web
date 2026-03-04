@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 import { getColorClasses, sanitizeDataTag } from '../scripts/badgeUtils.js'
 import { projectThumbs } from '../scripts/imageRegistry.js'
 
@@ -28,11 +30,12 @@ const colorClassesArray = colorSchemesArray.map((scheme) => {
 ---
 
 <figure class="mb-6 w-full flex-1 relative max-w-(--breakpoint-2xl) mx-auto overflow-hidden">
-    <img
-        class="absolute inset-0 h-full w-full object-cover"
-        src={imageProjectThumb.src}
+    <!-- <Image
+        class="absolute inset-0 h-full w-full object-cover py-2"
+        src={imageProjectThumb}
         alt={title}
-    />
+    /> -->
+    <!-- <Image src={imageProjectThumb} alt={title} /> -->
 
     <!-- Overlay -->
     <div class="absolute inset-0 bg-black/50"></div>

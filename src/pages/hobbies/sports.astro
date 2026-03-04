@@ -1,20 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-
-import HeaderNavBar from '../../components/HeaderNavBar.astro'
 ---
 
 <BaseLayout
-    bodyClass="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    body-class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    ,
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
 >
-    <!-- Preloader for this page -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Navbar Section -->
-    <HeaderNavBar classesCustom="sticky top-0 z-20 w-full flex-none" />
-
     <main class="flex flex-1 justify-center">
         <section
             class="grow content-center bg-gray-700 bg-[url('../assets/work_in_progress_3.jpeg')] bg-center bg-no-repeat bg-blend-multiply"

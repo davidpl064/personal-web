@@ -97,6 +97,6 @@ function removeFilterTag(tag) {
 }
 
 // Execute initialization after DOM loaded
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
     initProjectFilters()
 })

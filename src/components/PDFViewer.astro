@@ -1,0 +1,191 @@
+---
+const { src } = Astro.props
+---
+
+<pdf-viewer data-src={src}>
+    <div class="inline-flex flex-col">
+        <canvas id="the-canvas" class="mb-2"></canvas>
+        <div class="flex space-x-3 justify-center">
+            <div class="inline-flex rounded-base shadow-xs -space-x-px" role="group">
+                <button
+                    id="prev"
+                    data-tooltip-target="tooltip-previous"
+                    type="button"
+                    class="inline-flex items-center justify-center text-body bg-neutral-primary-soft rounded-s-base box-border border border-default hover:bg-neutral-secondary-medium hover:text-heading focus:ring-3 focus:ring-neutral-tertiary leading-5 w-6 h-6 focus:outline-none"
+                >
+                    <svg
+                        class="w-4 h-4"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        ><path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="m15 19-7-7 7-7"></path></svg
+                    >
+                </button>
+                <div
+                    id="tooltip-previous"
+                    role="tooltip"
+                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm leading-4 font-medium text-white transition-opacity duration-300 bg-dark rounded-base shadow-xs opacity-0 tooltip"
+                >
+                    Previous
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+                <button
+                    id="next"
+                    data-tooltip-target="tooltip-next"
+                    type="button"
+                    class="inline-flex items-center justify-center text-body bg-neutral-primary-soft rounded-e-base box-border border border-default hover:bg-neutral-secondary-medium hover:text-heading focus:ring-3 focus:ring-neutral-tertiary leading-5 w-6 h-6 focus:outline-none"
+                >
+                    <svg
+                        class="w-4 h-4"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        ><path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="m9 5 7 7-7 7"></path></svg
+                    >
+                </button>
+                <div
+                    id="tooltip-next"
+                    role="tooltip"
+                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm leading-4 font-medium text-white transition-opacity duration-300 bg-dark rounded-base shadow-xs opacity-0 tooltip"
+                >
+                    Next
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+            </div>
+            <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+        </div>
+    </div>
+</pdf-viewer>
+
+<script>
+    import * as pdfjsLib from 'pdfjs-dist'
+
+    class PDFViewer extends HTMLElement {
+        constructor() {
+            super()
+
+            // Per-instance state
+            this.pdfDoc = null
+            this.pageNum = 1
+            this.pageRendering = false
+            this.pageNumPending = null
+            this.scale = 0.8
+        }
+
+        connectedCallback() {
+            // Path to PDF
+            this.url = this.dataset.src
+
+            this.canvas = this.querySelector('#the-canvas')
+            this.ctx = this.canvas.getContext('2d')
+
+            pdfjsLib.GlobalWorkerOptions.workerSrc =
+                '../../node_modules/pdfjs-dist/build/pdf.worker.mjs'
+
+            this.querySelector('#prev').addEventListener('click', this.onPrevPage.bind(this))
+            this.querySelector('#next').addEventListener('click', this.onNextPage.bind(this))
+
+            /**
+             * Asynchronously downloads PDF.
+             */
+            pdfjsLib.getDocument(this.url).promise.then((pdfDoc_) => {
+                this.pdfDoc = pdfDoc_
+                this.querySelector('#page_count').textContent = this.pdfDoc.numPages
+
+                // Initial/first page rendering
+                this.renderPage(this.pageNum)
+            })
+        }
+
+        /**
+         * Get page info from document, resize canvas accordingly, and render page.
+         * @param num Page number.
+         */
+        renderPage(num) {
+            this.pageRendering = true
+            // Using promise to fetch the page
+            this.pdfDoc.getPage(num).then((page) => {
+                var viewport = page.getViewport({ scale: this.scale })
+                const outputScale = window.devicePixelRatio || 1
+
+                this.canvas.width = Math.floor(viewport.width * outputScale)
+                this.canvas.height = Math.floor(viewport.height * outputScale)
+
+                this.canvas.style.width = `${viewport.width}px`
+                this.canvas.style.height = `${viewport.height}px`
+
+                // Render PDF page into canvas context
+                var renderContext = {
+                    canvasContext: this.ctx,
+                    viewport: viewport,
+                    transform: [outputScale, 0, 0, outputScale, 0, 0],
+                }
+                var renderTask = page.render(renderContext)
+
+                // Wait for rendering to finish
+                renderTask.promise.then(() => {
+                    this.pageRendering = false
+                    if (this.pageNumPending !== null) {
+                        // New page rendering is pending
+                        this.renderPage(this.pageNumPending)
+                        this.pageNumPending = null
+                    }
+                })
+            })
+
+            // Update page counters
+            this.querySelector('#page_num').textContent = num
+        }
+
+        /**
+         * If another page rendering in progress, waits until the rendering is
+         * finised. Otherwise, executes rendering immediately.
+         */
+        queueRenderPage(num) {
+            if (this.pageRendering) {
+                this.pageNumPending = num
+            } else {
+                this.renderPage(num)
+            }
+        }
+
+        /**
+         * Displays previous page.
+         */
+        onPrevPage() {
+            if (this.pageNum <= 1) {
+                return
+            }
+            this.pageNum--
+            this.queueRenderPage(this.pageNum)
+        }
+
+        /**
+         * Displays next page.
+         */
+        onNextPage() {
+            if (this.pageNum >= this.pdfDoc.numPages) {
+                return
+            }
+            this.pageNum++
+            this.queueRenderPage(this.pageNum)
+        }
+    }
+    customElements.define('pdf-viewer', PDFViewer)
+</script>

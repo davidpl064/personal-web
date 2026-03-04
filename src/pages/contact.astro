@@ -1,20 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-
-import HeaderNavBar from '../components/HeaderNavBar.astro'
+import PDFViewer from '../components/PDFViewer.astro'
 ---
 
 <BaseLayout
-    bodyClass="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    body-class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    ,
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
 >
-    <!-- Preloader for this page -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Navbar Section -->
-    <HeaderNavBar classesCustom="sticky top-0 z-20 w-full flex-none" />
-
     <main class="mx-auto mt-8 grow justify-center">
         <!-- Grid -->
         <div class="mb-4 grid max-w-(--breakpoint-2xl) grid-cols-1 lg:grid-cols-2">
@@ -40,7 +33,7 @@ import HeaderNavBar from '../components/HeaderNavBar.astro'
                 <h2 class="text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">
                     Social Media
                 </h2>
-                <ul class="flex space-x-6 px-4">
+                <ul class="flex mb-3 space-x-6 px-4">
                     <li>
                         <a
                             href="mailto:davi.perlam@gmail.com"
@@ -72,6 +65,11 @@ import HeaderNavBar from '../components/HeaderNavBar.astro'
                         </a>
                     </li>
                 </ul>
+
+                <h2 class="text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">
+                    Resume
+                </h2>
+                <PDFViewer src="/resume.pdf" />
             </div>
 
             <!-- Wrapper second column -->

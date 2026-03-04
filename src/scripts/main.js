@@ -1,3 +1,5 @@
+import { initFlowbite } from 'flowbite'
+
 // Function to apply dark mode based on user or OS preference
 const applyDarkMode = () => {
     if (
@@ -24,24 +26,24 @@ const onToggleTheme = () => {
 // Watch for system preference changes and update theme accordingly
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyDarkMode)
 
-// Hide the preloader when the page is fully loaded
-window.addEventListener('load', function () {
-    const preloader = document.getElementById('preloader')
-    // preloader.style.display = 'none';  // Hide the preloader
+// // Hide the preloader when the page is fully loaded
+// window.addEventListener('load', function () {
+//     const preloader = document.getElementById('preloader')
+//     // preloader.style.display = 'none';  // Hide the preloader
 
-    // Simulate a loading delay (e.g., 2000 milliseconds = 2 seconds)
-    setTimeout(function () {
-        preloader.style.display = 'none' // Hide the preloader after the delay
-    }, 2000)
-})
+//     // Simulate a loading delay (e.g., 2000 milliseconds = 2 seconds)
+//     setTimeout(function () {
+//         preloader.style.display = 'none' // Hide the preloader after the delay
+//     }, 2000)
+// })
 
-// Show preloader on page navigation
-document.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', function (e) {
-        // Display the preloader when a link is clicked
-        document.getElementById('preloader').style.display = 'flex'
-    })
-})
+// // Show preloader on page navigation
+// document.querySelectorAll('a').forEach((link) => {
+//     link.addEventListener('click', function (e) {
+//         // Display the preloader when a link is clicked
+//         document.getElementById('preloader').style.display = 'flex'
+//     })
+// })
 
 function initInputSearchs() {
     const forms = document.querySelectorAll('form')
@@ -86,7 +88,9 @@ function filterSearchItems(query, items) {
 }
 
 // Execute initialization after DOM loaded
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
+    initFlowbite()
+
     // Add event listeners for search inputs
     const themeToggle = document.getElementById('theme-toggle')
     themeToggle.addEventListener('click', onToggleTheme)

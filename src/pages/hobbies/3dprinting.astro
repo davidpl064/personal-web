@@ -1,31 +1,166 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
 
-import HeaderNavBar from '../../components/HeaderNavBar.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import TopicHero from '../../components/TopicHero.astro'
+
+import imageHero from '../../assets/hobbies/3d_printing/hero_section.png'
+import prusaMK3 from '../../assets/hobbies/3d_printing/prusa_02.jpeg'
+
+import rcWH40KCards from '../../assets/hobbies/3d_printing/recreational_wh40k_cards.jpeg'
+import rcWH40KCounter from '../../assets/hobbies/3d_printing/recreational_wh40k_counter.jpeg'
+import rcBulbasaur from '../../assets/hobbies/3d_printing/recreational_bulbasaur.jpeg'
+import rcFan from '../../assets/hobbies/3d_printing/recreational_fan.jpeg'
+import rcA350 from '../../assets/hobbies/3d_printing/recreational_a350.jpg'
+import rcTRex from '../../assets/hobbies/3d_printing/recreational_trex.jpeg'
+
+import cheopsMain from '../../assets/hobbies/3d_printing/project_CHEOPS_model_main.png'
+import cheopsOpen from '../../assets/hobbies/3d_printing/project_CHEOPS_model_open.png'
+import quadcopterDIY from '../../assets/hobbies/3d_printing/project_diy_quadcopter.jpeg'
+import rover from '../../assets/hobbies/3d_printing/project_rover.jpg'
+import roverBody from '../../assets/hobbies/3d_printing/project_rover_body.jpeg'
+import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg'
 ---
 
 <BaseLayout
-    bodyClass="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    body-class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    ,
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
 >
-    <!-- Preloader for this page -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
+    <TopicHero title="3D Printing" image-hero={imageHero} />
 
-    <!-- Navbar Section -->
-    <HeaderNavBar classesCustom="sticky top-0 z-20 w-full flex-none" />
+    <main
+        class="flex flex-col flex-1 justify-center max-w-(--breakpoint-2xl) mx-auto px-4 py-4 lg:py-8"
+    >
+        <p class="text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            Democratization of 3D printing technologies has been a key event in history, mainly due
+            to following chacracteristics:
+            <ul
+                class="max-w-xl pl-4 py-2 space-y-1 text-lg md:py-4 text-body list-disc list-inside"
+            >
+                <li>No chain of production: flexibility to manufacture diverse models.</li>
+                <li>Very low cost compared to traditional manufacturing processes.</li>
+                <li>Very good tolerances and product quality.</li>
+            </ul>
+        </p>
+        <p class="text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            These characteristics define 3D printing as a perfect companion in scenarios where low
+            budget and quick iterations are the main requirements, which is usually the case for
+            many entrepeneurs or developers who want to test out their ideas. This was also the case
+            for me, as many of the projects I've been working on would have been impossible without
+            the manufacturing capabilities of 3D printing.
+        </p>
+        <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            My adventure began back in 2018, I was finishing my master's degree in Aerospace
+            Engineering and had a lot of ideas I wanted to realize, so I decided to buy my first 3D
+            printer, the Prusa MK3. For those who are not familiar with this brand, Prusa is a
+            european (Czech) company, characterized for the reliablity of their products along with
+            the backward compatibility, which is in my opinion, the key difference compared to other
+            brands. They always provide <span class="italic">upgrade kits</span>, so customers can
+            update older versions of the printer to the latest one. Prusa is also known for having a
+            very good customer support, providing a live chat 24/7. For these reasons, Prusa has
+            been one of the major actors in the market of general public 3D printers, and my "no
+            brainer" choice and recommendation, until recently ...
 
-    <main class="flex flex-1 justify-center">
-        <section
-            class="grow content-center bg-gray-700 bg-[url('../assets/work_in_progress_3.jpeg')] bg-center bg-no-repeat bg-blend-multiply"
-        >
-            <div class="mx-auto px-4 py-24 text-center lg:py-56">
-                <h1
-                    class="mb-4 text-4xl leading-none font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl"
-                >
-                    Work in progress, it'll be updated as soon as possible.
-                </h1>
+            <figure class="py-4 mx-auto max-w-lg relative overflow-hidden">
+                <Image class="h-auto max-w-full rounded-base" src={prusaMK3} alt={'Prusa MK3'} />
+                <figcaption class="mt-2 text-sm text-gray-500 text-center">Prusa MK3</figcaption>
+            </figure>
+        </p>
+
+        <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            As a proud engineer and DIY person, I'd opted for the "mount yourself" kit of the Prusa
+            MK3. The assembly process was very easy to follow (Prusa has some of the best docs I've
+            ever read) and has some surprises along the way (those famous gummy bears). Also, the
+            printer had a really good built-in calibration step, so once assembled, it took little
+            time to start printing. Quickly, I started to work on both, professional and hobbyist
+            projects:
+        </p>
+
+        <figure class="max-w-2xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="grid gap-4">
+                    <Image class="h-auto max-w-full rounded-base" src={rcWH40KCards} alt="" />
+                    <Image class="h-auto max-w-full rounded-base" src={rcWH40KCounter} alt="" />
+                </div>
+                <div class="grid gap-4">
+                    <Image class="h-auto max-w-full rounded-base" src={rcBulbasaur} alt="" />
+                    <Image class="h-auto max-w-full rounded-base" src={rcFan} alt="" />
+                </div>
+                <div class="grid gap-4">
+                    <Image class="h-auto max-w-full rounded-base" src={rcTRex} alt="" />
+                    <Image class="h-auto max-w-full rounded-base" src={rcA350} alt="" />
+                    <img
+                        class="h-auto max-w-full rounded-base"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
+                        alt=""
+                    />
+                    <img
+                        class="h-auto max-w-full rounded-base"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
+                        alt=""
+                    />
+                </div>
             </div>
+            <figcaption class="mt-2 text-sm text-gray-500 text-center">
+                Samples of recreational/hobbyist 3D printed models.
+            </figcaption>
+        </figure>
+
+        <figure class="max-w-2xl mt-8 mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="grid gap-4">
+                    <Image class="h-auto max-w-full rounded-base" src={cheopsMain} alt="" />
+                    <Image class="h-auto max-w-full rounded-base" src={cheopsOpen} alt="" />
+                </div>
+                <div class="grid gap-4">
+                    <Image class="h-auto max-w-full rounded-base" src={quadcopterDIY} alt="" />
+                </div>
+                <div class="grid gap-4">
+                    <Image class="h-auto max-w-full rounded-base" src={rover} alt="" />
+                    <Image class="h-auto max-w-full rounded-base" src={roverBody} alt="" />
+                    <Image class="h-auto max-w-full rounded-base" src={covidMasks} alt="" />
+                </div>
+            </div>
+            <figcaption class="mt-2 text-sm text-gray-500 text-center">
+                Samples of professional/technical 3D printed models.
+            </figcaption>
+        </figure>
+
+        <section class="bg-white dark:bg-gray-900">
+            <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                Multi-Material Printing
+            </h2>
+            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+                After getting some basic knowledge using the printer and the slicer, I wanted to try
+                more advance use cases, like printing with technical materials (ASA, TPU, PC, PA),
+                which provide better mechanical properties although it is harder to get good prints
+                with them, so tweaking some parameters was usually needed, at least until arrival of
+                the latest generation of 3D printers. Related with trying new materials, I got
+                interested in multi-material printing capabilities, which is basically the
+                capability to use several materials in the same print. This concept, which can seem
+                to be an aesthetic thing at first sight (as many makers use multi-material printing
+                for coloring prints mainly), opens up a new world of possibilities, to name a few:
+
+                <ul class="pl-4 py-2 space-y-1 text-lg md:py-4 text-body list-disc list-inside">
+                    <li>
+                        Better supports: materials with very different print temperatures can be
+                        used to lower support adhesion to the model and ease support separation.
+                    </li>
+                    <li>
+                        Structure optimization: based on expected load distribution over model
+                        structure, define optimal material (select material based on required
+                        mechanical properties).
+                    </li>
+                    <li>
+                        Functional parts: design models leveraging material properties to provide
+                        certain functionalities (like using flexible materials in hinges, ...).
+                    </li>
+                </ul>
+            </p>
         </section>
-    </main>
-</BaseLayout>
+        As the previous images shown, this tool allows you make a very diverse set of parts, so if you
+        have a curious mind and enjoy developing your own ideas, I'd definetly recommend you to buy a
+        3D printer.
+    </main></BaseLayout
+>

@@ -1,24 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
 
-import HeaderNavBar from '../../components/HeaderNavBar.astro'
-
 import CheckboxBadge from '../../components/CheckboxBadge.astro'
 import BadgeFilter from '../../components/BadgeFilter.astro'
 import ProjectCard from '../../components/ProjectCard.astro'
 ---
 
 <BaseLayout
-    bodyClass="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    body-class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    ,
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
 >
-    <!-- Preloader for this page -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Navbar Section -->
-    <HeaderNavBar classesCustom="sticky top-0 z-20 w-full flex-none" />
-
     <main class="grow px-4">
         <div class="flex items-center justify-center gap-8 py-4 md:py-8 lg:gap-16">
             <!-- Input search -->
@@ -205,7 +197,7 @@ import ProjectCard from '../../components/ProjectCard.astro'
                 initial-date="02/2016"
                 end-date="10/2016"
                 description="TDB"
-                rel-path-image="infotaxis"
+                rel-path-image="airship"
                 color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "tech-areas", "domain-industry"]'
                 data-tags='["MATLAB", "Arduino", "aircraft-design", "embedded-systems", "simulation", "aerospace"]'
             />
@@ -223,7 +215,7 @@ import ProjectCard from '../../components/ProjectCard.astro'
                 initial-date="09/2016"
                 end-date="12/2016"
                 description="TDB"
-                rel-path-image="infotaxis"
+                rel-path-image="optimization"
                 color-scheme='["programming-languages", "tech-areas"]'
                 data-tags='["MATLAB", "optimization"]'
             />
@@ -232,7 +224,7 @@ import ProjectCard from '../../components/ProjectCard.astro'
                 initial-date="03/2018"
                 end-date="03/2019"
                 description="TDB"
-                rel-path-image="infotaxis"
+                rel-path-image="cheops"
                 color-scheme='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
                 data-tags='["MATLAB", "numerical-calculus", "orbital-mechanics", "aerospace"]'
             />
@@ -241,10 +233,12 @@ import ProjectCard from '../../components/ProjectCard.astro'
                 initial-date="01/2018"
                 end-date="01/2022"
                 description="TDB"
-                rel-path-image="infotaxis"
+                rel-path-image="rover"
                 color-scheme='["programming-languages", "tech-areas", "tech-areas"]'
                 data-tags='["Arduino", "3D-printing", "electronics"]'
             />
         </div>
     </main>
+
+    <script src="/src/scripts/projects.js"></script>
 </BaseLayout>

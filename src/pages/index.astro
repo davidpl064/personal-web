@@ -2,23 +2,23 @@
 import Welcome from '../components/Welcome.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
 
-import HeaderNavBar from '../components/HeaderNavBar.astro'
-
 import placeHolder from '../assets/place_holder.webp'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<BaseLayout bodyClass="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-    <!-- <Welcome /> -->
+<BaseLayout
+    body-class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    ,
+    header-navbar-class="fixed top-0 z-20 w-full flex-none"
+>
     <!-- Preloader for this page -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
-    <!-- Navbar Section -->
-    <HeaderNavBar classesCustom="fixed top-0 z-20 w-full flex-none" />
+    <!-- <HeaderNavBar classesCustom="fixed top-0 z-20 w-full flex-none" /> -->
 
     <!-- Grid -->
     <div class="mb-4 grid h-screen grid-cols-1 lg:grid-cols-2">
@@ -242,7 +242,7 @@ import placeHolder from '../assets/place_holder.webp'
                     <h2
                         class="mb-6 text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100"
                     >
-                        About Me jolines
+                        About Me
                     </h2>
                     <p
                         class="text-justify text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300"

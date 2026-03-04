@@ -1,9 +1,16 @@
 ---
 import '../styles/global.css'
 
+import { ClientRouter } from 'astro:transitions'
+
+import HeaderNavBar from '../components/HeaderNavBar.astro'
 import Footer from '../components/Footer.astro'
 
-const { title, bodyClass = '' } = Astro.props
+const {
+	title,
+	'body-class': bodyClass = '',
+	'header-navbar-class': headerNavBarClass = '',
+} = Astro.props
 ---
 
 <!doctype html>
@@ -21,14 +28,11 @@ const { title, bodyClass = '' } = Astro.props
 		<link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon/favicon-16x16.png" />
 		<link rel="manifest" href="/logo/favicon/site.webmanifest" />
-		<link rel="icon" type="image/svg+xml" href="/logo/favicon/favicon.svg" />
+		<!-- <link rel="icon" type="image/svg+xml" href="/logo/favicon/favicon.svg" /> -->
 		<link rel="icon" href="/logo/favicon/favicon.ico" />
 
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-
-		<!-- Compiled Tailwind CSS
-		<link href="/styles/styles_tailwind.css" rel="stylesheet" /> -->
 
 		<!-- Font Awesome for Icons -->
 		<link
@@ -51,16 +55,21 @@ const { title, bodyClass = '' } = Astro.props
 						window.matchMedia('(prefers-color-scheme: dark)').matches)
 			)
 		</script>
+
+		<!-- Page transitions -->
+		<ClientRouter />
 	</head>
 	<body class={bodyClass}>
+		<!-- Navbar Section -->
+		<HeaderNavBar classesCustom={headerNavBarClass} />
+
 		<slot />
 
 		<!-- Footer with Contact Icons -->
 		<Footer />
 
-		<script type="module" src="/src/scripts/main.js"></script>
-		<script type="module" src="/src/scripts/projects.js"></script>
-		<script type="module" src="/src/scripts/external.js"></script>
+		<script src="/src/scripts/main.js"></script>
+		<script src="/src/scripts/external.js"></script>
 	</body>
 </html>
 
