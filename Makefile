@@ -10,9 +10,6 @@ update-packages-latest:
 	ncu
 	ncu -u
 	npm install
-compile-style: ## install package in "editable" mode
-	npm run compile-css
-	@echo "Ouput CSS style files in $(GREEN_COLOR)./dist/styles_tailwind.css$(RESET_COLOR)"
 
 lint:  ## lint code
 	npm run linting
@@ -21,6 +18,7 @@ build-dev:  ## build web in development mode
 	npm run build-dev
 build:  ## build web in development mode
 	npm run build
+	
 preview:  ## preview built web
 	npm run preview
 

@@ -17,7 +17,6 @@
         "preview": "astro preview",
         "astro": "astro",
         "linting": "npx lint-staged",
-        "compile-css": "npx @tailwindcss/cli -i ./styles/styles.css -o ./dist/styles_tailwind.css",
         "test": "echo \"Error: no test specified\" && exit 1",
         "prepare": "husky"
     },
