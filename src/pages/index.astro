@@ -1,8 +1,13 @@
 ---
-import Welcome from '../components/Welcome.astro'
+import { Image } from 'astro:assets'
+
 import BaseLayout from '../layouts/BaseLayout.astro'
 
-import placeHolder from '../assets/place_holder.webp'
+import newsCover from '../assets/news_cover.png'
+import pythonTemplateThumb from '../assets/projects/thumbnails/python_template.png'
+import cPlusPlusTemplateThumb from '../assets/projects/thumbnails/cplusplus_template.png'
+import tiltPlaneThumb from '../assets/projects/thumbnails/tiltplane.jpg'
+import roverThumb from '../assets/projects/thumbnails/rover.png'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -59,19 +64,17 @@ import placeHolder from '../assets/place_holder.webp'
                         class="relative float-left -mr-[100%] hidden w-full duration-1000 ease-in-out"
                         data-carousel-item
                     >
-                        <img
-                            src="https://mdbootstrap.com/img/new/textures/full/243.jpg"
+                        <Image
                             class="block h-screen w-full object-cover object-left"
-                            alt="..."
+                            src={newsCover}
+                            alt="C++ Template"
                         />
+
                         <div
-                            class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block"
+                            class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-gray-800 md:block"
                         >
-                            <h5 class="mb-3 text-xl">15 years of experience in the IT industry</h5>
-                            <p class="mb-3">
-                                I am in love with technology and have spent half my life developing
-                                it
-                            </p>
+                            <h5 class="mb-3 text-gray-800 text-xl">Highlights!</h5>
+                            <p class="mb-3">Latest projects and topic articles</p>
                         </div>
                     </div>
                     <!-- Item 2 -->
@@ -79,10 +82,10 @@ import placeHolder from '../assets/place_holder.webp'
                         class="relative float-left -mr-[100%] hidden w-full duration-1000 ease-in-out"
                         data-carousel-item
                     >
-                        <img
-                            src="https://mdbootstrap.com/img/new/textures/full/102.jpg"
+                        <Image
                             class="block h-screen w-full object-cover object-left"
-                            alt="..."
+                            src={tiltPlaneThumb}
+                            alt="Tilt Plane Project"
                         />
                     </div>
                     <!-- Item 3 -->
@@ -90,10 +93,10 @@ import placeHolder from '../assets/place_holder.webp'
                         class="relative float-left -mr-[100%] hidden w-full duration-1000 ease-in-out"
                         data-carousel-item
                     >
-                        <img
-                            src="https://mdbootstrap.com/img/new/textures/full/107.jpg"
+                        <Image
                             class="block h-screen w-full object-cover object-left"
-                            alt="..."
+                            src={cPlusPlusTemplateThumb}
+                            alt="C++ Template"
                         />
                     </div>
                     <!-- Item 4 -->
@@ -101,10 +104,10 @@ import placeHolder from '../assets/place_holder.webp'
                         class="relative float-left -mr-[100%] hidden w-full duration-1000 ease-in-out"
                         data-carousel-item
                     >
-                        <img
-                            src={placeHolder.src}
+                        <Image
                             class="block h-screen w-full object-cover object-left"
-                            alt="..."
+                            src={pythonTemplateThumb}
+                            alt="Python Template"
                         />
                     </div>
                     <!-- Item 5 -->
@@ -112,10 +115,10 @@ import placeHolder from '../assets/place_holder.webp'
                         class="relative float-left -mr-[100%] hidden w-full duration-1000 ease-in-out"
                         data-carousel-item
                     >
-                        <img
-                            src={placeHolder.src}
+                        <Image
                             class="block h-screen w-full object-cover object-left"
-                            alt="..."
+                            src={roverThumb}
+                            alt="Rover"
                         />
                     </div>
                 </div>
@@ -217,22 +220,6 @@ import placeHolder from '../assets/place_holder.webp'
     <!-- Grid -->
 
     <main class="">
-        <!-- Hero Section -->
-        <!-- <section
-            class="bg-[assets/erin-lindford.jpg] bg-gray-700 bg-center bg-no-repeat bg-blend-multiply"
-        >
-            <div class="mx-auto max-w-(--breakpoint-xl) px-4 py-24 text-center lg:py-56">
-                <h1
-                    class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl"
-                >
-                    Welcome to DPL
-                </h1>
-                <p class="mb-8 text-lg font-normal text-gray-300 sm:px-16 lg:px-48 lg:text-xl">
-                    A glimpse into my work, projects, and passions. Discover what drives me!
-                </p>
-            </div>
-        </section> -->
-
         <!-- Brief Introduction Section -->
         <section class="bg-white dark:bg-gray-900">
             <div
@@ -285,20 +272,22 @@ import placeHolder from '../assets/place_holder.webp'
                     <h2
                         class="mb-6 text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100"
                     >
-                        Navigate the Journey cacs
+                        Navigate the Journey
                     </h2>
                     <p
                         class="mb-3 text-justify text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300"
                     >
                         This web was conceived with a dual objective in mind: on one hand, it was
                         meant to be a place where I can share my passions, both personal and
-                        professional ones, with the level of detail and complexity I consider
-                        appropiate. Moreover, I wanted that place to feel like my own, so developing
-                        my own website sounded like the perfect match. On the other hand, this web
-                        is meant to act like a beacon for those who also share my interests, and to
-                        tend a bridge towards collaboration, whereas that is having a debate,
-                        sharing information or even starting together an exciting project. I
-                        encourage every reader to feel free on getting in contact with me.
+                        professional ones, with proper level of detail and complexity and I wanted
+                        that place to feel like my own, so developing my own website sounded like
+                        the perfect match. On the other hand, this web is meant to act like a beacon
+                        for those who also share my interests, and to tend a bridge towards
+                        collaboration, whereas that is having a debate, sharing information or even
+                        starting together an exciting project. I encourage every reader to feel free
+                        on getting in <a href="/contact" class="text-fg-brand hover:underline"
+                            >contact</a
+                        > with me.
                     </p>
                     <p
                         class="mb-3 text-justify text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300"
@@ -325,7 +314,8 @@ import placeHolder from '../assets/place_holder.webp'
                         >
                             <span class="font-semibold text-gray-900 dark:text-white">Hobbies:</span
                             >
-                            describes activities I really enjoy and were I spent most part of my free-time.
+                            free time activities I really enjoy, some of them related to my technical
+                            background, which I want to share and maybe inspire anothers.
                             <ul
                                 class="mt-2 list-inside list-roman space-y-1 ps-5 text-gray-700 md:text-xl dark:text-gray-300"
                             >
@@ -339,8 +329,7 @@ import placeHolder from '../assets/place_holder.webp'
                             <span class="font-semibold text-gray-900 dark:text-white"
                                 >Insights:</span
                             >
-                            blog-like space to discuss/share topics I found interesting or related to
-                            projects I'm working on.
+                            blog-like space to discuss/share specific topics.
                         </li>
                     </ol>
                 </div>

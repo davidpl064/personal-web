@@ -40,6 +40,7 @@
         "astro": "^5.18.0",
         "flowbite": "^4.0.1",
         "pdfjs-dist": "^5.4.624",
+        "simple-datatables": "^10.2.0",
         "tailwindcss": "^4.2.1"
     }
 }

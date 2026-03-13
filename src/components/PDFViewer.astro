@@ -4,7 +4,7 @@ const { src } = Astro.props
 
 <pdf-viewer data-src={src}>
     <div class="inline-flex flex-col">
-        <canvas id="the-canvas" class="mb-2"></canvas>
+        <canvas id="the-canvas" class="mb-2 border"></canvas>
         <div class="flex space-x-3 justify-center">
             <div class="inline-flex rounded-base shadow-xs -space-x-px" role="group">
                 <button
@@ -85,7 +85,7 @@ const { src } = Astro.props
             this.pageNum = 1
             this.pageRendering = false
             this.pageNumPending = null
-            this.scale = 0.8
+            this.scale = 1.4
         }
 
         connectedCallback() {

@@ -7,11 +7,11 @@ import ProjectCard from '../../components/ProjectCard.astro'
 ---
 
 <BaseLayout
-    body-class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
     ,
     header-navbar-class="sticky top-0 z-20 w-full flex-none"
 >
-    <main class="grow px-4">
+    <main class="flex-1 px-4">
         <div class="flex items-center justify-center gap-8 py-4 md:py-8 lg:gap-16">
             <!-- Input search -->
             <form class="mr-8 max-w-md w-full">
@@ -59,12 +59,29 @@ import ProjectCard from '../../components/ProjectCard.astro'
             <button
                 id="button-filter-tags"
                 data-dropdown-toggle="dropdown-filter-tags"
-                class="inline-flex items-center rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="inline-flex space-x-3 items-center rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button"
             >
-                Filter
                 <svg
-                    class="ms-3 h-2.5 w-2.5"
+                    class="h-4 w-4"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                        d="M18.796 4H5.204a1 1 0 0 0-.753 1.659l5.302 6.058a1 1 0 0 1 .247.659v4.874a.5.5 0 0 0 .2.4l3 2.25a.5.5 0 0 0 .8-.4v-7.124a1 1 0 0 1 .247-.659l5.302-6.059c.566-.646.106-1.658-.753-1.658Z"
+                    ></path>
+                </svg>
+
+                <span>Filter</span>
+                <svg
+                    class="h-2.5 w-2.5"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -98,6 +115,9 @@ import ProjectCard from '../../components/ProjectCard.astro'
                     </li>
                     <li>
                         <CheckboxBadge color-scheme="programming-languages" , data-tag="Arduino" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="programming-languages" , data-tag="Python" />
                     </li>
                     <li>
                         <CheckboxBadge color-scheme="tech-areas" , data-tag="statistics" />
@@ -154,6 +174,7 @@ import ProjectCard from '../../components/ProjectCard.astro'
                 <BadgeFilter color-scheme="programming-languages" data-tag="MATLAB" />
                 <BadgeFilter color-scheme="programming-languages" data-tag="C++" />
                 <BadgeFilter color-scheme="programming-languages" data-tag="Arduino" />
+                <BadgeFilter color-scheme="programming-languages" data-tag="Python" />
                 <BadgeFilter color-scheme="tech-areas" , data-tag="statistics" />
                 <BadgeFilter color-scheme="tech-areas" , data-tag="embedded-systems" />
                 <BadgeFilter color-scheme="tech-areas" data-tag="aircraft-design" />
@@ -174,9 +195,41 @@ import ProjectCard from '../../components/ProjectCard.astro'
             class="grid grid-cols-2 justify-items-center gap-4 items-start py-8 md:grid-cols-3 lg:px-8 lg:py-16"
         >
             <ProjectCard
+                title="C++ Template"
+                initial-date="01/2026"
+                status="maintained"
+                description="TDB"
+                rel-path-project="projects/cplusplus-template"
+                rel-path-image="cpluplus_template"
+                color-scheme='["programming-languages"]'
+                data-tags='["C++"]'
+            />
+            <ProjectCard
+                title="Python Template"
+                initial-date="05/2025"
+                status="maintained"
+                description="TDB"
+                rel-path-project="projects/python-template"
+                rel-path-image="python_template"
+                color-scheme='["programming-languages"]'
+                data-tags='["Python"]'
+            />
+            <ProjectCard
+                title="Tiltplane"
+                initial-date="05/2025"
+                end-date="08/2025"
+                status="completed"
+                description="TDB"
+                rel-path-project="projects/infotaxis"
+                rel-path-image="tiltplane"
+                color-scheme='["programming-languages", "tech-areas", "tech-areas", "tech-areas", "domain-industry"]'
+                data-tags='["C++", "embedded-systems", "3D-printing", "electronics", "aerospace"]'
+            />
+            <ProjectCard
                 title="Infotaxis"
                 initial-date="11/2015"
                 end-date="08/2016"
+                status="completed"
                 description="TDB"
                 rel-path-project="projects/infotaxis"
                 rel-path-image="infotaxis"
@@ -187,6 +240,7 @@ import ProjectCard from '../../components/ProjectCard.astro'
                 title="Quadcopter DIY"
                 initial-date="06/2015"
                 end-date="03/2016"
+                status="completed"
                 description="TDB"
                 rel-path-image="quadcopter"
                 color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
@@ -196,6 +250,7 @@ import ProjectCard from '../../components/ProjectCard.astro'
                 title="Autonomous Airship"
                 initial-date="02/2016"
                 end-date="10/2016"
+                status="completed"
                 description="TDB"
                 rel-path-image="airship"
                 color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "tech-areas", "domain-industry"]'
@@ -205,8 +260,9 @@ import ProjectCard from '../../components/ProjectCard.astro'
                 title="Ground Station"
                 initial-date="11/2016"
                 end-date="08/2017"
+                status="completed"
                 description="TDB"
-                rel-path-image="infotaxis"
+                rel-path-image="ground_station"
                 color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
                 data-tags='["Qt", "C++", "front-end", "MAVLink", "comms"]'
             />
@@ -214,6 +270,7 @@ import ProjectCard from '../../components/ProjectCard.astro'
                 title="Genetic Algorithms"
                 initial-date="09/2016"
                 end-date="12/2016"
+                status="completed"
                 description="TDB"
                 rel-path-image="optimization"
                 color-scheme='["programming-languages", "tech-areas"]'
@@ -223,6 +280,7 @@ import ProjectCard from '../../components/ProjectCard.astro'
                 title="CHEOPS"
                 initial-date="03/2018"
                 end-date="03/2019"
+                status="completed"
                 description="TDB"
                 rel-path-image="cheops"
                 color-scheme='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
@@ -232,6 +290,7 @@ import ProjectCard from '../../components/ProjectCard.astro'
                 title="Rover"
                 initial-date="01/2018"
                 end-date="01/2022"
+                status="completed"
                 description="TDB"
                 rel-path-image="rover"
                 color-scheme='["programming-languages", "tech-areas", "tech-areas"]'

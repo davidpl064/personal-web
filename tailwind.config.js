@@ -11,6 +11,6 @@ module.exports = {
             square: 'square',
             roman: 'upper-roman',
             lower: 'lower-alpha',
-        }
+        },
     },
 }

@@ -4,7 +4,7 @@ import { Image } from 'astro:assets'
 const { title = '', 'image-hero': imageHero = '' } = Astro.props
 ---
 
-<div class="flex flex-col max-w-(--breakpoint-2xl) mx-auto">
+<div class="flex flex-col max-w-(--breakpoint-xl) mx-auto">
     <figure class="mb-4 w-full relative overflow-hidden max-h-[60vh]">
         <Image class="inset-0 w-full object-cover" src={imageHero} alt={title} />
 
@@ -25,7 +25,7 @@ const { title = '', 'image-hero': imageHero = '' } = Astro.props
             [&>span:not(:last-child)]:after:content-['|']
             [&>span:not(:last-child)]:after:mx-2"
     >
-        <span>Updated: February 3, 2026</span>
+        <span>Updated: March 09, 2026</span>
         <span></span>
         <span></span>
     </div>
