@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+import ProjectHero from '../../components/ProjectHero.astro'
+---
+
+<BaseLayout
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    ,
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
+>
+    <main
+        class="grow content-center bg-gray-700 bg-[url('../assets/work_in_progress_3.jpeg')] bg-center bg-no-repeat bg-blend-multiply"
+    >
+        <div class="mx-auto px-4 py-24 text-center lg:py-56">
+            <h1
+                class="mb-4 text-4xl leading-tight font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl"
+            >
+                Work in progress, it'll be updated as soon as possible.
+            </h1>
+        </div>
+    </main>
+</BaseLayout>
