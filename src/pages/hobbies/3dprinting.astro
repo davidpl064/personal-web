@@ -6,6 +6,9 @@ import TopicHero from '../../components/TopicHero.astro'
 
 import imageHero from '../../assets/hobbies/3d_printing/hero_section.png'
 import prusaMK3 from '../../assets/hobbies/3d_printing/prusa_02.jpeg'
+import prusaMMU from '../../assets/hobbies/3d_printing/prusa_mmu.jpg'
+import bambulabX1C from '../../assets/hobbies/3d_printing/bambulab_x1c.jpeg'
+import elegooMars from '../../assets/hobbies/3d_printing/resin_elegoo_01.jpg'
 
 import rcWH40KCards from '../../assets/hobbies/3d_printing/recreational_wh40k_cards.jpeg'
 import rcWH40KCounter from '../../assets/hobbies/3d_printing/recreational_wh40k_counter.jpeg'
@@ -23,20 +26,20 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
 ---
 
 <BaseLayout
-    body-class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
     ,
     header-navbar-class="sticky top-0 z-20 w-full flex-none"
 >
     <TopicHero title="3D Printing" image-hero={imageHero} />
 
     <main
-        class="flex flex-col flex-1 justify-center max-w-(--breakpoint-2xl) mx-auto px-4 py-4 lg:py-8"
+        class="flex flex-col flex-1 justify-center max-w-(--breakpoint-xl) mx-auto px-4 py-4 lg:py-8"
     >
         <p class="text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             Democratization of 3D printing technologies has been a key event in history, mainly due
             to following chacracteristics:
             <ul
-                class="max-w-xl pl-4 py-2 space-y-1 text-lg md:py-4 text-body list-disc list-inside"
+                class="max-w-xl ps-5 py-2 space-y-1 text-lg md:py-4 text-body list-disc list-inside"
             >
                 <li>No chain of production: flexibility to manufacture diverse models.</li>
                 <li>Very low cost compared to traditional manufacturing processes.</li>
@@ -54,14 +57,27 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
             My adventure began back in 2018, I was finishing my master's degree in Aerospace
             Engineering and had a lot of ideas I wanted to realize, so I decided to buy my first 3D
             printer, the Prusa MK3. For those who are not familiar with this brand, Prusa is a
-            european (Czech) company, characterized for the reliablity of their products along with
-            the backward compatibility, which is in my opinion, the key difference compared to other
-            brands. They always provide <span class="italic">upgrade kits</span>, so customers can
-            update older versions of the printer to the latest one. Prusa is also known for having a
-            very good customer support, providing a live chat 24/7. For these reasons, Prusa has
-            been one of the major actors in the market of general public 3D printers, and my "no
-            brainer" choice and recommendation, until recently ...
-
+            european (Czech) company, characterized for:
+            <ol class="ps-5 mt-2 space-y-1 text-lg text-body list-decimal list-inside">
+                <li>
+                    Product support: backward compatibility, <span class="text-bold">RepRap</span> origins,
+                    customer support. They always provide <span class="italic">upgrade kits</span>,
+                    so customers can update older versions of the printer to the latest one, and
+                    their customer support is very good, having a live chat 24/7.
+                </li>
+                <li>
+                    Open-source philosophy: in software (printer firmware and slicer) and hardware.
+                </li>
+                <li>Reliability and excellent quiality/price ratio.</li>
+                <li>
+                    EU-based: as a european citizen, supporting industrial development in EU is a
+                    plus.
+                </li>
+            </ol>
+        </p>
+        <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            For these reasons, Prusa has been one of the major actors in the market of general
+            public 3D printers, and my "no brainer" choice and recommendation, until recently ...
             <figure class="py-4 mx-auto max-w-lg relative overflow-hidden">
                 <Image class="h-auto max-w-full rounded-base" src={prusaMK3} alt={'Prusa MK3'} />
                 <figcaption class="mt-2 text-sm text-gray-500 text-center">Prusa MK3</figcaption>
@@ -139,28 +155,293 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                 the latest generation of 3D printers. Related with trying new materials, I got
                 interested in multi-material printing capabilities, which is basically the
                 capability to use several materials in the same print. This concept, which can seem
-                to be an aesthetic thing at first sight (as many makers use multi-material printing
-                for coloring prints mainly), opens up a new world of possibilities, to name a few:
+                to be an aesthetic thing at first (as many makers use multi-material printing for
+                coloring prints mainly), opens up a new world of possibilities, to name a few:
 
-                <ul class="pl-4 py-2 space-y-1 text-lg md:py-4 text-body list-disc list-inside">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 items-center">
+                    <ul class="pl-4 py-2 space-y-4 text-lg md:py-4 text-body list-disc list-inside">
+                        <li>
+                            Better supports: materials with very different print temperatures can be
+                            used to lower support adhesion to the model and ease support separation.
+                        </li>
+                        <li>
+                            Structure optimization: based on expected load distribution over model
+                            structure, define optimal material (select material based on required
+                            mechanical properties).
+                        </li>
+                        <li>
+                            Functional parts: design models leveraging material properties to
+                            provide certain functionalities (like using flexible materials in
+                            hinges, ...).
+                        </li>
+                    </ul>
+                    <Image class="h-auto max-w-xs mx-auto rounded-base" src={prusaMMU} alt="" />
+                </div>
+            </p>
+            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+                As shown in the image above, in 2019 I decided to put one step into multi-material
+                printing by acquiring the multi-material module from Prusa, the so called MMU.
+                Although it was nice to test out the possibilities of multi-material printing, it
+                was a nightmare to work with the MMU, requiring a lot of tweaking until getting
+                reliable prints. This product was a huge dissapointment, and felt like an unfinished
+                prototypal thing. In fact, during this time, I started to notice some lazyness from
+                Prusa, while other brands (most of them chinese ones), were trying to get into the
+                market by pushing technological advancements. This feeling grew in the following
+                years, as the successor of the famous Prusa MK3 didn't arrive. There were some minor
+                updates like the MK3S, but major requests from makers (like bigger print volume,
+                higher printing speeds, input shaper, close printer, better multi-material module)
+                were still missing.
+            </p>
+            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+                This lack of innovation along with emergence of very good alternatives, ended in
+                2024 with my switch to Bambulab. Bambulab is a chinese company, which started as a
+                crowdfunding campaign in Kickstarter, being its main selling point the incorporation
+                of latest technologies at a reasonable price. This completely caught up Prusa, which
+                rapidly tried to answer releasing the long-awaited Prusa MK4, although it was in a
+                very inmature state, and wasn't prepared to compete with Bambulab's models.
+                <figure class="py-4 mx-auto max-w-xs relative overflow-hidden">
+                    <Image
+                        class="h-auto max-w-full rounded-base"
+                        src={bambulabX1C}
+                        alt={'Bambulab X1C'}
+                    />
+                    <figcaption class="mt-2 text-sm text-gray-500 text-center">
+                        Bambulab X1C printer with AMS module
+                    </figcaption>
+                </figure>
+            </p>
+            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+                Bambulab did answer most of improvements I was expecting for years (like the ones
+                I've aforementioned) and also came up with extra ones:
+                <ul class="pl-4 py-2 space-y-4 text-lg md:py-4 text-body list-disc list-inside">
                     <li>
-                        Better supports: materials with very different print temperatures can be
-                        used to lower support adhesion to the model and ease support separation.
+                        Multi-material: AMS (Automatic Material System) module was a solid product,
+                        providing a closed environment to extend filament lifespan, as it keeps them
+                        isolated from humidty and dust.
                     </li>
                     <li>
-                        Structure optimization: based on expected load distribution over model
-                        structure, define optimal material (select material based on required
-                        mechanical properties).
+                        Automated first layer calibration: no need of manually calibrating your
+                        own's bed parameters, which is very handy when switching between several
+                        print sheets. Calibration is performed by using a Lidar laser.
                     </li>
-                    <li>
-                        Functional parts: design models leveraging material properties to provide
-                        certain functionalities (like using flexible materials in hinges, ...).
-                    </li>
+                    <li>Connectivity: built-in Wifi, Mobile App</li>
                 </ul>
             </p>
+            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+                Nevertheless, not everything was gold with Bambulab. I've never liked the idea of
+                supporting companies that embrace the idea of closed environments, meaning their
+                products are designed and meant to work only using their software, hardware, addons,
+                etc. Moreover, Bambulab started their own slicer based on Prusa's open source
+                slicer, PrusaSlicer, and afterwards made it propietary, which I think is a very
+                hypocritical and dishonourable thing to do. In conclusion, I have conflicting
+                feelings with Bambulab, I'm amazed by the quality, innovation and value for money of
+                their products, but really dislike their propietary policiy. The good thing for
+                customers, is that Bambulab's entry in the market woke up Prusa, and in the recent
+                years they're closing the gap in terms of technologies, capabilities and innovation.
+            </p>
         </section>
-        As the previous images shown, this tool allows you make a very diverse set of parts, so if you
-        have a curious mind and enjoy developing your own ideas, I'd definetly recommend you to buy a
-        3D printer.
-    </main></BaseLayout
->
+
+        <section class="bg-white dark:bg-gray-900">
+            <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                SLA Technology
+            </h2>
+            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+                3D printing is an additive manufacturing process, as raw material is added to build
+                the final piece. FDM is the most extended and well-known 3D printing technology. FDM
+                stands for Fused Deposition Modeling, as the raw filament is fused in the extruder
+                and deposited by layers in the printed part. However, there are several alternatives
+                to FDM, which are getting more popular for the general public, being SLA its main
+                rival.
+            </p>
+            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+                SLA stands for Stereolithography, a proccess in which a liquid polymer (a resin), is
+                solidified by means of a chemical reaction called photopolymerization. This reaction
+                occurs when the resin is put under a source of UV light, which supplies enough
+                energy to start the reaction. So SLA prints each layer by using a UV laser to
+                project each section of a 3D model over the surface of the resin.
+                <div class="grid md:grid-cols-2">
+                    <div
+                        class="w-full max-w-sm p-6 bg-neutral-primary-soft border border-default rounded-base shadow-xs mx-auto"
+                    >
+                        <h5 class="mb-4 text-xl font-medium text-body">Pros</h5>
+                        <ul role="list" class="space-y-4 my-6">
+                            <li class="flex items-center">
+                                <svg
+                                    class="w-5 h-5 shrink-0 text-fg-success me-1.5"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    ><path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                    ></path></svg
+                                >
+                                <span class="text-body"
+                                    >Lower print times: each layer is typically printed at once
+                                    (depends on type of laser projector).</span
+                                >
+                            </li>
+                            <li class="flex items-center">
+                                <svg
+                                    class="w-5 h-5 shrink-0 text-fg-success me-1.5"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    ><path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                    ></path></svg
+                                >
+                                <span class="text-body"
+                                    >Better quality: greater XY resolution of projectors allows for
+                                    better details, quality and lower tolerances.
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="w-full max-w-sm p-6 bg-neutral-primary-soft border border-default rounded-base shadow-xs mx-auto"
+                    >
+                        <h5 class="mb-4 text-xl font-medium text-body">Cons</h5>
+                        <ul role="list" class="space-y-4 my-6">
+                            <li class="flex items-center">
+                                <svg
+                                    class="w-5 h-5 shrink-0 text-fg-danger me-1.5"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    ><path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                    ></path></svg
+                                >
+                                <span class="text-body"
+                                    >Health hazards: are more severe, as resin emits vapours that
+                                    are dangerous to breathe and contact of the resin with the skin
+                                    must be avoided. Therefore, wearing protective equipment is a
+                                    must: mask, gloves.</span
+                                >
+                            </li>
+                            <li class="flex items-center">
+                                <svg
+                                    class="w-5 h-5 shrink-0 text-fg-danger me-1.5"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    ><path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                    ></path></svg
+                                >
+                                <span class="text-body"
+                                    >Resin lifespan is typically lower than FDM filaments'.</span
+                                >
+                            </li>
+                            <li class="flex items-center">
+                                <svg
+                                    class="w-5 h-5 shrink-0 text-fg-danger me-1.5"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    ><path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                    ></path></svg
+                                >
+                                <span class="text-body"
+                                    >Harder to handle and process: apart from health risks, printed
+                                    parts need to be cleaned (typically in isopropyl alcohol) and
+                                    then curated under UV light to improve mechanical properties.</span
+                                >
+                            </li>
+                            <li class="flex items-center">
+                                <svg
+                                    class="w-5 h-5 shrink-0 text-fg-danger me-1.5"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    ><path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                                    ></path></svg
+                                >
+                                <span class="text-body"
+                                    >Lower material diversity: although it is expanding in recent
+                                    years.</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </p>
+            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+                Although SLA has several concercing disadvantages compared to FDM, I think it
+                complements those cases where extra detail and precision is required. I wanted to
+                try these capabilities, so in 2022 I bought an SLA printer from Elegoo. Big
+                disclosure here, due to health concerns, SLA printers shouldn't be used at home (I
+                have it in a garage).
+            </p>
+            <figure class="py-4 mx-auto max-w-xs relative overflow-hidden">
+                <Image
+                    class="h-auto max-w-full rounded-base"
+                    src={elegooMars}
+                    alt={'Elegoo Mars Pro'}
+                />
+                <figcaption class="mt-2 text-sm text-gray-500 text-center">
+                    Elegoo Mars Pro SLA printer.
+                </figcaption>
+            </figure>
+        </section>
+        <section class="bg-white dark:bg-gray-900">
+            <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                Join the World of Makers
+            </h2>
+            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+                The purpose of this section, apart from showcasing my trip throughout 3D printing,
+                is to encourage people to join it. For those previously unfamiliar with this world,
+                I hope information provided here has given some insight and cleared doubts. For
+                those already familiarized, I expect seeing some examples of the possibilities has
+                finally convinced you. Also remember to check the Projects and Insights sections
+                where I show/discuss in more detail examples/topics of 3D printing. Whatever the
+                case, if you have a curious mind and enjoy developing your own ideas, I'd definetly
+                recommend you to buy a 3D printer and join the world of makers.
+            </p>
+        </section>
+    </main>
+</BaseLayout>
