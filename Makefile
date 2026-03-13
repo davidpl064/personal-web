@@ -12,7 +12,9 @@ update-packages-latest:
 	npm install
 
 lint:  ## lint code
-	npm run linting
+	npm run lint
+lint-staged:  ## execute lint-staged tool
+	npm run linting-staged
 	
 build-dev:  ## build web in development mode
 	npm run build-dev

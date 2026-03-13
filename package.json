@@ -8,6 +8,7 @@
             "prettier --write"
         ],
         "*.{css,md,html,json}": "prettier --cache --write",
+        "src/**/*.astro": "prettier --cache --write",
         "src/pages/**/*.html": "prettier --cache --write",
         "src/styles/*.css": "prettier --cache --write"
     },
@@ -16,7 +17,8 @@
         "build": "astro build",
         "preview": "astro preview",
         "astro": "astro",
-        "linting": "npx lint-staged",
+        "lint": "eslint . --cache --fix && prettier . --write",
+        "linting-staged": "npx lint-staged",
         "test": "echo \"Error: no test specified\" && exit 1",
         "prepare": "husky"
     },
@@ -32,6 +34,7 @@
         "husky": "^9.1.7",
         "lint-staged": "^16.2.7",
         "prettier": "^3.8.1",
+        "prettier-plugin-astro": "^0.14.1",
         "prettier-plugin-tailwindcss": "^0.7.2"
     },
     "dependencies": {

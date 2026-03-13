@@ -4,6 +4,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 import CheckboxBadge from '../../components/CheckboxBadge.astro'
 import BadgeFilter from '../../components/BadgeFilter.astro'
 import ProjectCard from '../../components/ProjectCard.astro'
+
+const quadcopterDescription = `
+Development of a DIY quadcopter, which included both software and hardware.
+Preliminar analysis was performed in a simulator implemented in MATLAB.
+Fine tuning of PID gains was done analyzing system's response to several input types.
+`
+const cheopsDescription = `
+The scope of the internship was to developed a high precision Flight Dynamics System (FDS) tool
+and use it to analyze CHEOPS mission (ESA satellite) and optimize some design parameters.
+The code was implemented in MATLAB, in an user-friendly form through the use of several GUIs,
+avoiding the need of modifying internal code. All models are based on recommendations of IERS Conventions 2010 bulletin.
+`
 ---
 
 <BaseLayout
@@ -241,7 +253,7 @@ import ProjectCard from '../../components/ProjectCard.astro'
                 initial-date="06/2015"
                 end-date="03/2016"
                 status="completed"
-                description="Development of a DIY quadcopter, which included both software and hardware. The hardware was based on a 450mm frame (the most common size), using motors from DJI and being main flight controller an Arduino Due. Communications were not finally implemented, being only available the dev. bluetooth comms link. The autopilot was based on a PID controller of attitude's Euler angles. Definition of the control gains was first estimated using a simulator implemented in MATLAB, afterwards refined in a test bench and final tuning was performed in flight."
+                description={quadcopterDescription}
                 rel-path-image="quadcopter"
                 color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
                 data-tags='["MATLAB", "Arduino", "embedded-systems", "control", "aerospace"]'
@@ -283,7 +295,7 @@ After the construction of the airship prototype, flight tests were performed. Th
                 initial-date="03/2018"
                 end-date="03/2019"
                 status="completed"
-                description="TDB"
+                description={cheopsDescription}
                 rel-path-image="cheops"
                 color-scheme='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
                 data-tags='["MATLAB", "numerical-calculus", "orbital-mechanics", "aerospace"]'
