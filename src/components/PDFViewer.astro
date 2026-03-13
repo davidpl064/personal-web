@@ -75,6 +75,7 @@ const { src } = Astro.props
 
 <script>
     import * as pdfjsLib from 'pdfjs-dist'
+    import pdfWorker from 'pdfjs-dist/build/pdf.worker?url'
 
     class PDFViewer extends HTMLElement {
         constructor() {
@@ -95,8 +96,9 @@ const { src } = Astro.props
             this.canvas = this.querySelector('#the-canvas')
             this.ctx = this.canvas.getContext('2d')
 
-            pdfjsLib.GlobalWorkerOptions.workerSrc =
-                '../../node_modules/pdfjs-dist/build/pdf.worker.mjs'
+            // pdfjsLib.GlobalWorkerOptions.workerSrc =
+            //     '../../node_modules/pdfjs-dist/build/pdf.worker.mjs'
+            pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker
 
             this.querySelector('#prev').addEventListener('click', this.onPrevPage.bind(this))
             this.querySelector('#next').addEventListener('click', this.onNextPage.bind(this))
