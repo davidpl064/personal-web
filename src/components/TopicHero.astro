@@ -4,8 +4,8 @@ import { Image } from 'astro:assets'
 const { title = '', 'image-hero': imageHero = '' } = Astro.props
 ---
 
-<div class="flex flex-col max-w-(--breakpoint-xl) mx-auto">
-    <figure class="mb-4 w-full relative overflow-hidden max-h-[60vh]">
+<div class="mx-auto flex max-w-(--breakpoint-xl) flex-col">
+    <figure class="relative mb-4 max-h-[60vh] w-full overflow-hidden">
         <Image class="inset-0 w-full object-cover" src={imageHero} alt={title} />
 
         <!-- Overlay -->
@@ -14,16 +14,14 @@ const { title = '', 'image-hero': imageHero = '' } = Astro.props
         <!-- Centered Title -->
         <div class="absolute inset-0 flex items-center justify-center">
             <h1
-                class="text-4xl md:text-6xl font-semibold tracking-wide uppercase text-white text-center"
+                class="text-center text-4xl font-semibold tracking-wide text-white uppercase md:text-6xl"
             >
                 {title}
             </h1>
         </div>
     </figure>
     <div
-        class="flex flex-wrap gap-2 pl-4 text-sm text-gray-400
-            [&>span:not(:last-child)]:after:content-['|']
-            [&>span:not(:last-child)]:after:mx-2"
+        class="flex flex-wrap gap-2 pl-4 text-sm text-gray-400 [&>span:not(:last-child)]:after:mx-2 [&>span:not(:last-child)]:after:content-['|']"
     >
         <span>Updated: March 09, 2026</span>
         <!-- <span></span>

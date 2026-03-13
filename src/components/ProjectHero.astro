@@ -29,7 +29,7 @@ const colorClassesArray = colorSchemesArray.map((scheme) => {
 })
 ---
 
-<figure class="mb-6 w-full flex-1 relative max-w-(--breakpoint-2xl) mx-auto overflow-hidden">
+<figure class="relative mx-auto mb-6 w-full max-w-(--breakpoint-2xl) flex-1 overflow-hidden">
     <!-- <Image
         class="absolute inset-0 h-full w-full object-cover py-2"
         src={imageProjectThumb}
@@ -41,9 +41,9 @@ const colorClassesArray = colorSchemesArray.map((scheme) => {
     <div class="absolute inset-0 bg-black/50"></div>
 
     <!-- Centered Title -->
-    <div class="absolute h-full top-1/2 left-1/2 -translate-x-1/2">
+    <div class="absolute top-1/2 left-1/2 h-full -translate-x-1/2">
         <h1
-            class="text-4xl md:text-6xl font-semibold tracking-wide uppercase text-white text-center"
+            class="text-center text-4xl font-semibold tracking-wide text-white uppercase md:text-6xl"
         >
             {title}
         </h1>
@@ -51,13 +51,13 @@ const colorClassesArray = colorSchemesArray.map((scheme) => {
 
     <!-- Bottom-left Tags -->
     <figcaption class="absolute bottom-4 left-6 text-lg text-white">
-        <p class="text-base md:text-lg font-medium">
+        <p class="text-base font-medium md:text-lg">
             Status:
             <span
-                class="inline-flex items-center bg-success-soft border border-success-subtle text-fg-success-strong text-sm font-medium leading-none px-2 py-1 rounded"
+                class="inline-flex items-center rounded border border-success-subtle bg-success-soft px-2 py-1 text-sm leading-none font-medium text-fg-success-strong"
             >
                 <svg
-                    class="w-3.5 h-3.5 me-1.5"
+                    class="me-1.5 h-3.5 w-3.5"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -75,13 +75,13 @@ const colorClassesArray = colorSchemesArray.map((scheme) => {
                 Completed
             </span>
         </p>
-        <p class="text-base md:text-lg font-medium">
+        <p class="text-base font-medium md:text-lg">
             Documentation:
             <span
-                class="inline-flex items-center bg-warning-soft border border-warning-subtle text-fg-warning text-sm font-medium leading-none px-2 py-1 rounded"
+                class="inline-flex items-center rounded border border-warning-subtle bg-warning-soft px-2 py-1 text-sm leading-none font-medium text-fg-warning"
             >
                 <svg
-                    class="w-3.5 h-3.5 me-1.5"
+                    class="me-1.5 h-3.5 w-3.5"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -99,7 +99,7 @@ const colorClassesArray = colorSchemesArray.map((scheme) => {
                 In progress
             </span>
         </p>
-        <ul class="flex gap-2 mt-2">
+        <ul class="mt-2 flex gap-2">
             <!-- Generate the badges for each tag dynamically -->
             {
                 dataTagsArray.map((tag, index) => {

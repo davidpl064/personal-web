@@ -5,16 +5,16 @@ const { src } = Astro.props
 <pdf-viewer data-src={src}>
     <div class="inline-flex flex-col">
         <canvas id="the-canvas" class="mb-2 border"></canvas>
-        <div class="flex space-x-3 justify-center">
-            <div class="inline-flex rounded-base shadow-xs -space-x-px" role="group">
+        <div class="flex justify-center space-x-3">
+            <div class="inline-flex -space-x-px rounded-base shadow-xs" role="group">
                 <button
                     id="prev"
                     data-tooltip-target="tooltip-previous"
                     type="button"
-                    class="inline-flex items-center justify-center text-body bg-neutral-primary-soft rounded-s-base box-border border border-default hover:bg-neutral-secondary-medium hover:text-heading focus:ring-3 focus:ring-neutral-tertiary leading-5 w-6 h-6 focus:outline-none"
+                    class="box-border inline-flex h-6 w-6 items-center justify-center rounded-s-base border border-default bg-neutral-primary-soft leading-5 text-body hover:bg-neutral-secondary-medium hover:text-heading focus:ring-3 focus:ring-neutral-tertiary focus:outline-none"
                 >
                     <svg
-                        class="w-4 h-4"
+                        class="h-4 w-4"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -32,7 +32,7 @@ const { src } = Astro.props
                 <div
                     id="tooltip-previous"
                     role="tooltip"
-                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm leading-4 font-medium text-white transition-opacity duration-300 bg-dark rounded-base shadow-xs opacity-0 tooltip"
+                    class="tooltip invisible absolute z-10 inline-block rounded-base bg-dark px-3 py-2 text-sm leading-4 font-medium text-white opacity-0 shadow-xs transition-opacity duration-300"
                 >
                     Previous
                     <div class="tooltip-arrow" data-popper-arrow></div>
@@ -41,10 +41,10 @@ const { src } = Astro.props
                     id="next"
                     data-tooltip-target="tooltip-next"
                     type="button"
-                    class="inline-flex items-center justify-center text-body bg-neutral-primary-soft rounded-e-base box-border border border-default hover:bg-neutral-secondary-medium hover:text-heading focus:ring-3 focus:ring-neutral-tertiary leading-5 w-6 h-6 focus:outline-none"
+                    class="box-border inline-flex h-6 w-6 items-center justify-center rounded-e-base border border-default bg-neutral-primary-soft leading-5 text-body hover:bg-neutral-secondary-medium hover:text-heading focus:ring-3 focus:ring-neutral-tertiary focus:outline-none"
                 >
                     <svg
-                        class="w-4 h-4"
+                        class="h-4 w-4"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -62,7 +62,7 @@ const { src } = Astro.props
                 <div
                     id="tooltip-next"
                     role="tooltip"
-                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm leading-4 font-medium text-white transition-opacity duration-300 bg-dark rounded-base shadow-xs opacity-0 tooltip"
+                    class="tooltip invisible absolute z-10 inline-block rounded-base bg-dark px-3 py-2 text-sm leading-4 font-medium text-white opacity-0 shadow-xs transition-opacity duration-300"
                 >
                     Next
                     <div class="tooltip-arrow" data-popper-arrow></div>
