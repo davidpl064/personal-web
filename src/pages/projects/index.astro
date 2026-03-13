@@ -1,0 +1,317 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+import CheckboxBadge from '../../components/CheckboxBadge.astro'
+import BadgeFilter from '../../components/BadgeFilter.astro'
+import ProjectCard from '../../components/ProjectCard.astro'
+
+const quadcopterDescription = `
+Development of a DIY quadcopter, which included both software and hardware.
+Preliminar analysis was performed in a simulator implemented in MATLAB.
+Fine tuning of PID gains was done analyzing system's response to several input types.
+`
+const cheopsDescription = `
+The scope of the internship was to developed a high precision Flight Dynamics System (FDS) tool
+and use it to analyze CHEOPS mission (ESA satellite) and optimize some design parameters.
+The code was implemented in MATLAB, in an user-friendly form through the use of several GUIs,
+avoiding the need of modifying internal code. All models are based on recommendations of IERS Conventions 2010 bulletin.
+`
+---
+
+<BaseLayout
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    ,
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
+>
+    <main class="flex-1 px-4">
+        <div class="flex items-center justify-center gap-8 py-4 md:py-8 lg:gap-16">
+            <!-- Input search -->
+            <form class="mr-8 max-w-md w-full">
+                <label for="search" class="sr-only mb-2.5 block text-sm font-medium text-heading"
+                    >Search</label
+                >
+                <div class="relative">
+                    <div
+                        class="pointer-events-none absolute inset-y-0 inset-s-0 flex items-center ps-3"
+                    >
+                        <svg
+                            class="h-4 w-4 text-body"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-width="2"
+                                d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"></path>
+                        </svg>
+                    </div>
+                    <input
+                        type="search"
+                        id="search"
+                        data-search-target=".card"
+                        data-search-scope="#container-project-cards"
+                        class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium p-3 ps-9 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
+                        placeholder="Search"
+                    />
+                    <button
+                        type="submit"
+                        class="absolute inset-e-1.5 bottom-1.5 box-border rounded border border-transparent bg-brand px-3 py-1.5 text-xs leading-5 font-medium text-white shadow-xs hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium focus:outline-none"
+                    >
+                        Search
+                    </button>
+                </div>
+            </form>
+
+            <!-- Filter dropdown -->
+            <button
+                id="button-filter-tags"
+                data-dropdown-toggle="dropdown-filter-tags"
+                class="inline-flex space-x-3 items-center rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                type="button"
+            >
+                <svg
+                    class="h-4 w-4"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                        d="M18.796 4H5.204a1 1 0 0 0-.753 1.659l5.302 6.058a1 1 0 0 1 .247.659v4.874a.5.5 0 0 0 .2.4l3 2.25a.5.5 0 0 0 .8-.4v-7.124a1 1 0 0 1 .247-.659l5.302-6.059c.566-.646.106-1.658-.753-1.658Z"
+                    ></path>
+                </svg>
+
+                <span>Filter</span>
+                <svg
+                    class="h-2.5 w-2.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m1 1 4 4 4-4"></path>
+                </svg>
+            </button>
+            <div
+                id="dropdown-filter-tags"
+                class="z-10 hidden w-48 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
+            >
+                <ul
+                    id="checkbox-list"
+                    class="h-48 space-y-3 overflow-y-auto p-3 text-sm text-gray-700 dark:text-gray-200"
+                    aria-labelledby="dropdownCheckboxButton"
+                >
+                    <li>
+                        <CheckboxBadge color-scheme="programming-languages" , data-tag="Qt" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="programming-languages" , data-tag="MATLAB" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="programming-languages" , data-tag="C++" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="programming-languages" , data-tag="Arduino" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="programming-languages" , data-tag="Python" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="tech-areas" , data-tag="statistics" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="tech-areas" , data-tag="embedded-systems" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="tech-areas" , data-tag="aircraft-design" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="tech-areas" , data-tag="simulation" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="tech-areas" , data-tag="optimization" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="tech-areas" , data-tag="3D-printing" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="tech-areas" , data-tag="orbital-mechanics" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="tech-areas" data-tag="control" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="domain-industry" , data-tag="agriculture" />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="domain-industry" , data-tag="aerospace" />
+                    </li>
+                    <li>
+                        <CheckboxBadge
+                            color-scheme="scale-collaboration-type"
+                            ,
+                            data-tag="personal"
+                        />
+                    </li>
+                    <li>
+                        <CheckboxBadge
+                            color-scheme="scale-collaboration-type"
+                            ,
+                            data-tag="professional"
+                        />
+                    </li>
+                    <li>
+                        <CheckboxBadge color-scheme="skills" , data-tag="test" />
+                    </li>
+                </ul>
+            </div>
+
+            <div id="active-bagdes" class="flex flex-wrap items-center justify-center py-4 md:py-8">
+                <BadgeFilter color-scheme="programming-languages" data-tag="Qt" />
+                <BadgeFilter color-scheme="programming-languages" data-tag="MATLAB" />
+                <BadgeFilter color-scheme="programming-languages" data-tag="C++" />
+                <BadgeFilter color-scheme="programming-languages" data-tag="Arduino" />
+                <BadgeFilter color-scheme="programming-languages" data-tag="Python" />
+                <BadgeFilter color-scheme="tech-areas" , data-tag="statistics" />
+                <BadgeFilter color-scheme="tech-areas" , data-tag="embedded-systems" />
+                <BadgeFilter color-scheme="tech-areas" data-tag="aircraft-design" />
+                <BadgeFilter color-scheme="tech-areas" , data-tag="simulation" />
+                <BadgeFilter color-scheme="tech-areas" data-tag="optimization" />
+                <BadgeFilter color-scheme="tech-areas" , data-tag="3D-printing" />
+                <BadgeFilter color-scheme="tech-areas" , data-tag="orbital-mechanics" />
+                <BadgeFilter color-scheme="tech-areas" data-tag="control" />
+                <BadgeFilter color-scheme="domain-industry" data-tag="agriculture" />
+                <BadgeFilter color-scheme="domain-industry" data-tag="aerospace" />
+                <BadgeFilter color-scheme="scale-collaboration-type" data-tag="personal" />
+                <BadgeFilter color-scheme="scale-collaboration-type" data-tag="professional" />
+                <BadgeFilter color-scheme="skills" , data-tag="test" />
+            </div>
+        </div>
+        <div
+            id="container-project-cards"
+            class="grid grid-cols-2 justify-items-center gap-4 items-start py-8 md:grid-cols-3 lg:px-8 lg:py-16"
+        >
+            <ProjectCard
+                title="C++ Template"
+                initial-date="01/2026"
+                status="maintained"
+                description="TDB"
+                rel-path-project="projects/cplusplus-template"
+                rel-path-image="cpluplus_template"
+                color-scheme='["programming-languages"]'
+                data-tags='["C++"]'
+            />
+            <ProjectCard
+                title="Python Template"
+                initial-date="05/2025"
+                status="maintained"
+                description="TDB"
+                rel-path-project="projects/python-template"
+                rel-path-image="python_template"
+                color-scheme='["programming-languages"]'
+                data-tags='["Python"]'
+            />
+            <ProjectCard
+                title="Tiltplane"
+                initial-date="05/2025"
+                end-date="08/2025"
+                status="completed"
+                description="TDB"
+                rel-path-project="projects/infotaxis"
+                rel-path-image="tiltplane"
+                color-scheme='["programming-languages", "tech-areas", "tech-areas", "tech-areas", "domain-industry"]'
+                data-tags='["C++", "embedded-systems", "3D-printing", "electronics", "aerospace"]'
+            />
+            <ProjectCard
+                title="Infotaxis"
+                initial-date="11/2015"
+                end-date="08/2016"
+                status="completed"
+                description="TDB"
+                rel-path-project="projects/infotaxis"
+                rel-path-image="infotaxis"
+                color-scheme='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
+                data-tags='["MATLAB", "statistics", "simulation", "agriculture"]'
+            />
+            <ProjectCard
+                title="Quadcopter DIY"
+                initial-date="06/2015"
+                end-date="03/2016"
+                status="completed"
+                description={quadcopterDescription}
+                rel-path-image="quadcopter"
+                color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
+                data-tags='["MATLAB", "Arduino", "embedded-systems", "control", "aerospace"]'
+            />
+            <ProjectCard
+                title="Autonomous Airship"
+                initial-date="02/2016"
+                end-date="10/2016"
+                status="completed"
+                description="Final degree project, developed during my internship in Unmanned Solutions (USOL). The work's scope covers the principle parts of a new design (conceptual - preliminary - detail design and construction of a prototype for testing purposes. The objective was to analyse the advantages of new airships in comparison with other air vehicles in its interval of range - velocity. The aircraft should be optimized in terms of autonomy (good aerodynamics to reduce drag) and, as an optional requirement, autonomous functions should be implemented.
+The design of the entire airship was done in terms of minimizing drag while fulfilling the payload requirements. In order to avoid wasting money in future steps, a numerical model of the airship was implemented in Simulink/Matlab during the conceptual design phase. This allows to carry out performance analysis and support design decisions.
+After the construction of the airship prototype, flight tests were performed. The flight control system as well as all the sensors were programmed in Arduino (similar to C++). The control algorithm was based in PID control theory."
+                rel-path-image="airship"
+                color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "tech-areas", "domain-industry"]'
+                data-tags='["MATLAB", "Arduino", "aircraft-design", "embedded-systems", "simulation", "aerospace"]'
+            />
+            <ProjectCard
+                title="Ground Station"
+                initial-date="11/2016"
+                end-date="08/2017"
+                status="completed"
+                description="Development of a ground station using Qt. The code was programmed in C++/QML. The purpose of the ground station is to allow the control of autonomous RPAS from a single computer, monitorizing their actual positions in a 2D displayed map as well as the required aditional parameters as function of time. Control over the RPAS can be acquired, commanding pre-defined functions or controlling their movement using a gamepad."
+                rel-path-image="ground_station"
+                color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
+                data-tags='["Qt", "C++", "front-end", "MAVLink", "comms"]'
+            />
+            <ProjectCard
+                title="Genetic Algorithms"
+                initial-date="09/2016"
+                end-date="12/2016"
+                status="completed"
+                description="TDB"
+                rel-path-image="optimization"
+                color-scheme='["programming-languages", "tech-areas"]'
+                data-tags='["MATLAB", "optimization"]'
+            />
+            <ProjectCard
+                title="CHEOPS"
+                initial-date="03/2018"
+                end-date="03/2019"
+                status="completed"
+                description={cheopsDescription}
+                rel-path-image="cheops"
+                color-scheme='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
+                data-tags='["MATLAB", "numerical-calculus", "orbital-mechanics", "aerospace"]'
+            />
+            <ProjectCard
+                title="Rover"
+                initial-date="01/2018"
+                end-date="01/2022"
+                status="completed"
+                description="TDB"
+                rel-path-image="rover"
+                color-scheme='["programming-languages", "tech-areas", "tech-areas"]'
+                data-tags='["Arduino", "3D-printing", "electronics"]'
+            />
+        </div>
+    </main>
+
+    <script src="/src/scripts/projects.js"></script>
+</BaseLayout>

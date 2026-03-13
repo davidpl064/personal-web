@@ -1,0 +1,74 @@
+---
+import '../styles/global.css'
+
+import { ClientRouter } from 'astro:transitions'
+
+import HeaderNavBar from '../components/HeaderNavBar.astro'
+import Footer from '../components/Footer.astro'
+
+const {
+    title,
+    'body-class': bodyClass = '',
+    'header-navbar-class': headerNavBarClass = '',
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Personal portfolio showcasing projects and technical details."
+        />
+
+        <!-- Web Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="/logo/favicon/site.webmanifest" />
+        <!-- <link rel="icon" type="image/svg+xml" href="/logo/favicon/favicon.svg" /> -->
+        <link rel="icon" href="/logo/favicon/favicon.ico" />
+
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+
+        <!-- Font Awesome for Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+
+        <!-- Font and Icons -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Check dark mode -->
+        <script>
+            document.documentElement.classList.toggle(
+                'dark',
+                localStorage.theme === 'dark' ||
+                    (!('theme' in localStorage) &&
+                        window.matchMedia('(prefers-color-scheme: dark)').matches)
+            )
+        </script>
+
+        <!-- Page transitions -->
+        <ClientRouter />
+    </head>
+    <body class={bodyClass}>
+        <!-- Navbar Section -->
+        <HeaderNavBar classesCustom={headerNavBarClass} />
+
+        <slot />
+
+        <!-- Footer with Contact Icons -->
+        <Footer />
+
+        <script src="/src/scripts/main.js"></script>
+        <script src="/src/scripts/external.js"></script>
+    </body>
+</html>

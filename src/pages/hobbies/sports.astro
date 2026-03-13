@@ -1,0 +1,277 @@
+---
+import { Image } from 'astro:assets'
+
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+import TopicHero from '../../components/TopicHero.astro'
+
+import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
+---
+
+<BaseLayout
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    ,
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
+>
+    <TopicHero title="Sports" image-hero={imageHero} />
+
+    <main
+        class="flex flex-col flex-1 justify-center max-w-(--breakpoint-xl) mx-auto px-4 py-4 lg:py-8"
+    >
+        <p class="text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            Sports are a key element in my life, and I love practising them due to following
+            characteristics:
+            <ul class="pl-4 py-2 space-y-4 text-lg md:py-4 text-body list-disc list-inside">
+                <li>
+                    Physical condition: exercising keeps you fit and improves your overall health.
+                </li>
+                <li>
+                    Mental condition: exercising give me free time to think about my feelings, life
+                    goals, etc. This has a huge impact in several aspects of my life, greatly
+                    reduces stress and improves my mental health.
+                </li>
+                <li>
+                    Many sports teach you ideas/concepts that I find very positive, to name a few:
+                    perseverance, discipline, fair play, fellowship, ...
+                </li>
+                <li>
+                    It's just fun: I really enjoy working out, especially outdoors, and it's way
+                    better if shared with others.
+                </li>
+            </ul>
+        </p>
+        <p class="text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            In this section I want to share this important element of my personal life, and I'll try
+            to keep it updated, describing my main sports and routes/places I found really
+            interesting. I do this firstly, so you can get to know me better, and secondly, to
+            encourage people to adopt this philosphy and incorporate sports in their daily life.
+            Also, for those already in the subject, maybe there is a opportunity to share passions
+            and train together.
+        </p>
+
+        <div class="flex items-center justify-center space-x-4">
+            <span class="text-[#FC4C02] font-bold text-lg uppercase">Follow me on</span>
+            <a
+                href="https://www.strava.com/athletes/dplamarca"
+                target="_blank"
+                class="inline-flex items-center justify-center w-24 h-24 rounded-lg bg-[#FC4C02] transition-opacity duration-300 hover:opacity-75 md:text-2xl dark:hover:opacity-75"
+            >
+                <!-- Strava Icon -->
+                <i class="fab fa-strava fa-3x text-white"></i>
+            </a>
+        </div>
+
+        <section class="bg-white dark:bg-gray-900">
+            <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                Running
+            </h2>
+            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+                Running has been always my preferred sport, as I can practice it outdoors and
+                discover amazing places, completely removes stress and gives me free time to think
+                on things. Moreover, I'm a competetive person (in the positive sense haha) and I
+                trully enjoy participating in running events.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">PRs</h3>
+            <div
+                class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default"
+            >
+                <table class="w-full text-sm text-left rtl:text-right text-body">
+                    <thead
+                        class="text-sm text-body bg-neutral-secondary-soft border-b rounded-base border-default"
+                    >
+                        <tr>
+                            <th scope="col" class="px-6 py-3 font-medium"> Distance </th>
+                            <th scope="col" class="px-6 py-3 font-medium"> Time </th>
+                            <th scope="col" class="px-6 py-3 font-medium"> Year </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            class="bg-neutral-primary border-b border-default hover:bg-neutral-secondary-medium"
+                        >
+                            <th
+                                scope="row"
+                                class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                            >
+                                400 m
+                            </th>
+                            <td class="px-6 py-4"> 00:01:28 </td>
+                            <td class="px-6 py-4"> 2025 </td>
+                        </tr>
+                        <tr
+                            class="bg-neutral-primary border-b border-default hover:bg-neutral-secondary-medium"
+                        >
+                            <th
+                                scope="row"
+                                class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                            >
+                                1 km
+                            </th>
+                            <td class="px-6 py-4"> 00:03:11 </td>
+                            <td class="px-6 py-4"> 2025 </td>
+                        </tr>
+                        <tr
+                            class="bg-neutral-primary border-b border-default hover:bg-neutral-secondary-medium"
+                        >
+                            <th
+                                scope="row"
+                                class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                            >
+                                5 km
+                            </th>
+                            <td class="px-6 py-4"> 00:19:41 </td>
+                            <td class="px-6 py-4"> 2015 </td>
+                        </tr>
+                        <tr
+                            class="bg-neutral-primary border-b border-default hover:bg-neutral-secondary-medium"
+                        >
+                            <th
+                                scope="row"
+                                class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                            >
+                                10 km
+                            </th>
+                            <td class="px-6 py-4"> 00:40:42 </td>
+                            <td class="px-6 py-4"> 2015 </td>
+                        </tr>
+                        <tr class="bg-neutral-primary hover:bg-neutral-secondary-medium">
+                            <th
+                                scope="row"
+                                class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                            >
+                                Half Marathon
+                            </th>
+                            <td class="px-6 py-4"> 01:37:39 </td>
+                            <td class="px-6 py-4"> 2013 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">
+                Events
+            </h3>
+            <div class="mb-4">
+                <table id="search-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <span class="flex items-center"> Race </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center"> Distance </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center"> Time </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center"> Year </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center"> Location </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-medium text-heading whitespace-nowrap"
+                                >Calvario 5 + 5
+                            </td>
+                            <td>5K</td>
+                            <td>00:24:13</td>
+                            <td>2026</td>
+                            <td>Vigo</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-heading whitespace-nowrap">Ponle Freno</td>
+                            <td>5K</td>
+                            <td>00:21:50</td>
+                            <td>2025</td>
+                            <td>Vigo</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-heading whitespace-nowrap">O Porriño</td>
+                            <td>5K</td>
+                            <td>00:22:48</td>
+                            <td>2025</td>
+                            <td>O Porriño</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-heading whitespace-nowrap"
+                                >Érguete e Corre</td
+                            >
+                            <td>5K</td>
+                            <td>00:24:11</td>
+                            <td>2024</td>
+                            <td>Vigo</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-heading whitespace-nowrap"
+                                >Esclerosis Múltiple</td
+                            >
+                            <td>5K</td>
+                            <td>00:24:00</td>
+                            <td>2024</td>
+                            <td>Vigo</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-heading whitespace-nowrap"
+                                >XIII Interrunning</td
+                            >
+                            <td>5K</td>
+                            <td>00:23:42</td>
+                            <td>2024</td>
+                            <td>O Porriño</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-heading whitespace-nowrap">MiniBay</td>
+                            <td>10K</td>
+                            <td>00:57:15</td>
+                            <td>2024</td>
+                            <td>Baiona</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-heading whitespace-nowrap"
+                                >EDP Rock 'n' Roll</td
+                            >
+                            <td>Half Marathon</td>
+                            <td>01:53:06</td>
+                            <td>2019</td>
+                            <td>Madrid</td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-heading whitespace-nowrap"
+                                >36 Carrera del Agua</td
+                            >
+                            <td>10K</td>
+                            <td>00:40:42</td>
+                            <td>2015</td>
+                            <td>Madrid</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <section class="bg-white dark:bg-gray-900">
+                <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                    Cycling
+                </h2>
+                <p
+                    class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300"
+                >
+                    I found in cycling a perfect cross-training for running. It allows me to enjoy
+                    outdoors working out, reaching beautiful but far distant places while also
+                    greatly reducing impact stress from running. This last characteristic was
+                    essential to me in 2021, I was overcoming a very tough time and I'd gained quite
+                    a lot of weight (almost 30 kg), so running was discouraged to me. This way, I
+                    really got serious into cycling, exploring almost every route in my local area
+                    while loosing much of that extra weight. From that moment, I fell in love with
+                    cycling, and actually I keep it as my second main sport. In this section, I want
+                    to share the best routes I've ridden, grouped by location.
+                </p>
+            </section>
+        </section>
+    </main>
+    <script src="/src/scripts/sports.js"></script>
+</BaseLayout>

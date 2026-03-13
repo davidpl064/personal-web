@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+    body-class="flex min-h-screen flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    ,
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
+>
+    <main
+        class="grow content-center bg-gray-700 bg-[url('../assets/work_in_progress_3.jpeg')] bg-center bg-no-repeat bg-blend-multiply"
+    >
+        <form class="mx-auto max-w-md">
+            <label for="search" class="sr-only mb-2.5 block text-sm font-medium text-heading"
+                >Search</label
+            >
+            <div class="relative">
+                <div
+                    class="pointer-events-none absolute inset-y-0 inset-s-0 flex items-center ps-3"
+                >
+                    <svg
+                        class="h-4 w-4 text-body"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-width="2"
+                            d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"></path>
+                    </svg>
+                </div>
+                <input
+                    type="search"
+                    id="search"
+                    data-search-target=".card"
+                    data-search-scope="#container-article-cards"
+                    class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium p-3 ps-9 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
+                    placeholder="Search"
+                    required
+                />
+                <button
+                    type="button"
+                    class="absolute inset-e-1.5 bottom-1.5 box-border rounded border border-transparent bg-brand px-3 py-1.5 text-xs leading-5 font-medium text-white shadow-xs hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium focus:outline-none"
+                >
+                    Search
+                </button>
+            </div>
+        </form>
+
+        <div class="mx-auto px-4 py-24 text-center lg:py-56">
+            <h1
+                class="mb-4 text-4xl leading-none font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl"
+            >
+                Work in progress, it'll be updated as soon as possible.
+            </h1>
+        </div>
+    </main>
+</BaseLayout>

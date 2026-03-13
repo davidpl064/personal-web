@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+import ProjectHero from '../../components/ProjectHero.astro'
+---
+
+<BaseLayout
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    ,
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
+>
+    <ProjectHero
+        title="Infotaxis"
+        data-tags='["MATLAB", "statistics", "simulation", "agriculture"]'
+        color-schemes='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
+        image-key="infotaxis"
+    />
+
+    <main class="mx-auto max-w-(--breakpoint-2xl)">
+        <section class="mb-6 bg-white dark:bg-gray-900">
+            <h2 class="mb-4 text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                Overview
+            </h2>
+            <p
+                class="text-justify text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300"
+            >
+                Plant pests and diseases cause significant losses in agricultural and horticultural
+                crops, reducing global potential production by up to 40% annually. Currently, these
+                threats are managed through widespread chemical treatments, which pose serious
+                environmental risks, including groundwater contamination and harm to wildlife,
+                particularly pollinators, and potentially humans. Ensuring effective plant health
+                management is essential for food security, and mitigating negative impacts requires
+                precise, localized application of control measures. This project aims to develop
+                algorithms for detecting and localizing infection hotspots through olfactory sensing
+                of chemical markers associated with specific pests and diseases. Autonomous systems,
+                equipped with specialized sensors and guided by mathematical olfactory search
+                algorithms, will perform this task.
+            </p>
+        </section>
+
+        <section class="mb-6 bg-white dark:bg-gray-900">
+            <h2 class="mb-4 text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                Technical Background
+            </h2>
+            <p
+                class="text-justify text-lg leading-relaxed text-gray-700 md:text-xl dark:text-gray-300"
+            >
+                Development of abovementioned models requires knowledge of following subjects:
+            </p>
+            <ul
+                class="max-w-md list-inside list-disc space-y-1 pl-4 text-lg text-gray-700 md:text-xl dark:text-gray-300"
+            >
+                <li class="text-gray-700 dark:text-gray-300">Statistics</li>
+                <li class="text-gray-700 dark:text-gray-300">Information theory</li>
+                <li class="text-gray-700 dark:text-gray-300">Fuild mechanics</li>
+            </ul>
+        </section>
+    </main>
+</BaseLayout>
