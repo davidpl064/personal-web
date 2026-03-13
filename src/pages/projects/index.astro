@@ -26,7 +26,7 @@ avoiding the need of modifying internal code. All models are based on recommenda
     <main class="flex-1 px-4">
         <div class="flex items-center justify-center gap-8 py-4 md:py-8 lg:gap-16">
             <!-- Input search -->
-            <form class="mr-8 max-w-md w-full">
+            <form class="mr-8 w-full max-w-md">
                 <label for="search" class="sr-only mb-2.5 block text-sm font-medium text-heading"
                     >Search</label
                 >
@@ -71,7 +71,7 @@ avoiding the need of modifying internal code. All models are based on recommenda
             <button
                 id="button-filter-tags"
                 data-dropdown-toggle="dropdown-filter-tags"
-                class="inline-flex space-x-3 items-center rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="inline-flex items-center space-x-3 rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button"
             >
                 <svg
@@ -204,14 +204,14 @@ avoiding the need of modifying internal code. All models are based on recommenda
         </div>
         <div
             id="container-project-cards"
-            class="grid grid-cols-2 justify-items-center gap-4 items-start py-8 md:grid-cols-3 lg:px-8 lg:py-16"
+            class="grid grid-cols-2 items-start justify-items-center gap-4 py-8 md:grid-cols-3 lg:px-8 lg:py-16"
         >
             <ProjectCard
                 title="C++ Template"
                 initial-date="01/2026"
                 status="maintained"
-                description="TDB"
-                rel-path-project="projects/cplusplus-template"
+                description="TBD"
+                rel-path-project="projects/none"
                 rel-path-image="cpluplus_template"
                 color-scheme='["programming-languages"]'
                 data-tags='["C++"]'
@@ -220,8 +220,8 @@ avoiding the need of modifying internal code. All models are based on recommenda
                 title="Python Template"
                 initial-date="05/2025"
                 status="maintained"
-                description="TDB"
-                rel-path-project="projects/python-template"
+                description="TBD"
+                rel-path-project="projects/none"
                 rel-path-image="python_template"
                 color-scheme='["programming-languages"]'
                 data-tags='["Python"]'
@@ -231,8 +231,8 @@ avoiding the need of modifying internal code. All models are based on recommenda
                 initial-date="05/2025"
                 end-date="08/2025"
                 status="completed"
-                description="TDB"
-                rel-path-project="projects/infotaxis"
+                description="TBD"
+                rel-path-project="projects/none"
                 rel-path-image="tiltplane"
                 color-scheme='["programming-languages", "tech-areas", "tech-areas", "tech-areas", "domain-industry"]'
                 data-tags='["C++", "embedded-systems", "3D-printing", "electronics", "aerospace"]'
@@ -242,8 +242,8 @@ avoiding the need of modifying internal code. All models are based on recommenda
                 initial-date="11/2015"
                 end-date="08/2016"
                 status="completed"
-                description="TDB"
-                rel-path-project="projects/infotaxis"
+                description="TBD"
+                rel-path-project="projects/none"
                 rel-path-image="infotaxis"
                 color-scheme='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
                 data-tags='["MATLAB", "statistics", "simulation", "agriculture"]'
@@ -254,6 +254,7 @@ avoiding the need of modifying internal code. All models are based on recommenda
                 end-date="03/2016"
                 status="completed"
                 description={quadcopterDescription}
+                rel-path-project="projects/none"
                 rel-path-image="quadcopter"
                 color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
                 data-tags='["MATLAB", "Arduino", "embedded-systems", "control", "aerospace"]'
@@ -266,6 +267,7 @@ avoiding the need of modifying internal code. All models are based on recommenda
                 description="Final degree project, developed during my internship in Unmanned Solutions (USOL). The work's scope covers the principle parts of a new design (conceptual - preliminary - detail design and construction of a prototype for testing purposes. The objective was to analyse the advantages of new airships in comparison with other air vehicles in its interval of range - velocity. The aircraft should be optimized in terms of autonomy (good aerodynamics to reduce drag) and, as an optional requirement, autonomous functions should be implemented.
 The design of the entire airship was done in terms of minimizing drag while fulfilling the payload requirements. In order to avoid wasting money in future steps, a numerical model of the airship was implemented in Simulink/Matlab during the conceptual design phase. This allows to carry out performance analysis and support design decisions.
 After the construction of the airship prototype, flight tests were performed. The flight control system as well as all the sensors were programmed in Arduino (similar to C++). The control algorithm was based in PID control theory."
+                rel-path-project="projects/none"
                 rel-path-image="airship"
                 color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "tech-areas", "domain-industry"]'
                 data-tags='["MATLAB", "Arduino", "aircraft-design", "embedded-systems", "simulation", "aerospace"]'
@@ -276,6 +278,7 @@ After the construction of the airship prototype, flight tests were performed. Th
                 end-date="08/2017"
                 status="completed"
                 description="Development of a ground station using Qt. The code was programmed in C++/QML. The purpose of the ground station is to allow the control of autonomous RPAS from a single computer, monitorizing their actual positions in a 2D displayed map as well as the required aditional parameters as function of time. Control over the RPAS can be acquired, commanding pre-defined functions or controlling their movement using a gamepad."
+                rel-path-project="projects/none"
                 rel-path-image="ground_station"
                 color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
                 data-tags='["Qt", "C++", "front-end", "MAVLink", "comms"]'
@@ -285,7 +288,8 @@ After the construction of the airship prototype, flight tests were performed. Th
                 initial-date="09/2016"
                 end-date="12/2016"
                 status="completed"
-                description="TDB"
+                description="TBD"
+                rel-path-project="projects/none"
                 rel-path-image="optimization"
                 color-scheme='["programming-languages", "tech-areas"]'
                 data-tags='["MATLAB", "optimization"]'
@@ -296,6 +300,7 @@ After the construction of the airship prototype, flight tests were performed. Th
                 end-date="03/2019"
                 status="completed"
                 description={cheopsDescription}
+                rel-path-project="projects/none"
                 rel-path-image="cheops"
                 color-scheme='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
                 data-tags='["MATLAB", "numerical-calculus", "orbital-mechanics", "aerospace"]'
@@ -305,7 +310,8 @@ After the construction of the airship prototype, flight tests were performed. Th
                 initial-date="01/2018"
                 end-date="01/2022"
                 status="completed"
-                description="TDB"
+                description="TBD"
+                rel-path-project="projects/none"
                 rel-path-image="rover"
                 color-scheme='["programming-languages", "tech-areas", "tech-areas"]'
                 data-tags='["Arduino", "3D-printing", "electronics"]'

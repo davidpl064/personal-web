@@ -16,12 +16,12 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
     <TopicHero title="Sports" image-hero={imageHero} />
 
     <main
-        class="flex flex-col flex-1 justify-center max-w-(--breakpoint-xl) mx-auto px-4 py-4 lg:py-8"
+        class="mx-auto flex max-w-(--breakpoint-xl) flex-1 flex-col justify-center px-4 py-4 lg:py-8"
     >
         <p class="text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             Sports are a key element in my life, and I love practising them due to following
             characteristics:
-            <ul class="pl-4 py-2 space-y-4 text-lg md:py-4 text-body list-disc list-inside">
+            <ul class="list-inside list-disc space-y-4 py-2 pl-4 text-lg text-body md:py-4">
                 <li>
                     Physical condition: exercising keeps you fit and improves your overall health.
                 </li>
@@ -49,12 +49,12 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
             and train together.
         </p>
 
-        <div class="flex items-center justify-center space-x-4">
-            <span class="text-[#FC4C02] font-bold text-lg uppercase">Follow me on</span>
+        <div class="mt-4 flex items-center justify-center space-x-4">
+            <span class="text-lg font-bold text-[#FC4C02] uppercase">Follow me on</span>
             <a
                 href="https://www.strava.com/athletes/dplamarca"
                 target="_blank"
-                class="inline-flex items-center justify-center w-24 h-24 rounded-lg bg-[#FC4C02] transition-opacity duration-300 hover:opacity-75 md:text-2xl dark:hover:opacity-75"
+                class="inline-flex h-24 w-24 items-center justify-center rounded-lg bg-[#FC4C02] transition-opacity duration-300 hover:opacity-75 md:text-2xl dark:hover:opacity-75"
             >
                 <!-- Strava Icon -->
                 <i class="fab fa-strava fa-3x text-white"></i>
@@ -65,20 +65,22 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
             <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
                 Running
             </h2>
-            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 Running has been always my preferred sport, as I can practice it outdoors and
                 discover amazing places, completely removes stress and gives me free time to think
                 on things. Moreover, I'm a competetive person (in the positive sense haha) and I
                 trully enjoy participating in running events.
             </p>
 
-            <h3 class="text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">PRs</h3>
+            <h3 class="mt-4 text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">
+                PRs
+            </h3>
             <div
-                class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default"
+                class="relative overflow-x-auto rounded-base border border-default bg-neutral-primary-soft shadow-xs"
             >
-                <table class="w-full text-sm text-left rtl:text-right text-body">
+                <table class="w-full text-left text-sm text-body rtl:text-right">
                     <thead
-                        class="text-sm text-body bg-neutral-secondary-soft border-b rounded-base border-default"
+                        class="rounded-base border-b border-default bg-neutral-secondary-soft text-sm text-body"
                     >
                         <tr>
                             <th scope="col" class="px-6 py-3 font-medium"> Distance </th>
@@ -88,11 +90,11 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                     </thead>
                     <tbody>
                         <tr
-                            class="bg-neutral-primary border-b border-default hover:bg-neutral-secondary-medium"
+                            class="border-b border-default bg-neutral-primary hover:bg-neutral-secondary-medium"
                         >
                             <th
                                 scope="row"
-                                class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                                class="px-6 py-4 font-medium whitespace-nowrap text-heading"
                             >
                                 400 m
                             </th>
@@ -100,11 +102,11 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                             <td class="px-6 py-4"> 2025 </td>
                         </tr>
                         <tr
-                            class="bg-neutral-primary border-b border-default hover:bg-neutral-secondary-medium"
+                            class="border-b border-default bg-neutral-primary hover:bg-neutral-secondary-medium"
                         >
                             <th
                                 scope="row"
-                                class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                                class="px-6 py-4 font-medium whitespace-nowrap text-heading"
                             >
                                 1 km
                             </th>
@@ -112,11 +114,11 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                             <td class="px-6 py-4"> 2025 </td>
                         </tr>
                         <tr
-                            class="bg-neutral-primary border-b border-default hover:bg-neutral-secondary-medium"
+                            class="border-b border-default bg-neutral-primary hover:bg-neutral-secondary-medium"
                         >
                             <th
                                 scope="row"
-                                class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                                class="px-6 py-4 font-medium whitespace-nowrap text-heading"
                             >
                                 5 km
                             </th>
@@ -124,11 +126,11 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                             <td class="px-6 py-4"> 2015 </td>
                         </tr>
                         <tr
-                            class="bg-neutral-primary border-b border-default hover:bg-neutral-secondary-medium"
+                            class="border-b border-default bg-neutral-primary hover:bg-neutral-secondary-medium"
                         >
                             <th
                                 scope="row"
-                                class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                                class="px-6 py-4 font-medium whitespace-nowrap text-heading"
                             >
                                 10 km
                             </th>
@@ -138,7 +140,7 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                         <tr class="bg-neutral-primary hover:bg-neutral-secondary-medium">
                             <th
                                 scope="row"
-                                class="px-6 py-4 font-medium text-heading whitespace-nowrap"
+                                class="px-6 py-4 font-medium whitespace-nowrap text-heading"
                             >
                                 Half Marathon
                             </th>
@@ -149,7 +151,7 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                 </table>
             </div>
 
-            <h3 class="text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">
+            <h3 class="mt-4 text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">
                 Events
             </h3>
             <div class="mb-4">
@@ -175,7 +177,7 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="font-medium text-heading whitespace-nowrap"
+                            <td class="font-medium whitespace-nowrap text-heading"
                                 >Calvario 5 + 5
                             </td>
                             <td>5K</td>
@@ -184,21 +186,21 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                             <td>Vigo</td>
                         </tr>
                         <tr>
-                            <td class="font-medium text-heading whitespace-nowrap">Ponle Freno</td>
+                            <td class="font-medium whitespace-nowrap text-heading">Ponle Freno</td>
                             <td>5K</td>
                             <td>00:21:50</td>
                             <td>2025</td>
                             <td>Vigo</td>
                         </tr>
                         <tr>
-                            <td class="font-medium text-heading whitespace-nowrap">O Porriño</td>
+                            <td class="font-medium whitespace-nowrap text-heading">O Porriño</td>
                             <td>5K</td>
                             <td>00:22:48</td>
                             <td>2025</td>
                             <td>O Porriño</td>
                         </tr>
                         <tr>
-                            <td class="font-medium text-heading whitespace-nowrap"
+                            <td class="font-medium whitespace-nowrap text-heading"
                                 >Érguete e Corre</td
                             >
                             <td>5K</td>
@@ -207,7 +209,7 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                             <td>Vigo</td>
                         </tr>
                         <tr>
-                            <td class="font-medium text-heading whitespace-nowrap"
+                            <td class="font-medium whitespace-nowrap text-heading"
                                 >Esclerosis Múltiple</td
                             >
                             <td>5K</td>
@@ -216,7 +218,7 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                             <td>Vigo</td>
                         </tr>
                         <tr>
-                            <td class="font-medium text-heading whitespace-nowrap"
+                            <td class="font-medium whitespace-nowrap text-heading"
                                 >XIII Interrunning</td
                             >
                             <td>5K</td>
@@ -225,14 +227,14 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                             <td>O Porriño</td>
                         </tr>
                         <tr>
-                            <td class="font-medium text-heading whitespace-nowrap">MiniBay</td>
+                            <td class="font-medium whitespace-nowrap text-heading">MiniBay</td>
                             <td>10K</td>
                             <td>00:57:15</td>
                             <td>2024</td>
                             <td>Baiona</td>
                         </tr>
                         <tr>
-                            <td class="font-medium text-heading whitespace-nowrap"
+                            <td class="font-medium whitespace-nowrap text-heading"
                                 >EDP Rock 'n' Roll</td
                             >
                             <td>Half Marathon</td>
@@ -241,7 +243,7 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                             <td>Madrid</td>
                         </tr>
                         <tr>
-                            <td class="font-medium text-heading whitespace-nowrap"
+                            <td class="font-medium whitespace-nowrap text-heading"
                                 >36 Carrera del Agua</td
                             >
                             <td>10K</td>
@@ -258,7 +260,7 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                     Cycling
                 </h2>
                 <p
-                    class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300"
+                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
                 >
                     I found in cycling a perfect cross-training for running. It allows me to enjoy
                     outdoors working out, reaching beautiful but far distant places while also

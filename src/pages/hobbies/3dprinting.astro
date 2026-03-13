@@ -16,6 +16,7 @@ import rcBulbasaur from '../../assets/hobbies/3d_printing/recreational_bulbasaur
 import rcFan from '../../assets/hobbies/3d_printing/recreational_fan.jpeg'
 import rcA350 from '../../assets/hobbies/3d_printing/recreational_a350.jpg'
 import rcTRex from '../../assets/hobbies/3d_printing/recreational_trex.jpeg'
+import paperDispenser from '../../assets/hobbies/3d_printing/recreational_paper_dispenser.png'
 
 import cheopsMain from '../../assets/hobbies/3d_printing/project_CHEOPS_model_main.png'
 import cheopsOpen from '../../assets/hobbies/3d_printing/project_CHEOPS_model_open.png'
@@ -33,13 +34,13 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
     <TopicHero title="3D Printing" image-hero={imageHero} />
 
     <main
-        class="flex flex-col flex-1 justify-center max-w-(--breakpoint-xl) mx-auto px-4 py-4 lg:py-8"
+        class="mx-auto flex max-w-(--breakpoint-xl) flex-1 flex-col justify-center px-4 py-4 lg:py-8"
     >
         <p class="text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             Democratization of 3D printing technologies has been a key event in history, mainly due
             to following chacracteristics:
             <ul
-                class="max-w-xl ps-5 py-2 space-y-1 text-lg md:py-4 text-body list-disc list-inside"
+                class="max-w-xl list-inside list-disc space-y-1 py-2 ps-5 text-lg text-body md:py-4"
             >
                 <li>No chain of production: flexibility to manufacture diverse models.</li>
                 <li>Very low cost compared to traditional manufacturing processes.</li>
@@ -53,12 +54,12 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
             for me, as many of the projects I've been working on would have been impossible without
             the manufacturing capabilities of 3D printing.
         </p>
-        <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+        <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             My adventure began back in 2018, I was finishing my master's degree in Aerospace
             Engineering and had a lot of ideas I wanted to realize, so I decided to buy my first 3D
             printer, the Prusa MK3. For those who are not familiar with this brand, Prusa is a
             european (Czech) company, characterized for:
-            <ol class="ps-5 mt-2 space-y-1 text-lg text-body list-decimal list-inside">
+            <ol class="mt-2 list-inside list-decimal space-y-1 ps-5 text-lg text-body">
                 <li>
                     Product support: backward compatibility, <span class="text-bold">RepRap</span> origins,
                     customer support. They always provide <span class="italic">upgrade kits</span>,
@@ -75,16 +76,16 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                 </li>
             </ol>
         </p>
-        <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+        <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             For these reasons, Prusa has been one of the major actors in the market of general
             public 3D printers, and my "no brainer" choice and recommendation, until recently ...
-            <figure class="py-4 mx-auto max-w-lg relative overflow-hidden">
+            <figure class="relative mx-auto max-w-lg overflow-hidden py-4">
                 <Image class="h-auto max-w-full rounded-base" src={prusaMK3} alt={'Prusa MK3'} />
-                <figcaption class="mt-2 text-sm text-gray-500 text-center">Prusa MK3</figcaption>
+                <figcaption class="mt-2 text-center text-sm text-gray-500">Prusa MK3</figcaption>
             </figure>
         </p>
 
-        <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+        <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             As a proud engineer and DIY person, I'd opted for the "mount yourself" kit of the Prusa
             MK3. The assembly process was very easy to follow (Prusa has some of the best docs I've
             ever read) and has some surprises along the way (those famous gummy bears). Also, the
@@ -93,8 +94,8 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
             projects:
         </p>
 
-        <figure class="max-w-2xl mx-auto">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <figure class="mx-auto mt-8 max-w-2xl">
+            <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
                 <div class="grid gap-4">
                     <Image class="h-auto max-w-full rounded-base" src={rcWH40KCards} alt="" />
                     <Image class="h-auto max-w-full rounded-base" src={rcWH40KCounter} alt="" />
@@ -106,25 +107,16 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                 <div class="grid gap-4">
                     <Image class="h-auto max-w-full rounded-base" src={rcTRex} alt="" />
                     <Image class="h-auto max-w-full rounded-base" src={rcA350} alt="" />
-                    <img
-                        class="h-auto max-w-full rounded-base"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
-                        alt=""
-                    />
-                    <img
-                        class="h-auto max-w-full rounded-base"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
-                        alt=""
-                    />
+                    <Image class="h-auto max-w-full rounded-base" src={paperDispenser} alt="" />
                 </div>
             </div>
-            <figcaption class="mt-2 text-sm text-gray-500 text-center">
+            <figcaption class="mt-2 text-center text-sm text-gray-500">
                 Samples of recreational/hobbyist 3D printed models.
             </figcaption>
         </figure>
 
-        <figure class="max-w-2xl mt-8 mx-auto">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <figure class="mx-auto mt-8 max-w-2xl">
+            <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
                 <div class="grid gap-4">
                     <Image class="h-auto max-w-full rounded-base" src={cheopsMain} alt="" />
                     <Image class="h-auto max-w-full rounded-base" src={cheopsOpen} alt="" />
@@ -138,16 +130,16 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                     <Image class="h-auto max-w-full rounded-base" src={covidMasks} alt="" />
                 </div>
             </div>
-            <figcaption class="mt-2 text-sm text-gray-500 text-center">
+            <figcaption class="mt-2 text-center text-sm text-gray-500">
                 Samples of professional/technical 3D printed models.
             </figcaption>
         </figure>
 
-        <section class="bg-white dark:bg-gray-900">
+        <section class="mt-8 bg-white dark:bg-gray-900">
             <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
                 Multi-Material Printing
             </h2>
-            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 After getting some basic knowledge using the printer and the slicer, I wanted to try
                 more advance use cases, like printing with technical materials (ASA, TPU, PC, PA),
                 which provide better mechanical properties although it is harder to get good prints
@@ -158,8 +150,8 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                 to be an aesthetic thing at first (as many makers use multi-material printing for
                 coloring prints mainly), opens up a new world of possibilities, to name a few:
 
-                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 items-center">
-                    <ul class="pl-4 py-2 space-y-4 text-lg md:py-4 text-body list-disc list-inside">
+                <div class="mt-8 mb-8 grid grid-cols-1 items-center gap-6 sm:grid-cols-2">
+                    <ul class="list-inside list-disc space-y-4 py-2 pl-4 text-lg text-body md:py-4">
                         <li>
                             Better supports: materials with very different print temperatures can be
                             used to lower support adhesion to the model and ease support separation.
@@ -175,10 +167,10 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                             hinges, ...).
                         </li>
                     </ul>
-                    <Image class="h-auto max-w-xs mx-auto rounded-base" src={prusaMMU} alt="" />
+                    <Image class="mx-auto h-auto max-w-xs rounded-base" src={prusaMMU} alt="" />
                 </div>
             </p>
-            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 As shown in the image above, in 2019 I decided to put one step into multi-material
                 printing by acquiring the multi-material module from Prusa, the so called MMU.
                 Although it was nice to test out the possibilities of multi-material printing, it
@@ -192,28 +184,28 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                 higher printing speeds, input shaper, close printer, better multi-material module)
                 were still missing.
             </p>
-            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 This lack of innovation along with emergence of very good alternatives, ended in
                 2024 with my switch to Bambulab. Bambulab is a chinese company, which started as a
                 crowdfunding campaign in Kickstarter, being its main selling point the incorporation
                 of latest technologies at a reasonable price. This completely caught up Prusa, which
                 rapidly tried to answer releasing the long-awaited Prusa MK4, although it was in a
                 very inmature state, and wasn't prepared to compete with Bambulab's models.
-                <figure class="py-4 mx-auto max-w-xs relative overflow-hidden">
+                <figure class="relative mx-auto max-w-xs overflow-hidden py-4">
                     <Image
                         class="h-auto max-w-full rounded-base"
                         src={bambulabX1C}
                         alt={'Bambulab X1C'}
                     />
-                    <figcaption class="mt-2 text-sm text-gray-500 text-center">
+                    <figcaption class="mt-2 text-center text-sm text-gray-500">
                         Bambulab X1C printer with AMS module
                     </figcaption>
                 </figure>
             </p>
-            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 Bambulab did answer most of improvements I was expecting for years (like the ones
                 I've aforementioned) and also came up with extra ones:
-                <ul class="pl-4 py-2 space-y-4 text-lg md:py-4 text-body list-disc list-inside">
+                <ul class="list-inside list-disc space-y-4 py-2 pl-4 text-lg text-body md:py-4">
                     <li>
                         Multi-material: AMS (Automatic Material System) module was a solid product,
                         providing a closed environment to extend filament lifespan, as it keeps them
@@ -227,7 +219,7 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                     <li>Connectivity: built-in Wifi, Mobile App</li>
                 </ul>
             </p>
-            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 Nevertheless, not everything was gold with Bambulab. I've never liked the idea of
                 supporting companies that embrace the idea of closed environments, meaning their
                 products are designed and meant to work only using their software, hardware, addons,
@@ -241,11 +233,11 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
             </p>
         </section>
 
-        <section class="bg-white dark:bg-gray-900">
+        <section class="mt-8 bg-white dark:bg-gray-900">
             <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
                 SLA Technology
             </h2>
-            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 3D printing is an additive manufacturing process, as raw material is added to build
                 the final piece. FDM is the most extended and well-known 3D printing technology. FDM
                 stands for Fused Deposition Modeling, as the raw filament is fused in the extruder
@@ -253,21 +245,21 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                 to FDM, which are getting more popular for the general public, being SLA its main
                 rival.
             </p>
-            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 SLA stands for Stereolithography, a proccess in which a liquid polymer (a resin), is
                 solidified by means of a chemical reaction called photopolymerization. This reaction
                 occurs when the resin is put under a source of UV light, which supplies enough
                 energy to start the reaction. So SLA prints each layer by using a UV laser to
                 project each section of a 3D model over the surface of the resin.
-                <div class="grid md:grid-cols-2">
+                <div class="mt-8 mb-8 grid md:grid-cols-2">
                     <div
-                        class="w-full max-w-sm p-6 bg-neutral-primary-soft border border-default rounded-base shadow-xs mx-auto"
+                        class="mx-auto w-full max-w-sm rounded-base border border-default bg-neutral-primary-soft p-6 shadow-xs"
                     >
                         <h5 class="mb-4 text-xl font-medium text-body">Pros</h5>
-                        <ul role="list" class="space-y-4 my-6">
+                        <ul role="list" class="my-6 space-y-4">
                             <li class="flex items-center">
                                 <svg
-                                    class="w-5 h-5 shrink-0 text-fg-success me-1.5"
+                                    class="me-1.5 h-5 w-5 shrink-0 text-fg-success"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -289,7 +281,7 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                             </li>
                             <li class="flex items-center">
                                 <svg
-                                    class="w-5 h-5 shrink-0 text-fg-success me-1.5"
+                                    class="me-1.5 h-5 w-5 shrink-0 text-fg-success"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -312,13 +304,13 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                         </ul>
                     </div>
                     <div
-                        class="w-full max-w-sm p-6 bg-neutral-primary-soft border border-default rounded-base shadow-xs mx-auto"
+                        class="mx-auto w-full max-w-sm rounded-base border border-default bg-neutral-primary-soft p-6 shadow-xs"
                     >
                         <h5 class="mb-4 text-xl font-medium text-body">Cons</h5>
-                        <ul role="list" class="space-y-4 my-6">
+                        <ul role="list" class="my-6 space-y-4">
                             <li class="flex items-center">
                                 <svg
-                                    class="w-5 h-5 shrink-0 text-fg-danger me-1.5"
+                                    class="me-1.5 h-5 w-5 shrink-0 text-fg-danger"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -342,7 +334,7 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                             </li>
                             <li class="flex items-center">
                                 <svg
-                                    class="w-5 h-5 shrink-0 text-fg-danger me-1.5"
+                                    class="me-1.5 h-5 w-5 shrink-0 text-fg-danger"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -363,7 +355,7 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                             </li>
                             <li class="flex items-center">
                                 <svg
-                                    class="w-5 h-5 shrink-0 text-fg-danger me-1.5"
+                                    class="me-1.5 h-5 w-5 shrink-0 text-fg-danger"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -386,7 +378,7 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                             </li>
                             <li class="flex items-center">
                                 <svg
-                                    class="w-5 h-5 shrink-0 text-fg-danger me-1.5"
+                                    class="me-1.5 h-5 w-5 shrink-0 text-fg-danger"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -410,20 +402,20 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
                     </div>
                 </div>
             </p>
-            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 Although SLA has several concercing disadvantages compared to FDM, I think it
                 complements those cases where extra detail and precision is required. I wanted to
                 try these capabilities, so in 2022 I bought an SLA printer from Elegoo. Big
                 disclosure here, due to health concerns, SLA printers shouldn't be used at home (I
                 have it in a garage).
             </p>
-            <figure class="py-4 mx-auto max-w-xs relative overflow-hidden">
+            <figure class="relative mx-auto max-w-xs overflow-hidden py-4">
                 <Image
                     class="h-auto max-w-full rounded-base"
                     src={elegooMars}
                     alt={'Elegoo Mars Pro'}
                 />
-                <figcaption class="mt-2 text-sm text-gray-500 text-center">
+                <figcaption class="mt-2 text-center text-sm text-gray-500">
                     Elegoo Mars Pro SLA printer.
                 </figcaption>
             </figure>
@@ -432,7 +424,7 @@ import covidMasks from '../../assets/hobbies/3d_printing/project_covid_masks.jpg
             <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
                 Join the World of Makers
             </h2>
-            <p class="text-justify text-lg mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+            <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 The purpose of this section, apart from showcasing my trip throughout 3D printing,
                 is to encourage people to join it. For those previously unfamiliar with this world,
                 I hope information provided here has given some insight and cleared doubts. For
