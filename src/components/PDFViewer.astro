@@ -123,7 +123,7 @@ const { src } = Astro.props
             this.pageRendering = true
             // Using promise to fetch the page
             this.pdfDoc.getPage(num).then((page) => {
-                var viewport = page.getViewport({ scale: this.scale })
+                const viewport = page.getViewport({ scale: this.scale })
                 const outputScale = window.devicePixelRatio || 1
 
                 this.canvas.width = Math.floor(viewport.width * outputScale)
@@ -133,12 +133,12 @@ const { src } = Astro.props
                 this.canvas.style.height = `${viewport.height}px`
 
                 // Render PDF page into canvas context
-                var renderContext = {
+                const renderContext = {
                     canvasContext: this.ctx,
                     viewport: viewport,
                     transform: [outputScale, 0, 0, outputScale, 0, 0],
                 }
-                var renderTask = page.render(renderContext)
+                const renderTask = page.render(renderContext)
 
                 // Wait for rendering to finish
                 renderTask.promise.then(() => {
