@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    ,
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
+>
+    <section class="space-y-4">
+        <div
+            class="mx-auto items-center bg-linear-to-r from-blue-500 to-purple-600 pt-48 pb-40 text-center"
+        >
+            <h1
+                class="text-center text-4xl font-semibold tracking-wide text-white uppercase md:text-6xl"
+            >
+                Privacy Policy
+            </h1>
+        </div>
+        <div
+            class="mx-auto flex max-w-(--breakpoint-xl) flex-wrap gap-2 pl-4 text-sm text-gray-400 [&>span:not(:last-child)]:after:mx-2 [&>span:not(:last-child)]:after:content-['|']"
+        >
+            <span>Updated: March 16, 2026</span>
+        </div>
+    </section>
+
+    <main
+        class="mx-auto flex max-w-(--breakpoint-xl) flex-1 flex-col justify-center space-y-8 px-4 py-4 md:space-y-12 lg:py-8"
+    >
+        <p class="text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            This Privacy Policy explains what information may be collected through this website, how
+            it is used, and how it is protected. By using this website or submitting a message
+            through the contact form, you acknowledge the practices described in this policy.
+        </p>
+
+        <article class="policy space-y-8 md:space-y-12">
+            <section class="bg-white dark:bg-gray-900">
+                <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                    Information Collected
+                </h2>
+                <p
+                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                >
+                    This website collects very limited personally identifiable information, which
+                    may include:
+                    <ul class="list-inside list-disc space-y-2 py-2 pl-4 text-lg text-body md:py-4">
+                        <li>Name</li>
+                        <li>Email address</li>
+                        <li>Message content</li>
+                    </ul>
+                </p>
+                <p
+                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                >
+                    This information is voluntarily provided by you when you submit the contact
+                    form. No other personal information is intentionally collected.
+                </p>
+            </section>
+
+            <section class="bg-white dark:bg-gray-900">
+                <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                    Purpose of Data Collection
+                </h2>
+                <p
+                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                >
+                    The information you provide through the contact form is used solely for the
+                    purpose of: responding to your message and/or communicating with you regarding
+                    your inquiry Your information will not be used for marketing purposes, shared
+                    with third parties for advertising, or sold.
+                </p>
+            </section>
+
+            <section class="bg-white dark:bg-gray-900">
+                <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                    How the Information Is Processed
+                </h2>
+                <p
+                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                >
+                    Contact form submissions are processed using Netlify Forms, a service provided
+                    by
+                    <span class="font-semibold text-heading underline decoration-brand"
+                        >Netlify, Inc</span
+                    >. When you submit the form, the information you provide is securely transmitted
+                    and stored by Netlify in order to deliver the message. You can learn more about
+                    Netlify’s privacy practices here: <a
+                        href="https://www.netlify.com/privacy/"
+                        class="text-fg-brand hover:underline">https://www.netlify.com/privacy</a
+                    >
+                </p>
+            </section>
+
+            <section class="bg-white dark:bg-gray-900">
+                <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                    Data Retention
+                </h2>
+                <p
+                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                >
+                    Personal information submitted through the contact form is retained only for as
+                    long as necessary to respond to your inquiry and maintain relevant
+                    correspondence. Information may be deleted periodically when it is no longer
+                    required.
+                </p>
+            </section>
+
+            <section class="bg-white dark:bg-gray-900">
+                <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                    Data Security
+                </h2>
+                <p
+                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                >
+                    Reasonable measures are taken to protect submitted information. The website uses
+                    secure HTTPS connections, and form submissions are processed through Netlify’s
+                    infrastructure. However, no method of transmission over the internet can be
+                    guaranteed to be completely secure.
+                </p>
+            </section>
+
+            <section class="bg-white dark:bg-gray-900">
+                <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                    Rights of Data Subjects
+                </h2>
+                <p
+                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                >
+                    In accordance with the General Data Protection Regulation (GDPR) applicable
+                    within the European Economic Area (EEA), individuals whose personal data is
+                    processed (data subjects) may have certain rights regarding their personal
+                    information. Depending on your location and applicable laws, you may have the
+                    right to:
+                    <ul class="list-inside list-disc space-y-2 py-2 pl-4 text-lg text-body md:py-4">
+                        <li>
+                            Request <span
+                                class="font-semibold text-heading underline decoration-brand"
+                                >access</span
+                            > to the personal information you have provided.
+                        </li>
+                        <li>
+                            Request <span
+                                class="font-semibold text-heading underline decoration-brand"
+                                >correction</span
+                            > of inaccurate or incomplete information.
+                        </li>
+                        <li>
+                            Request <span
+                                class="font-semibold text-heading underline decoration-brand"
+                                >deletion</span
+                            > of your personal information when it is no longer necessary for the purposes
+                            for which it was collected.
+                        </li>
+                    </ul>
+                </p>
+                <p
+                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                >
+                    If you wish to exercise any of these rights, you may contact the website owner
+                    using the contact form available on this website. Requests will be handled in
+                    accordance with applicable data protection regulations.
+                </p>
+            </section>
+
+            <section class="bg-white dark:bg-gray-900">
+                <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                    Third-Party Services
+                </h2>
+                <p
+                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                >
+                    This website uses Netlify to process form submissions. Aside from this service,
+                    no third-party services are used to collect personal information through the
+                    contact form. Additional third-party services may apply if other tools are added
+                    to the website in the future.
+                </p>
+            </section>
+
+            <section class="bg-white dark:bg-gray-900">
+                <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                    Changes to This Policy
+                </h2>
+                <p
+                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                >
+                    This Privacy Policy may be updated from time to time to reflect changes to the
+                    website or legal requirements. Updates will be published on this page with the
+                    revised date.
+                </p>
+            </section>
+
+            <section class="bg-white dark:bg-gray-900">
+                <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                    Contact
+                </h2>
+                <p
+                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+                >
+                    If you have any questions regarding this Privacy Policy or the handling of your
+                    data, you may get in touch through the contact form available on this website.
+                </p>
+            </section>
+        </article>
+    </main>
+</BaseLayout>

@@ -22,4 +22,16 @@
     path {
         color: inherit;
     }
+
+    .policy {
+        counter-reset: section;
+    }
+
+    .policy h2 {
+        counter-increment: section;
+    }
+
+    .policy h2::before {
+        content: counter(section) '. ';
+    }
 }
