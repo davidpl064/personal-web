@@ -105,6 +105,7 @@ import PDFViewer from '../components/PDFViewer.astro'
             <form
                 name="contact"
                 class="mx-auto max-w-lg space-y-4 py-2 lg:py-4"
+                method="POST"
                 netlify-honeypot="bot-field"
                 data-netlify-recaptcha="true"
                 data-netlify="true"
@@ -137,6 +138,7 @@ import PDFViewer from '../components/PDFViewer.astro'
                         >Company</label
                     >
                     <input
+                        name="company"
                         type="text"
                         id="company"
                         class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium px-3 py-2.5 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
@@ -183,6 +185,7 @@ import PDFViewer from '../components/PDFViewer.astro'
                         >Message</label
                     >
                     <textarea
+                        name="message"
                         id="message"
                         rows="4"
                         class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium p-3.5 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"

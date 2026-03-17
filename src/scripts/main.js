@@ -50,7 +50,7 @@ function initInputSearchs() {
 
     forms.forEach((form) => {
         const input = form.querySelector('input[type="search"]')
-        // if (!input) return
+        if (!input) return
 
         form.addEventListener('submit', (event) => {
             event.preventDefault()
