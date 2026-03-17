@@ -10,7 +10,7 @@ import PDFViewer from '../components/PDFViewer.astro'
 >
     <main class="mx-auto mt-8 grow justify-center">
         <!-- Grid -->
-        <div class="mb-4 grid max-w-(--breakpoint-xl) grid-cols-1 lg:grid-cols-3">
+        <div class="mb-4 grid max-w-(--breakpoint-xl) grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
             <!-- Wrapper first column -->
             <div class="col-span-2 mx-auto">
                 <h1
@@ -141,7 +141,6 @@ import PDFViewer from '../components/PDFViewer.astro'
                         id="company"
                         class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium px-3 py-2.5 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
                         placeholder=""
-                        required
                     />
                 </div>
                 <div>
@@ -175,6 +174,7 @@ import PDFViewer from '../components/PDFViewer.astro'
                             id="email"
                             class="block w-full rounded-base border border-default-medium bg-neutral-secondary-medium py-2.5 ps-9 pe-3 text-sm text-heading shadow-xs placeholder:text-body focus:border-brand focus:ring-brand"
                             placeholder="email@example.com"
+                            required
                         />
                     </div>
                 </div>

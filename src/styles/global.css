@@ -35,3 +35,10 @@
         content: counter(section) '. ';
     }
 }
+
+@layer components {
+    .prose-wide {
+        @apply prose max-w-(--breakpoint-xl);
+        /* max-width: min(100%, var(--breakpoint-xl)); */
+    }
+}
