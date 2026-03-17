@@ -8,9 +8,9 @@ import PDFViewer from '../components/PDFViewer.astro'
     ,
     header-navbar-class="sticky top-0 z-20 w-full flex-none"
 >
-    <main class="mx-auto mt-8 grow justify-center">
+    <main class="mx-auto mt-8 w-full max-w-(--breakpoint-xl) grow justify-center px-4">
         <!-- Grid -->
-        <div class="mb-4 grid max-w-(--breakpoint-xl) grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
+        <div class="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
             <!-- Wrapper first column -->
             <div class="col-span-2 mx-auto">
                 <h1
@@ -69,7 +69,7 @@ import PDFViewer from '../components/PDFViewer.astro'
                     </li>
                 </ul>
 
-                <div class="flex w-fit flex-col">
+                <div class="flex w-full flex-col">
                     <div class="flex justify-between">
                         <h2
                             class="text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100"
@@ -205,13 +205,15 @@ import PDFViewer from '../components/PDFViewer.astro'
                                 >.
                             </p>
                         </div>
-                        <p class="text-xs text-heading select-none">
-                            By submitting this form, you agree that the information provided will be
-                            used to respond to your message.
-                        </p>
                     </label>
                 </div>
                 <div data-netlify-recaptcha="true"></div>
+                <div class="mb-5 flex items-start">
+                    <p class="text-xs text-heading select-none">
+                        By submitting this form, you agree that the information provided will be
+                        used to respond to your message.
+                    </p>
+                </div>
                 <button
                     type="submit"
                     class="box-border rounded-base border border-transparent bg-brand px-4 py-2.5 text-sm leading-5 font-medium text-white shadow-xs hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium focus:outline-none"

@@ -30,9 +30,10 @@ During the conceptual design phase, a numerical model of the airship implemented
     header-navbar-class="sticky top-0 z-20 w-full flex-none"
 >
     <main class="mx-auto flex-1">
-        <div class="flex items-center justify-center gap-8 py-4 md:py-8 lg:gap-16">
+        <!-- Filter controls -->
+        <div class="flex flex-wrap items-center justify-center gap-8 py-4 md:py-8 lg:gap-16">
             <!-- Input search -->
-            <form class="mr-8 w-full max-w-md">
+            <form class="w-full max-w-md">
                 <label for="search" class="sr-only mb-2.5 block text-sm font-medium text-heading"
                     >Search</label
                 >
@@ -186,27 +187,26 @@ During the conceptual design phase, a numerical model of the airship implemented
                     </li>
                 </ul>
             </div>
-
-            <div id="active-bagdes" class="flex flex-wrap items-center justify-center py-4 md:py-8">
-                <BadgeFilter color-scheme="programming-languages" data-tag="Qt" />
-                <BadgeFilter color-scheme="programming-languages" data-tag="MATLAB" />
-                <BadgeFilter color-scheme="programming-languages" data-tag="C++" />
-                <BadgeFilter color-scheme="programming-languages" data-tag="Arduino" />
-                <BadgeFilter color-scheme="programming-languages" data-tag="Python" />
-                <BadgeFilter color-scheme="tech-areas" , data-tag="statistics" />
-                <BadgeFilter color-scheme="tech-areas" , data-tag="embedded-systems" />
-                <BadgeFilter color-scheme="tech-areas" data-tag="aircraft-design" />
-                <BadgeFilter color-scheme="tech-areas" , data-tag="simulation" />
-                <BadgeFilter color-scheme="tech-areas" data-tag="optimization" />
-                <BadgeFilter color-scheme="tech-areas" , data-tag="3D-printing" />
-                <BadgeFilter color-scheme="tech-areas" , data-tag="orbital-mechanics" />
-                <BadgeFilter color-scheme="tech-areas" data-tag="control" />
-                <BadgeFilter color-scheme="domain-industry" data-tag="agriculture" />
-                <BadgeFilter color-scheme="domain-industry" data-tag="aerospace" />
-                <BadgeFilter color-scheme="scale-collaboration-type" data-tag="personal" />
-                <BadgeFilter color-scheme="scale-collaboration-type" data-tag="professional" />
-                <BadgeFilter color-scheme="skills" , data-tag="test" />
-            </div>
+        </div>
+        <div id="active-bagdes" class="flex flex-wrap items-center justify-center py-4 md:py-8">
+            <BadgeFilter color-scheme="programming-languages" data-tag="Qt" />
+            <BadgeFilter color-scheme="programming-languages" data-tag="MATLAB" />
+            <BadgeFilter color-scheme="programming-languages" data-tag="C++" />
+            <BadgeFilter color-scheme="programming-languages" data-tag="Arduino" />
+            <BadgeFilter color-scheme="programming-languages" data-tag="Python" />
+            <BadgeFilter color-scheme="tech-areas" , data-tag="statistics" />
+            <BadgeFilter color-scheme="tech-areas" , data-tag="embedded-systems" />
+            <BadgeFilter color-scheme="tech-areas" data-tag="aircraft-design" />
+            <BadgeFilter color-scheme="tech-areas" , data-tag="simulation" />
+            <BadgeFilter color-scheme="tech-areas" data-tag="optimization" />
+            <BadgeFilter color-scheme="tech-areas" , data-tag="3D-printing" />
+            <BadgeFilter color-scheme="tech-areas" , data-tag="orbital-mechanics" />
+            <BadgeFilter color-scheme="tech-areas" data-tag="control" />
+            <BadgeFilter color-scheme="domain-industry" data-tag="agriculture" />
+            <BadgeFilter color-scheme="domain-industry" data-tag="aerospace" />
+            <BadgeFilter color-scheme="scale-collaboration-type" data-tag="personal" />
+            <BadgeFilter color-scheme="scale-collaboration-type" data-tag="professional" />
+            <BadgeFilter color-scheme="skills" , data-tag="test" />
         </div>
         <div
             id="container-project-cards"
