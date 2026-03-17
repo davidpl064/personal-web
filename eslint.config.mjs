@@ -17,6 +17,14 @@ export default [
     // Astro support
     ...astro.configs.recommended,
 
+    // Front-end files
+    {
+        files: ['src/**/*.{js,ts,astro}'],
+        languageOptions: {
+            globals: globals.browser,
+        },
+    },
+
     // Node environment for config files
     {
         files: ['*.config.js', '*.config.mjs', 'tailwind.config.js', 'vite.config.js'],
@@ -24,8 +32,10 @@ export default [
             globals: globals.node,
         },
     },
+
+    // Browser environment for script files
     {
-        files: ['src/scripts/**/*.js'],
+        files: ['src/**/*.js'],
         rules: {
             'no-console': 'warn',
             'no-unused-vars': 'warn',
