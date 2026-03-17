@@ -3,8 +3,8 @@ const { src } = Astro.props
 ---
 
 <pdf-viewer data-src={src}>
-    <div class="inline-flex flex-col">
-        <canvas id="the-canvas" class="mb-2 border"></canvas>
+    <div class="flex w-full min-w-0 flex-col">
+        <canvas id="the-canvas" class="mb-2 max-w-full border"></canvas>
         <div class="flex justify-center space-x-3">
             <div class="inline-flex -space-x-px rounded-base shadow-xs" role="group">
                 <button
@@ -86,7 +86,7 @@ const { src } = Astro.props
             this.pageNum = 1
             this.pageRendering = false
             this.pageNumPending = null
-            this.scale = 1.4
+            // this.scale = 1.4
         }
 
         connectedCallback() {
@@ -96,8 +96,6 @@ const { src } = Astro.props
             this.canvas = this.querySelector('#the-canvas')
             this.ctx = this.canvas.getContext('2d')
 
-            // pdfjsLib.GlobalWorkerOptions.workerSrc =
-            //     '../../node_modules/pdfjs-dist/build/pdf.worker.mjs'
             pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker
 
             this.querySelector('#prev').addEventListener('click', this.onPrevPage.bind(this))
@@ -113,6 +111,8 @@ const { src } = Astro.props
                 // Initial/first page rendering
                 this.renderPage(this.pageNum)
             })
+
+            this.setupResizeObserver()
         }
 
         /**
@@ -123,22 +123,31 @@ const { src } = Astro.props
             this.pageRendering = true
             // Using promise to fetch the page
             this.pdfDoc.getPage(num).then((page) => {
-                var viewport = page.getViewport({ scale: this.scale })
+                const container = this.canvas.parentElement
+                const containerWidth = container.clientWidth
+
+                // Get original viewport at scale 1
+                const viewport = page.getViewport({ scale: 1 })
+
+                // Calculate scale to fit container
+                const scale = containerWidth / viewport.width
+
+                const scaledViewport = page.getViewport({ scale })
                 const outputScale = window.devicePixelRatio || 1
 
-                this.canvas.width = Math.floor(viewport.width * outputScale)
-                this.canvas.height = Math.floor(viewport.height * outputScale)
+                this.canvas.width = Math.floor(scaledViewport.width * outputScale)
+                this.canvas.height = Math.floor(scaledViewport.height * outputScale)
 
-                this.canvas.style.width = `${viewport.width}px`
-                this.canvas.style.height = `${viewport.height}px`
+                this.canvas.style.width = `${scaledViewport.width}px`
+                this.canvas.style.height = `${scaledViewport.height}px`
 
                 // Render PDF page into canvas context
-                var renderContext = {
+                const renderContext = {
                     canvasContext: this.ctx,
-                    viewport: viewport,
+                    viewport: scaledViewport,
                     transform: [outputScale, 0, 0, outputScale, 0, 0],
                 }
-                var renderTask = page.render(renderContext)
+                const renderTask = page.render(renderContext)
 
                 // Wait for rendering to finish
                 renderTask.promise.then(() => {
@@ -187,6 +196,18 @@ const { src } = Astro.props
             }
             this.pageNum++
             this.queueRenderPage(this.pageNum)
+        }
+
+        setupResizeObserver() {
+            this.resizeObserver = new ResizeObserver((entries) => {
+                for (const entry of entries) {
+                    if (entry.contentRect.width > 0 && this.pdfDoc) {
+                        this.queueRenderPage(this.pageNum)
+                    }
+                }
+            })
+            const container = this.canvas.parentElement
+            this.resizeObserver.observe(container)
         }
     }
     customElements.define('pdf-viewer', PDFViewer)

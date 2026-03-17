@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    ,
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
+>
+    <section class="space-y-4">
+        <div
+            class="mx-auto items-center bg-linear-to-r from-blue-500 to-purple-600 pt-48 pb-40 text-center"
+        >
+            <h1
+                class="text-center text-4xl font-semibold tracking-wide text-white uppercase md:text-6xl"
+            >
+                Privacy Policy
+            </h1>
+        </div>
+        <div
+            class="flex w-full max-w-(--breakpoint-xl) flex-wrap gap-2 pl-4 text-sm text-gray-400 [&>span:not(:last-child)]:after:mx-2 [&>span:not(:last-child)]:after:content-['|']"
+        >
+            <span>Updated: March 16, 2026</span>
+        </div>
+    </section>
+
+    <main class="policy prose-wide mx-auto w-full px-4 dark:prose-invert">
+        <p>
+            This Privacy Policy explains what information may be collected through this website, how
+            it is used, and how it is protected. By using this website or submitting a message
+            through the contact form, you acknowledge the practices described in this policy.
+        </p>
+
+        <section>
+            <h2>Information Collected</h2>
+            <p>
+                This website collects very limited personally identifiable information, which may
+                include:
+                <ul>
+                    <li>Name</li>
+                    <li>Email address</li>
+                    <li>Message content</li>
+                </ul>
+            </p>
+            <p>
+                This information is voluntarily provided by you when you submit the contact form. No
+                other personal information is intentionally collected.
+            </p>
+        </section>
+
+        <section>
+            <h2>Purpose of Data Collection</h2>
+            <p>
+                The information you provide through the contact form is used solely for the purpose
+                of responding to your message and communicating with you regarding your inquiry.
+                Additionally, technical measures, including Google reCAPTCHA, are used to protect
+                the website from spam and automated abuse. Your information will not be used for
+                marketing purposes, shared with third parties for advertising, or sold.
+            </p>
+        </section>
+
+        <section>
+            <h2>How the Information Is Processed</h2>
+            <p>
+                Contact form submissions are processed using Netlify Forms, a service provided by
+                <span class="font-semibold text-heading underline decoration-brand"
+                    >Netlify, Inc</span
+                >. When you submit the form, the information you provide is securely transmitted and
+                stored by Netlify in order to deliver the message. You can learn more about
+                Netlify’s privacy practices here: <a
+                    href="https://www.netlify.com/privacy/"
+                    class="text-fg-brand hover:underline">https://www.netlify.com/privacy</a
+                >
+            </p>
+        </section>
+
+        <section>
+            <h2>Data Retention</h2>
+            <p>
+                Personal information submitted through the contact form is retained only for as long
+                as necessary to respond to your inquiry and maintain relevant correspondence.
+                Information may be deleted periodically when it is no longer required.
+            </p>
+        </section>
+
+        <section>
+            <h2>Data Security</h2>
+            <p>
+                Reasonable measures are taken to protect submitted information. The website uses
+                secure HTTPS connections, and form submissions are processed through Netlify’s
+                infrastructure. However, no method of transmission over the internet can be
+                guaranteed to be completely secure.
+            </p>
+        </section>
+
+        <section>
+            <h2>Rights of Data Subjects</h2>
+            <p>
+                In accordance with the General Data Protection Regulation (GDPR) applicable within
+                the European Economic Area (EEA), individuals whose personal data is processed (data
+                subjects) may have certain rights regarding their personal information. Depending on
+                your location and applicable laws, you may have the right to:
+                <ul>
+                    <li>
+                        Request <span class="font-semibold text-heading underline decoration-brand"
+                            >access</span
+                        > to the personal information you have provided.
+                    </li>
+                    <li>
+                        Request <span class="font-semibold text-heading underline decoration-brand"
+                            >correction</span
+                        > of inaccurate or incomplete information.
+                    </li>
+                    <li>
+                        Request <span class="font-semibold text-heading underline decoration-brand"
+                            >deletion</span
+                        > of your personal information when it is no longer necessary for the purposes
+                        for which it was collected.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                If you wish to exercise any of these rights, you may contact the website owner using
+                the contact form available on this website. Requests will be handled in accordance
+                with applicable data protection regulations.
+            </p>
+        </section>
+
+        <section>
+            <h2>Third-Party Services</h2>
+            <p>This website uses third-party services to support its functionality.</p>
+            <h3>Netlify</h3>
+            <p>
+                Contact form submissions are processed through Netlify, which acts as a data
+                processor for the purpose of handling and delivering form submissions.
+            </p>
+            <h3>Google reCAPTCHA</h3>
+            <p>
+                This website uses Google reCAPTCHA to protect forms from spam and abuse. reCAPTCHA
+                analyzes user interactions and device information to determine whether a request is
+                made by a human. This process may involve the collection of data such as IP address,
+                browser and device information, and user interaction patterns. The use of reCAPTCHA
+                is subject to the Google Privacy Policy and Terms of Service:
+            </p>
+            <ul>
+                <li>
+                    <a
+                        href="https://policies.google.com/privacy"
+                        class="text-fg-brand hover:underline">https://policies.google.com/privacy</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://policies.google.com/terms"
+                        class="text-fg-brand hover:underline">https://policies.google.com/terms</a
+                    >
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Changes to This Policy</h2>
+            <p>
+                This Privacy Policy may be updated from time to time to reflect changes to the
+                website or legal requirements. Updates will be published on this page with the
+                revised date.
+            </p>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <p>
+                If you have any questions regarding this Privacy Policy or the handling of your
+                data, you may get in touch through the contact form available on this website.
+            </p>
+        </section>
+    </main>
+</BaseLayout>

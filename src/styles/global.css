@@ -11,19 +11,34 @@
 
 /* General Reset */
 @layer base {
-    * {
+    /* * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: 'Roboto', sans-serif;
-    }
-
-    body {
-        height: auto !important;
-    }
+    } */
 
     svg,
     path {
         color: inherit;
+    }
+
+    .policy {
+        counter-reset: section;
+    }
+
+    .policy h2 {
+        counter-increment: section;
+    }
+
+    .policy h2::before {
+        content: counter(section) '. ';
+    }
+}
+
+@layer components {
+    .prose-wide {
+        @apply prose max-w-(--breakpoint-xl);
+        /* max-width: min(100%, var(--breakpoint-xl)); */
     }
 }

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import typography from '@tailwindcss/typography'
+
 module.exports = {
     content: [
         'src/pages/**/*.astro',
@@ -18,4 +20,5 @@ module.exports = {
             lower: 'lower-alpha',
         },
     },
+    plugins: [typography],
 }

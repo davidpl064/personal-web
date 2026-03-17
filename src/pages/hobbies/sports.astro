@@ -16,7 +16,7 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
     <TopicHero title="Sports" image-hero={imageHero} />
 
     <main
-        class="mx-auto flex max-w-(--breakpoint-xl) flex-1 flex-col justify-center px-4 py-4 lg:py-8"
+        class="mx-auto flex w-full max-w-(--breakpoint-xl) flex-1 flex-col justify-center px-4 py-4 lg:py-8"
     >
         <p class="text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             Sports are a key element in my life, and I love practising them due to following
@@ -61,7 +61,7 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
             </a>
         </div>
 
-        <section class="bg-white dark:bg-gray-900">
+        <section class="w-full bg-white dark:bg-gray-900">
             <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
                 Running
             </h2>
@@ -110,8 +110,8 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
                             >
                                 1 km
                             </th>
-                            <td class="px-6 py-4"> 00:03:11 </td>
-                            <td class="px-6 py-4"> 2025 </td>
+                            <td class="px-6 py-4"> 00:03:59 </td>
+                            <td class="px-6 py-4"> 2026 </td>
                         </tr>
                         <tr
                             class="border-b border-default bg-neutral-primary hover:bg-neutral-secondary-medium"
@@ -154,125 +154,212 @@ import imageHero from '../../assets/hobbies/sports/hero_section.jpg'
             <h3 class="mt-4 text-xl font-semibold text-gray-800 md:text-2xl dark:text-gray-100">
                 Events
             </h3>
-            <div class="mb-4">
-                <table id="search-table">
-                    <thead>
-                        <tr>
-                            <th>
-                                <span class="flex items-center"> Race </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center"> Distance </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center"> Time </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center"> Year </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center"> Location </span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="font-medium whitespace-nowrap text-heading"
-                                >Calvario 5 + 5
-                            </td>
-                            <td>5K</td>
-                            <td>00:24:13</td>
-                            <td>2026</td>
-                            <td>Vigo</td>
-                        </tr>
-                        <tr>
-                            <td class="font-medium whitespace-nowrap text-heading">Ponle Freno</td>
-                            <td>5K</td>
-                            <td>00:21:50</td>
-                            <td>2025</td>
-                            <td>Vigo</td>
-                        </tr>
-                        <tr>
-                            <td class="font-medium whitespace-nowrap text-heading">O Porriño</td>
-                            <td>5K</td>
-                            <td>00:22:48</td>
-                            <td>2025</td>
-                            <td>O Porriño</td>
-                        </tr>
-                        <tr>
-                            <td class="font-medium whitespace-nowrap text-heading"
-                                >Érguete e Corre</td
-                            >
-                            <td>5K</td>
-                            <td>00:24:11</td>
-                            <td>2024</td>
-                            <td>Vigo</td>
-                        </tr>
-                        <tr>
-                            <td class="font-medium whitespace-nowrap text-heading"
-                                >Esclerosis Múltiple</td
-                            >
-                            <td>5K</td>
-                            <td>00:24:00</td>
-                            <td>2024</td>
-                            <td>Vigo</td>
-                        </tr>
-                        <tr>
-                            <td class="font-medium whitespace-nowrap text-heading"
-                                >XIII Interrunning</td
-                            >
-                            <td>5K</td>
-                            <td>00:23:42</td>
-                            <td>2024</td>
-                            <td>O Porriño</td>
-                        </tr>
-                        <tr>
-                            <td class="font-medium whitespace-nowrap text-heading">MiniBay</td>
-                            <td>10K</td>
-                            <td>00:57:15</td>
-                            <td>2024</td>
-                            <td>Baiona</td>
-                        </tr>
-                        <tr>
-                            <td class="font-medium whitespace-nowrap text-heading"
-                                >EDP Rock 'n' Roll</td
-                            >
-                            <td>Half Marathon</td>
-                            <td>01:53:06</td>
-                            <td>2019</td>
-                            <td>Madrid</td>
-                        </tr>
-                        <tr>
-                            <td class="font-medium whitespace-nowrap text-heading"
-                                >36 Carrera del Agua</td
-                            >
-                            <td>10K</td>
-                            <td>00:40:42</td>
-                            <td>2015</td>
-                            <td>Madrid</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table id="search-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="flex items-center">
+                                Race
+                                <svg
+                                    class="ms-1 h-4 w-4"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m8 15 4 4 4-4m0-6-4-4-4 4"></path>
+                                </svg>
+                            </span>
+                        </th>
+                        <th>
+                            <span class="flex items-center">
+                                Distance
+                                <svg
+                                    class="ms-1 h-4 w-4"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m8 15 4 4 4-4m0-6-4-4-4 4"></path>
+                                </svg>
+                            </span>
+                        </th>
+                        <th>
+                            <span class="flex items-center">
+                                Time
+                                <svg
+                                    class="ms-1 h-4 w-4"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m8 15 4 4 4-4m0-6-4-4-4 4"></path>
+                                </svg>
+                            </span>
+                        </th>
+                        <th>
+                            <span class="flex items-center">
+                                Year
+                                <svg
+                                    class="ms-1 h-4 w-4"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m8 15 4 4 4-4m0-6-4-4-4 4"></path>
+                                </svg>
+                            </span>
+                        </th>
+                        <th>
+                            <span class="flex items-center">
+                                Location
+                                <svg
+                                    class="ms-1 h-4 w-4"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m8 15 4 4 4-4m0-6-4-4-4 4"></path>
+                                </svg>
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="font-medium whitespace-nowrap text-heading">Teis </td>
+                        <td>5K</td>
+                        <td>00:29:52</td>
+                        <td>2026</td>
+                        <td>Vigo</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium whitespace-nowrap text-heading">Calvario 5 + 5 </td>
+                        <td>5K</td>
+                        <td>00:24:13</td>
+                        <td>2026</td>
+                        <td>Vigo</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium whitespace-nowrap text-heading">Ponle Freno</td>
+                        <td>5K</td>
+                        <td>00:21:50</td>
+                        <td>2025</td>
+                        <td>Vigo</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium whitespace-nowrap text-heading">O Porriño</td>
+                        <td>5K</td>
+                        <td>00:22:48</td>
+                        <td>2025</td>
+                        <td>O Porriño</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium whitespace-nowrap text-heading">Érguete e Corre</td>
+                        <td>5K</td>
+                        <td>00:24:11</td>
+                        <td>2024</td>
+                        <td>Vigo</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium whitespace-nowrap text-heading"
+                            >Esclerosis Múltiple</td
+                        >
+                        <td>5K</td>
+                        <td>00:24:00</td>
+                        <td>2024</td>
+                        <td>Vigo</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium whitespace-nowrap text-heading">XIII Interrunning</td
+                        >
+                        <td>5K</td>
+                        <td>00:23:42</td>
+                        <td>2024</td>
+                        <td>O Porriño</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium whitespace-nowrap text-heading">MiniBay</td>
+                        <td>10K</td>
+                        <td>00:57:15</td>
+                        <td>2024</td>
+                        <td>Baiona</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium whitespace-nowrap text-heading">EDP Rock 'n' Roll</td
+                        >
+                        <td>Half Marathon</td>
+                        <td>01:53:06</td>
+                        <td>2019</td>
+                        <td>Madrid</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium whitespace-nowrap text-heading"
+                            >36 Carrera del Agua</td
+                        >
+                        <td>10K</td>
+                        <td>00:40:42</td>
+                        <td>2015</td>
+                        <td>Madrid</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-            <section class="bg-white dark:bg-gray-900">
-                <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
-                    Cycling
-                </h2>
-                <p
-                    class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300"
-                >
-                    I found in cycling a perfect cross-training for running. It allows me to enjoy
-                    outdoors working out, reaching beautiful but far distant places while also
-                    greatly reducing impact stress from running. This last characteristic was
-                    essential to me in 2021, I was overcoming a very tough time and I'd gained quite
-                    a lot of weight (almost 30 kg), so running was discouraged to me. This way, I
-                    really got serious into cycling, exploring almost every route in my local area
-                    while loosing much of that extra weight. From that moment, I fell in love with
-                    cycling, and actually I keep it as my second main sport. In this section, I want
-                    to share the best routes I've ridden, grouped by location.
-                </p>
-            </section>
+        <section class="mt-4 bg-white dark:bg-gray-900">
+            <h2 class="text-3xl font-semibold text-gray-800 md:text-4xl dark:text-gray-100">
+                Cycling
+            </h2>
+            <p class="mt-4 text-justify text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                I found in cycling a perfect cross-training for running. It allows me to enjoy
+                outdoors working out, reaching beautiful but far distant places while also greatly
+                reducing impact stress from running. This last characteristic was essential to me in
+                2021, I was overcoming a very tough time and I'd gained quite a lot of weight
+                (almost 30 kg), so running was discouraged to me. This way, I really got serious
+                into cycling, exploring almost every route in my local area while loosing much of
+                that extra weight. From that moment, I fell in love with cycling, and actually I
+                keep it as my second main sport. In this section, I want to share the best routes
+                I've ridden, grouped by location.
+            </p>
         </section>
     </main>
     <script src="/src/scripts/sports.js"></script>
