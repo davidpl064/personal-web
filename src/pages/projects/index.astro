@@ -5,22 +5,76 @@ import CheckboxBadge from '../../components/CheckboxBadge.astro'
 import BadgeFilter from '../../components/BadgeFilter.astro'
 import ProjectCard from '../../components/ProjectCard.astro'
 
+const cPluPlusTemplateDescription = `
+C++ template repository providing a structured, preconfigured foundation for C++ based projects.
+It integrates tools for dependency management, linting and formatting, building, testing
+along with security analysis, both in own code and third party libraries (based on public databases)
+and Github CI/CD workflows.
+`
+
+const pythonTemplateDescription = `
+Python template repository providing a structured, preconfigured foundation for Python based projects.
+It integrates tools for dependency and environment management, linting and formatting, building, testing
+along with security analysis, both in own code and third party libraries (based on public databases)
+and Github CI/CD workflows.
+`
+
+const tiltPlaneDescription = `
+Building of a 3D printed tiltrotor airplane, with modular components for easy assembly/disassembly,
+integrating an autopilot based on Ardupilot and communications based on
+open source ELRS (Express Long Range System).
+The airplane structure leverages very lightweight self-foaming ASA and
+stronger carbon fiber reinforced PLA for critical components.
+`
+
+const infotaxisDescription = `
+Development of a search algorithm, to detect and localize the source of a chemical substance
+in dilute mediums. Search is accomplished by combining olfactory sensing of the source's chemical marker (using
+electronic noses) with mathematical strategy, modeling the substance diffusion process and
+information theory to process detected signals. The scope includes the numerical implementation
+of the algorithm, and subsequent robustness analyses to account for sensor and parametric model uncertainties.
+
+`
+
 const quadcopterDescription = `
 Development of a DIY quadcopter, which included both software and hardware.
 Preliminar analysis was performed in a simulator implemented in MATLAB.
 Fine tuning of PID gains was done analyzing system's response to several input types.
 `
+
+const airshipDescription = `
+Final degree project, developed during my internship in Unmanned Solutions (USOL).
+The work's scope covers most of a product's lifecycle: conceptual - preliminary - detailed design, and construction of a prototype for testing purposes.
+The objective was to analyse the advantages of new airships in comparison with other air vehicles in its interval of range - velocity.
+During the conceptual design phase, a numerical model of the airship implemented in Simulink/Matlab was developed to carry out performance analysis and support design decisions.
+`
+
+const groundStationDescription = `
+Development of a ground station using Qt. The code was programmed in C++/QML.
+The purpose of the ground station is to allow the control of autonomous RPAS from a single computer,
+monitorizing their actual positions in a 2D displayed map as well as the required aditional parameters
+as function of time. Control over the RPAS can be acquired, commanding pre-defined functions
+or controlling their movement using a gamepad.
+`
+
+const geneticAlgorithmsDescription = `
+Application of genetic algorithms to optimize a car’s 2D longitudinal shape for drag reduction.
+The geometry is parameterized as segmented exponential functions, whose coefficients are optimized
+by the genetic algorithm based on values of the objective function, the drag coefficient.
+For each candidate solution, drag is evaluated via CFD in Ansys Fluent.
+`
+
 const cheopsDescription = `
 The scope of the internship was to developed a high precision Flight Dynamics System (FDS) tool
 and use it to analyze CHEOPS mission (ESA satellite) and optimize some design parameters.
 The code was implemented in MATLAB, in an user-friendly form through the use of several GUIs,
 avoiding the need of modifying internal code. All models are based on recommendations of IERS Conventions 2010 bulletin.
 `
-const airshipDescription = `
-Final degree project, developed during my internship in Unmanned Solutions (USOL).
-The work's scope covers most of a product's lifecycle: conceptual - preliminary - detailed design, and construction of a prototype for testing purposes.
-The objective was to analyse the advantages of new airships in comparison with other air vehicles in its interval of range - velocity.
-During the conceptual design phase, a numerical model of the airship implemented in Simulink/Matlab was developed to carry out performance analysis and support design decisions.
+
+const roverDescription = `
+Building and programming of a rover vehicle to perform experimental campaigns in real condition scenarios
+and validate numerical analyses obtained in Infotaxis project. 3D printing was used for construction
+of many parts, and the main controller, based on a STM32 chip, implemented a PID control to follow waypoints.
 `
 ---
 
@@ -213,7 +267,7 @@ During the conceptual design phase, a numerical model of the airship implemented
                 title="C++ Template"
                 initial-date="01/2026"
                 status="maintained"
-                description="TBD"
+                description={cPluPlusTemplateDescription}
                 rel-path-project="/projects/none"
                 rel-path-image="cpluplus_template"
                 color-scheme='["programming-languages"]'
@@ -223,7 +277,7 @@ During the conceptual design phase, a numerical model of the airship implemented
                 title="Python Template"
                 initial-date="05/2025"
                 status="maintained"
-                description="TBD"
+                description={pythonTemplateDescription}
                 rel-path-project="/projects/none"
                 rel-path-image="python_template"
                 color-scheme='["programming-languages"]'
@@ -234,7 +288,7 @@ During the conceptual design phase, a numerical model of the airship implemented
                 initial-date="05/2025"
                 end-date="08/2025"
                 status="completed"
-                description="TBD"
+                description={tiltPlaneDescription}
                 rel-path-project="/projects/none"
                 rel-path-image="tiltplane"
                 color-scheme='["programming-languages", "tech-areas", "tech-areas", "tech-areas", "domain-industry"]'
@@ -245,8 +299,8 @@ During the conceptual design phase, a numerical model of the airship implemented
                 initial-date="11/2015"
                 end-date="08/2016"
                 status="completed"
-                description="TBD"
-                rel-path-project="/projects/none"
+                description={infotaxisDescription}
+                rel-path-project="/projects/infotaxis"
                 rel-path-image="infotaxis"
                 color-scheme='["programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
                 data-tags='["MATLAB", "statistics", "simulation", "agriculture"]'
@@ -278,7 +332,7 @@ During the conceptual design phase, a numerical model of the airship implemented
                 initial-date="11/2016"
                 end-date="08/2017"
                 status="completed"
-                description="Development of a ground station using Qt. The code was programmed in C++/QML. The purpose of the ground station is to allow the control of autonomous RPAS from a single computer, monitorizing their actual positions in a 2D displayed map as well as the required aditional parameters as function of time. Control over the RPAS can be acquired, commanding pre-defined functions or controlling their movement using a gamepad."
+                description={groundStationDescription}
                 rel-path-project="/projects/none"
                 rel-path-image="ground_station"
                 color-scheme='["programming-languages", "programming-languages", "tech-areas", "tech-areas", "domain-industry"]'
@@ -289,7 +343,7 @@ During the conceptual design phase, a numerical model of the airship implemented
                 initial-date="09/2016"
                 end-date="12/2016"
                 status="completed"
-                description="TBD"
+                description={geneticAlgorithmsDescription}
                 rel-path-project="/projects/none"
                 rel-path-image="optimization"
                 color-scheme='["programming-languages", "tech-areas"]'
@@ -311,7 +365,7 @@ During the conceptual design phase, a numerical model of the airship implemented
                 initial-date="01/2018"
                 end-date="01/2022"
                 status="completed"
-                description="TBD"
+                description={roverDescription}
                 rel-path-project="/projects/none"
                 rel-path-image="rover"
                 color-scheme='["programming-languages", "tech-areas", "tech-areas"]'
