@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+import ProjectHero from '../../components/ProjectHero.astro'
+---
+
+<BaseLayout
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
+>
+    <ProjectHero
+        title="C++ Template"
+        data-tags='["C++"]'
+        color-schemes='["programming-languages"]'
+        image-key="cpluplus_template"
+        initial-date="01/2026"
+        dev-status="maintained"
+        doc-status="ongoing"
+        github="https://github.com/davidpl064/cpp-template"
+    />
+
+    <main class="prose-wide mx-auto w-full flex-1 px-4 dark:prose-invert">
+        <section>
+            <h2>Overview</h2>
+            <p class="text-justify">
+                As a scientist, my primary focus was the core functionality of the tools I built.
+                However, broader considerations - such as maintainability, scalability, and
+                effective team collaboration through consistent practices and coding standards - are
+                equally essential for sustainable development. This C++ template is designed to
+                provide a robust and well-structured project infrastructure that addresses these
+                needs for C++ based applications.
+            </p>
+        </section>
+
+        <section>
+            <h2>Development</h2>
+            <p class="text-justify">
+                The selected main management tool was <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >conan</span
+                >, a Python tool that handles: project metadata, dependency management (including
+                build tools), task runner, packaging, etc. It can be confusing to have a Python tool
+                to manage C++ code, but it leverages Python's best characteristics, being easy to
+                configure and very versatile. The configuration is set in a Python file, <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >conanfile.py</span
+                >. There are many alternatives, but for me the key decision points were:
+            </p>
+            <ul>
+                <li>Open source: not a must, but I like to support open source projects.</li>
+                <li>Muti OS support.</li>
+                <li>Compatible with any build system and compiler.</li>
+                <li>Free tier artifactory.</li>
+            </ul>
+            <p class="text-justify">
+                All of the aforementioned tasks are executed by using certain repetitive commands.
+                In this case, they're <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >conan</span
+                > commands, but I wanted to define a tool-agnostic interface, so changes in selected management
+                tool wouldn't affect command syntax. To accomplish this, a <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >Makefile</span
+                > was implemented, so every <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >make</span
+                > command subsequently calls the corresponding tool.
+            </p>
+            <p class="text-justify">
+                Apart from the main management tool, there are other important functionalities to be
+                covered. The version control software is the famous and widely adopted <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >Git</span
+                >, along with <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >Github</span
+                > for repository hosting and collaboration. Tests are collected and executed using Google's
+                library <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >GTest</span
+                >, and related with testing, it was implemented a workflow to test correct Conan's
+                packaging of own code, which is performed in the <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >test_package</span
+                > directory, which acts as a consumer of own package. Format and linting are performed
+                through <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >clang-format</span
+                >/<span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >clang-tidy</span
+                > respectively.
+            </p>
+            <p class="text-justify">
+                With respect to commits, the repository follows the <a
+                    href="https://www.conventionalcommits.org/en/v1.0.0/"
+                    class="text-fg-brand hover:underline">Conventional Commits</a
+                > specification, a widely adopted standard that enables structured history, automated
+                tooling, and semantic versioning. The specification defines a group of prefixes that must
+                be added to each commit message, acting as a header. This serves a dual purpose, in one
+                hand it helps to easily and quickly understand the scope of the changes, while also automating
+                <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >Changelog</span
+                > generation, associating each prefix with a type of change. Moreover, as the specification
+                follows semantic versioning, it also automates version definition of the code. Leveraging
+                automation is achieved by the implementation of a Github workflow that uses Google's <a
+                    href="https://github.com/googleapis/release-please"
+                    class="text-fg-brand hover:underline">release please</a
+                > action.
+            </p>
+            <p class="text-justify">
+                Another important aspect of code development is documentation. It is useful for a
+                single developer, as a second memory and quick reference, but it's crucial in
+                contexts like professional team development or end-user reference. Otherwise,
+                knowledge distribution would be almost impossible to achieve, adding considerable
+                time to understand other's work. Additionally, documentation helps to identify and
+                minimize bugs, as the purpose of each function/class and the types of variables
+                involved are well defined. In this template, <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >Doxygen</span
+                > was the tool selected to generate code documentation. It is capable of automatically
+                update documentation based on code comments, parsing information about functions, classes,
+                etc.
+            </p>
+            <p class="text-justify">
+                A Continious Integration workflow is an essential feature to validate safe
+                integration of code changes, maintaining code quality, and helping to detect issues
+                during development. This repository includes a Github CI workflow, which executes
+                next main actions: install dependencies, format and lint, test and generation of
+                coverage reports (using <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >lcov</span
+                >). The ideal objective is to have a 100% coverage, but in real scenarios this isn't
+                always possible due to time constraints/deadlines, so most importantly is to define
+                a minimum threshold and follow-up coverage evolution. To fulfill this purpose, <a
+                    href="https://about.codecov.io/"
+                    class="text-fg-brand hover:underline">codecov</a
+                > was added to the CI workflow. The CI automation is set to run for every PR to <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >main</span
+                > branch, to assist during code review and ensure production code meets standards, and
+                also to every push to <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >main</span
+                > (although this practice should be avoided).
+            </p>
+        </section>
+    </main>
+</BaseLayout>

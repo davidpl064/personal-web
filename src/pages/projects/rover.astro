@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+import ProjectHero from '../../components/ProjectHero.astro'
+---
+
+<BaseLayout
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
+>
+    <ProjectHero
+        title="Rover"
+        data-tags='["Arduino", "3D-printing", "electronics"]'
+        color-schemes='["programming-languages", "tech-areas", "tech-areas"]'
+        image-key="rover"
+        initial-date="01/2018"
+        end-date="01/2022"
+        dev-status="completed"
+        doc-status="ongoing"
+    />
+
+    <main class="prose-wide mx-auto w-full flex-1 px-4 dark:prose-invert">
+        <section>
+            <h2>Overview</h2>
+            <p class="text-justify">ssdsd</p>
+        </section>
+
+        <section>
+            <h2>Development</h2>
+            <p class="text-justify"></p>
+        </section>
+    </main>
+</BaseLayout>
