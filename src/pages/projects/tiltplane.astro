@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+import ProjectHero from '../../components/ProjectHero.astro'
+---
+
+<BaseLayout
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
+>
+    <ProjectHero
+        title="Tiltplane"
+        data-tags='["C++", "embedded-systems", "3D-printing", "electronics", "aerospace"]'
+        color-schemes='["programming-languages", "tech-areas", "tech-areas", "tech-areas", "domain-industry"]'
+        image-key="tiltplane"
+        initial-date="05/2025"
+        end-date="08/2025"
+        dev-status="completed"
+        doc-status="ongoing"
+    />
+
+    <main class="prose-wide mx-auto w-full flex-1 px-4 dark:prose-invert">
+        <section>
+            <h2>Overview</h2>
+            <p class="text-justify">ssdsd</p>
+        </section>
+
+        <section>
+            <h2>Development</h2>
+            <p class="text-justify"></p>
+        </section>
+    </main>
+</BaseLayout>

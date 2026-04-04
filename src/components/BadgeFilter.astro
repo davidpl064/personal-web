@@ -4,8 +4,7 @@ import { getColorClasses, sanitizeDataTag } from '../scripts/badgeUtils.js'
 const { 'data-tag': dataTag = '', 'color-scheme': colorScheme = '' } = Astro.props
 
 const sanitizedDataTag = sanitizeDataTag(dataTag)
-const { textColorClass, borderColorClass, badgeColorClass, buttonColorClass, checkboxColorClass } =
-    getColorClasses(colorScheme)
+const { badgeColorClass, buttonColorClass } = getColorClasses(colorScheme)
 ---
 
 <span

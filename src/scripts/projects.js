@@ -17,11 +17,6 @@ function initProjectFilters() {
 
 // Functionality of tag checkboxes
 function handleCheckboxChange(event) {
-    // checkboxId = event.target.id;
-
-    // Get associated label and tags
-    /*     let checkboxList = document.getElementById('checkbox-list');
-    labelCheckbox = checkboxList.querySelector(`label[for="${checkboxId}"]`); */
     let tag = event.target.dataset.tags
 
     if (event.target.checked) {

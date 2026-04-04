@@ -1,0 +1,135 @@
+---
+import { Image } from 'astro:assets'
+
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+import ProjectHero from '../../components/ProjectHero.astro'
+
+import roverBody01 from '../../assets/projects/rover/roverbody_01.jpg'
+import roverBody02 from '../../assets/projects/rover/roverbody_02.jpg'
+import roverBody03 from '../../assets/hobbies/3d_printing/project_rover.jpg'
+---
+
+<BaseLayout
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
+>
+    <ProjectHero
+        title="Rover"
+        data-tags='["Arduino", "3D-printing", "electronics"]'
+        color-schemes='["programming-languages", "tech-areas", "tech-areas"]'
+        image-key="rover"
+        initial-date="01/2018"
+        end-date="01/2022"
+        dev-status="completed"
+        doc-status="ongoing"
+    />
+
+    <main class="prose-wide mx-auto w-full flex-1 px-4 dark:prose-invert">
+        <section>
+            <h2>Overview</h2>
+            <p class="text-justify">
+                Numerical analyses carried out in <a
+                    href="/projects/infotaxis"
+                    class="text-fg-brand hover:underline">Infotaxis</a
+                > were the first step to prove algorithm's performance and robustness. However, validation
+                through experimental campaigns was required to ensure its capabilities and feasibility.
+                To conduct such experiments, a search vehicle was needed, which would carry the olfactory
+                sensor and processing unit, and execute calculated movements through search space.
+            </p>
+        </section>
+
+        <section>
+            <h2>Development</h2>
+            <p class="text-justify">The main requirements for the search vehicle were:</p>
+            <ul>
+                <li>
+                    Capable of moving in grid mesh: search space was discretized as a grid mesh, so
+                    there were 5 possible movements (stay, forward, backwards, left, right).
+                </li>
+                <li>
+                    Reliable navigation through real scenarios: target scenarios were agricultural
+                    fields, so moving through abrupt terrain with dense vegetation must be possible.
+                </li>
+                <li>
+                    Minimal interference with surrounding airflow: vehicles like a quadcopter
+                    severely modify local airflow, which affects model performance.
+                </li>
+                <li>Payload: weight of electronics to run search algorithm, approximately 1 kg.</li>
+                <li>Low budget.</li>
+            </ul>
+            <p class="text-justify">
+                Given the previous constraints, a rover platform was selected. It can perform 90&deg
+                rotations through its body z-axis, enabling accurate adherence to the defined grid
+                space, and has very good autonomy and payload capabilities. To minimize cost, the
+                main body of the rover was 3D printed, based on the design of <a
+                    href="https://youtu.be/PJvhMdysS9s?si=luXtLVeqrAG8kILk"
+                    class="inline-flex items-center gap-0.5 text-fg-brand hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Kamil Kosi
+                    <svg
+                        class="h-5 w-5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"
+                        ></path>
+                    </svg>
+                </a>.
+                <div class="not-prose mx-auto grid max-w-lg gap-4">
+                    <div>
+                        <Image class="h-auto max-w-full rounded-base" src={roverBody01} alt="" />
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <Image
+                                class="h-auto max-w-full rounded-base"
+                                src={roverBody02}
+                                alt=""
+                            />
+                        </div>
+                        <div>
+                            <Image
+                                class="h-auto max-w-full rounded-base"
+                                src={roverBody03}
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                </div>
+            </p>
+        </section>
+
+        <section>
+            <h2>Videos</h2>
+            <div class="mb-4 grid gap-4 lg:mb-8 lg:grid-cols-2">
+                <iframe
+                    class="h-64 w-full rounded-lg shadow-xl sm:h-96"
+                    src="https://www.youtube.com/embed/rNC_PZAZxNc?si=iKyEwC5sHJ84eYOb"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+                <iframe
+                    class="h-64 w-full rounded-lg shadow-xl sm:h-96"
+                    src="https://youtube.com/embed/n0rNYLkt3pY"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+</BaseLayout>

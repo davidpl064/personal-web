@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+import ProjectHero from '../../components/ProjectHero.astro'
+---
+
+<BaseLayout
+    body-class="flex flex-col min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200"
+    header-navbar-class="sticky top-0 z-20 w-full flex-none"
+>
+    <ProjectHero
+        title="Python Template"
+        data-tags='["Python"]'
+        color-schemes='["programming-languages"]'
+        image-key="python_template"
+        initial-date="05/2025"
+        dev-status="maintained"
+        doc-status="completed"
+        github="https://github.com/davidpl064/python-template"
+    />
+
+    <main class="prose-wide mx-auto w-full flex-1 px-4 dark:prose-invert">
+        <section>
+            <h2>Overview</h2>
+            <p class="text-justify">
+                As a scientist, my primary focus was the core functionality of the tools I built.
+                However, broader considerations - such as maintainability, scalability, and
+                effective team collaboration through consistent practices and coding standards - are
+                equally essential for sustainable development. This Python template is designed to
+                provide a robust and well-structured project infrastructure that addresses these
+                needs for Python based applications.
+            </p>
+        </section>
+
+        <section>
+            <h2>Development</h2>
+            <p class="text-justify">
+                The selected main management tool was <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >uv</span
+                >, a Python tool that handles: project metadata, environment and dependency
+                management, task runner, packaging, etc. However, it doesn't support dependencies in
+                other languages rather than Python. For this case, <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >pixi</span
+                > was selected as an alternative, as it is an extension of <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >uv</span
+                >, using it in the background for Python dependencies, and extending its
+                functionality for other languages. There are many alternatives, but for me the key
+                decision points were:
+            </p>
+            <ul>
+                <li>
+                    Outstanding performance advantage: both tools are implemented in <span
+                        class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                        >Rust</span
+                    >, providing an incredible performance gap compared to similar alternatives
+                    (like <span
+                        class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                        >poetry, pdm</span
+                    > for <span
+                        class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                        >uv</span
+                    > and <span
+                        class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                        >conda</span
+                    > for <span
+                        class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                        >pixi</span
+                    >).
+                </li>
+                <li>Automatic handling of Python version.</li>
+                <li>
+                    Project configuration defined in standard <span
+                        class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                        >pyproject.toml</span
+                    > file, following PEP 518.
+                </li>
+                <li>Allow usage of custom artifact repositories.</li>
+            </ul>
+            <p class="text-justify">
+                All of the aforementioned tasks are executed by using certain repetitive commands.
+                In this case, they're <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >uv/pixi</span
+                > commands, but I wanted to define a tool-agnostic interface, so changes in selected management
+                tool wouldn't affect command syntax. To accomplish this, a <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >Makefile</span
+                > was implemented, so every <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >make</span
+                > command subsequently calls the corresponding tool.
+            </p>
+            <p class="text-justify">
+                Apart from the main management tool, there are other important functionalities to be
+                covered. The version control software is the famous and widely adopted <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >Git</span
+                >, along with <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >Github</span
+                > for repository hosting and collaboration. Tests are collected and executed using <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >pytest</span
+                >. Format and linting are centralized through <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >pre-commit</span
+                >, which coordinates multiple tools to perform specialized checks and
+                transformations. The set of specialized tools is: <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >pre-commit-hooks</span
+                >, <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >ruff</span
+                >, <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >mypy</span
+                > and <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >black</span
+                >.
+            </p>
+            <p class="text-justify">
+                With respect to commits, the repository follows the <a
+                    href="https://www.conventionalcommits.org/en/v1.0.0/"
+                    class="text-fg-brand hover:underline">Conventional Commits</a
+                > specification, a widely adopted standard that enables structured history, automated
+                tooling, and semantic versioning. The specification defines a group of prefixes that must
+                be added to each commit message, acting as a header. This serves a dual purpose, in one
+                hand it helps to easily and quickly understand the scope of the changes, while also automating
+                <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >Changelog</span
+                > generation, associating each prefix with a type of change. Moreover, as the specification
+                follows semantic versioning, it also automates version definition of the code. Leveraging
+                automation is achieved by the implementation of a Github workflow that uses Google's <a
+                    href="https://github.com/googleapis/release-please"
+                    class="text-fg-brand hover:underline">release please</a
+                > action.
+            </p>
+            <p class="text-justify">
+                Another important aspect of code development is documentation. It is useful for a
+                single developer, as a second memory and quick reference, but it's crucial in
+                contexts like professional team development or end-user reference. Otherwise,
+                knowledge distribution would be almost impossible to achieve, adding considerable
+                time to understand other's work. Additionally, documentation helps to identify and
+                minimize bugs, as the purpose of each function/class and the types of variables
+                involved are well defined. This templase uses <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >docstrings</span
+                > to provide structured, inline documentation for modules, classes, and functions, facilitating
+                readability and automated documentation generation.
+            </p>
+            <p class="text-justify">
+                A Continious Integration workflow is an essential feature to validate safe
+                integration of code changes, maintaining code quality, and helping to detect issues
+                during development. This repository includes a Github CI workflow, which is divided
+                into two main jobs: <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >test</span
+                > and <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >security</span
+                >.
+            </p>
+            <p class="text-justify">
+                The <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >test</span
+                > job includes next main actions: environment creation and dependency management, format
+                and lint, test and generation of coverage reports. The ideal objective is to have a 100%
+                coverage, but in real scenarios this isn't always possible due to time constraints/deadlines,
+                so most importantly is to define a minimum threshold and follow-up coverage evolution.
+                To fulfill this purpose, <a
+                    href="https://about.codecov.io/"
+                    class="text-fg-brand hover:underline">codecov</a
+                > was added to the CI workflow. The CI automation is set to run for every PR to <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >main</span
+                > branch, to assist during code review and ensure production code meets standards, and
+                also to every push to <span
+                    class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                    >main</span
+                > (although this practice should be avoided).
+            </p>
+            <p class="text-justify"></p>
+            The <span
+                class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                >security</span
+            > job defines actions to scan both own codebase and its dependencies for known vulnerabilities,
+            misconfigurations, and potential security risks. The underlying tools are <span
+                class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                >Bandit</span
+            > and <span
+                class="rounded bg-gray-100 px-1 py-0.5 font-mono font-semibold dark:bg-gray-800"
+                >CodeQL</span
+            >.
+        </section>
+    </main>
+</BaseLayout>

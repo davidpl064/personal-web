@@ -6,7 +6,7 @@ import { projectThumbs } from '../scripts/imageRegistry.js'
 const {
     title = '',
     'rel-path-project': relPathProjectPage = '',
-    'rel-path-image': relPathImage = '',
+    'image-key': imageKey = '',
     description = '',
     'data-tags': dataTags = '[]',
     'color-scheme': colorSchemes = '[]',
@@ -15,7 +15,7 @@ const {
     status,
 } = Astro.props
 
-const imageProjectThumb = projectThumbs[relPathImage]
+const imageProjectThumb = projectThumbs[imageKey]
 
 // Parse JSON strings into an arrays
 const dataTagsArray = JSON.parse(dataTags)
