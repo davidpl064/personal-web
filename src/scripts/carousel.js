@@ -1,5 +1,6 @@
 function initCarousel() {
     const carousel = document.querySelector('[data-carousel]')
+    if (!carousel) return
 
     let startX = 0
     let endX = 0

@@ -26,25 +26,6 @@ const onToggleTheme = () => {
 // Watch for system preference changes and update theme accordingly
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyDarkMode)
 
-// // Hide the preloader when the page is fully loaded
-// window.addEventListener('load', function () {
-//     const preloader = document.getElementById('preloader')
-//     // preloader.style.display = 'none';  // Hide the preloader
-
-//     // Simulate a loading delay (e.g., 2000 milliseconds = 2 seconds)
-//     setTimeout(function () {
-//         preloader.style.display = 'none' // Hide the preloader after the delay
-//     }, 2000)
-// })
-
-// // Show preloader on page navigation
-// document.querySelectorAll('a').forEach((link) => {
-//     link.addEventListener('click', function (e) {
-//         // Display the preloader when a link is clicked
-//         document.getElementById('preloader').style.display = 'flex'
-//     })
-// })
-
 function initInputSearchs() {
     const forms = document.querySelectorAll('form')
 
