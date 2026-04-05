@@ -9,5 +9,10 @@
         { "type": "refactor", "section": "Refactoring", "hidden": false },
         { "type": "chore", "section": "Chore", "hidden": false },
         { "type": "style", "section": "Style", "hidden": false }
-    ]
+    ],
+    "packages": {
+        ".": {
+            "package-name": ""
+        }
+    }
 }
