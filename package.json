@@ -1,6 +1,6 @@
 {
     "name": "personal-web",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Personal web page to describe professional and personal projects, providing an environment to share deeper and detailed explanations.",
     "lint-staged": {
         "src/scripts/**/*.js": [
