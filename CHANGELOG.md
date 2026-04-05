@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.1](https://github.com/davidpl064/personal-web/compare/v0.2.0...v0.2.1) (2026-04-05)
+
+
+### Bug Fixes
+
+* add minimal release-please manifest ([1104118](https://github.com/davidpl064/personal-web/commit/1104118cbb7caa223db069f95fda519f74424795))
+* correct issue release-please recognizing repo type ([#18](https://github.com/davidpl064/personal-web/issues/18)) ([21668cf](https://github.com/davidpl064/personal-web/commit/21668cf3a833c0a67e25a713dd8696433f627a21))
+* correct requirement for manifest file in single package repos ([#22](https://github.com/davidpl064/personal-web/issues/22)) ([a1c0fdc](https://github.com/davidpl064/personal-web/commit/a1c0fdc3c5d8c706a82957a1d144d2a3914c4061))
+* remove manifest mode ([#20](https://github.com/davidpl064/personal-web/issues/20)) ([e6cb532](https://github.com/davidpl064/personal-web/commit/e6cb532a5e522864e19e8821f7525d8e04d18fe6))
+* remove required manifest file release-please ([fc3e458](https://github.com/davidpl064/personal-web/commit/fc3e458b7b154587aac314928ca3c6f360f2fa9b))
+* reset manifest path in workflow ([940f2e4](https://github.com/davidpl064/personal-web/commit/940f2e412cc99b11e321eccaa715373acd57ceed))
+
 ## [0.2.0](https://github.com/davidpl064/personal-web/compare/personal-web-v0.1.0...personal-web-v0.2.0) (2026-04-05)
 
 
