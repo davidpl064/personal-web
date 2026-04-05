@@ -1,6 +1,7 @@
 # PersonalWeb
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e85625e2-1762-4f1d-bc58-f4519d4e41b6/deploy-status)](https://app.netlify.com/sites/dplamarca/deploys)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
 Personal web page to describe professional and personal projects, providing a comfortable environment with required tools to customize content design and complexity to desired level.
 
